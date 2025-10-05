@@ -1,0 +1,22 @@
+{
+  "address": {
+    "title": "Adresimiz",
+    "iconAlt": "adres simgesi",
+    "isoAlt": "ISO logosu",
+    "text": "Şehit Erdoğan Yıldız Cd. No:5 Kızılay, Lefkoşa Kuzey Kıbrıs (KKTC)"
+  },
+  "contact": {
+    "title": "İletişim",
+    "iconAlt": "iletişim simgesi"
+  },
+  "quickAccess": {
+    "title": "Hızlı Erişim",
+    "iconAlt": "hızlı erişim simgesi",
+    "home": "Anasayfa",
+    "treatments": "Tedaviler",
+    "travel": "Seyahat"
+  },
+  "copyright": {
+    "text": "© 2025 Tüm hakları saklıdır"
+  }
+}

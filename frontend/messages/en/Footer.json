@@ -1,0 +1,22 @@
+{
+  "address": {
+    "title": "Our Address",
+    "iconAlt": "address icon",
+    "isoAlt": "ISO logo",
+    "text": "Sehit Erdogan Yildiz St. No:5 Kizilay, Nicosia, Northern Cyprus (TRNC)"
+  },
+  "contact": {
+    "title": "Contact",
+    "iconAlt": "contact icon"
+  },
+  "quickAccess": {
+    "title": "Quick Access",
+    "iconAlt": "quick access icon",
+    "home": "Home",
+    "treatments": "Treatments",
+    "travel": "Travel"
+  },
+  "copyright": {
+    "text": "© 2025 All rights reserved"
+  }
+}

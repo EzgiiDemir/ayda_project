@@ -1,0 +1,19 @@
+{
+  "topTitle": "En Sık Tercih Edilen",
+  "title": "Tedavi Yöntemlerimiz",
+  "description1": "Tedaviniz hakkında daha detaylı bilgiye hızlıca ulaşabilmeniz için özenle hazırladığımız yöntemlerimize göz atın.",
+  "description2": "Sorularınız için her zaman yanınızdayız. Sağlıklı bir bebek için profesyonel destek vermek üzere buradayız.",
+  "contactButton": "Bizimle İletişime Geçin",
+  "list": {
+    "1": "Tüp Bebek (IVF) - ICSI",
+    "2": "Yumurta Donasyonu",
+    "3": "Sperm Donasyonu",
+    "4": "Embriyo Donasyonu",
+    "5": "Ovarian ve Endometrial PRP",
+    "6": "Embriyo Genetik Tarama (NGS, Tek Gen)",
+    "7": "Cinsiyet Seçimi (PGD)",
+    "8": "Yumurta Dondurma",
+    "9": "Taşıyıcı Annelik",
+    "10": "Embriyo Genetik Tarama (PGD)"
+  }
+}

@@ -1,0 +1,260 @@
+{
+  "welcome": {
+    "titleTop": "Ayda-Tüp Bebek Web Sitesine",
+    "title": "Hoş Geldiniz",
+    "p1": "Kuzey Kıbrıs’ın başkenti Lefkoşa'nın merkezinde bulunan kliniğimiz; Elite hastanesi bünyesinde olup, sizleri hamileliğe ulaştırabilmek için yıllardır canla başla çalışıyor. Evlat sahibi olma arzusu ile kliniğimize başvuran tüm bireylere; bilimin el verdiği derecede, birçok teknik ve yöntemle, en modern, yenilikçi ve son teknolojiye sahip altyapımızla yardımcı olmak için buradayız.",
+    "p2": "Tüp bebekteki 8 senelik mesleki hayatıma ilk olarak Almanya’nın Wiesbaden şehrinde adım atmıştım. Benim için; tüp bebeğe ilk adım attığım günden bu yana etik kurallar çerçevesinde mesleğimi sürdürmem her zaman her şeyin önünde olmuştur. Mesleğimin ne kadar kutsal ve anlamlı olduğunu ilk hastamın transferini yapıp onun gebelik sevincine ortak olduğum ilk günden anlamıştım.",
+    "p3": "Karşınızdaki insanın size güvenerek sizi tercih etmesi büyük bir sorumluluktur ve özveri ile çalışma gerektirir. Hasta ile birlikte anlamlı ve önemli bir yolculuğa birlikte çıkarsınız. Birlikte güler birlikte ağlarsınız. Hastanız streslidir; en güzel ve en doğru teselliyi verecek kişi sizsinizdir. Hastanız kaygılıdır; onun yanında olan, onu anlayan kişi sizsinizdir. Hastanızın tüm bu süreçleri atlatıp gebelik testi günü gelmiştir; onunla birlikte bu büyük heyecana ortak olacak olan kişi yine sizsinizdir. Siz onun en büyük ve en önemli sırrına ve umuduna ortak olursunuz. Bu yüzden hastanız ile samimi, doğru ve dürüst olmak çok önemlidir.",
+    "p4": "Günün sonunda karşılıklı emeklerin güzel sonuçlarla sonuçlanması, hastalarımıza evlat bahşederek onlara sonsuz mutluluğu verebilmek, evlatlarına her baktıklarında size okudukları o dualar, teşekkürler paha biçilemez duygular. İnsan tüm bu duygulara ortak olunca, hastasının hamile kalabilmesi için gerekli en doğru yolu onlara çizer ve karşılıklı anlayış ve emek ile başarıya ulaşmak için adımlar atılır. İşte yıllardır hastalarımın hep sorduğu ‘nasıl bu kadar başarılı ve pozitif olabiliyorsunuz’ sorusunun cevabı burada gizlidir. Bizler enerjimizi sizlerden alıyoruz ve sizlere geri veriyoruz.",
+    "p5": "Bende bizi tercih eden her bir bireye bize inanıp güvendikleri ve bu yolda birlikte yürüdükleri için ne kadar teşekkür etsem azdır. Eğer hala bizimle tanışmadıysanız ve tüp bebek yolculuğuna çıkmak istiyorsanız gelin bu adımı birlikte atalım. Sizleri de aile olmak için bir adım öteye taşıyalım.",
+    "signatureName": "Tanyel FELEK, MS",
+    "signatureTitle": "Ayda Tüp Bebek Takımı Direktörü & Embriyoloji Laboratuvarı Sorumlusu"
+  },
+
+  "hero": {
+    "slides": [
+      {
+        "title": "En Güzel Hediyeyi Verelim",
+        "subtitle": "Gelin Size Sahip Olabileceğiniz"
+      }
+    ],
+    "rightText": "PTESİ - CUMA : 9:00 - 14:00",
+    "bottomText": "Ayda IVF Center"
+  },
+
+  "about": "Hakkımızda",
+  "whyUs": "Neden Biz ?",
+  "prices": "Fiyatlarımız",
+  "team": "Takımımız",
+  "successRates": "Başarı Oranlarımız",
+
+  "treatments": "Tedaviler",
+  "ivfIcsi": "Tüp Bebek (IVF) - ICSI",
+  "eggDonation": "Yumurta Donasyonu",
+  "spermDonation": "Sperm Donasyonu",
+  "embryoDonation": "Embriyo Donasyonu",
+  "eggFreezing": "Yumurta Dondurma",
+  "ovarianEndometrialPrp": "Ovarian ve Endometrial PRP",
+  "acupuncture": "Akupunktur",
+
+  "faq": "SSS",
+  "travel": "Seyahat",
+  "contact": "İletişim",
+
+  "phoneNumber": "+905488252821",
+  "logoAlt": "ayda-logo",
+
+  "tm": {
+    "mostPreferred": "En Sık Tercih Edilen",
+    "title": "Tedavi Yöntemlerimiz",
+    "p1": "Ayda Tüp Bebek Ekibini ziyaret etmeden önce tedaviniz hakkında daha detaylı bilgiye ulaşabilmeniz için sizlere özel olarak, her bir detayı özenle düşünerek hazırlamış olduğumuz tedavi yöntemlerimize mutlaka bir göz atınız. Burada size uygun tedavinizi daha yakından inceleme fırsatına ve detaylı bilgi edinebilme şansına sahip olacaksınız.",
+    "p2": "Tedavilerimizi inceledikten sonra merak ettiğiniz tüm sorularınız için bir telefon kadar uzağınızda olduğumuzu unutmayınız. Sizlerle tanışmak ve sağlıklı bir bebek kucağınıza almanız için sizlere profesyonel yardımda bulunmayı dört gözle bekliyoruz.",
+    "contactCta": "Bizimle İletişime Geçin"
+  },
+
+  "embryoGeneticScreeningNgs": "Embriyo Genetik Tarama (NGS, Tek Gen)",
+  "genderSelectionPgd": "Cinsiyet Seçimi (PGD)",
+  "surrogacy": "Taşıyıcı Annelik",
+  "embryoGeneticScreeningPgd": "Embriyo Genetik Tarama (PGD)",
+
+  "TreatmentMethods": {
+    "subtitle": "En Sık Tercih Edilen",
+    "title": "Tedavi Yöntemlerimiz",
+    "description": {
+      "part1": "Ayda Tüp Bebek Ekibini ziyaret etmeden önce tedaviniz hakkında daha detaylı bilgiye ulaşabilmeniz için sizlere özel olarak, her bir detayı özenle düşünerek hazırlamış olduğumuz tedavi yöntemlerimize mutlaka bir göz atınız. Burada size uygun tedavinizi daha yakından inceleme fırsatına ve detaylı bilgi edinebilme şansına sahip olacaksınız.",
+      "part2": "Tedavilerimizi inceledikten sonra merak ettiğiniz tüm sorularınız için bir telefon kadar uzağınızda olduğumuzu unutmayınız. Sizlerle tanışmak ve sağlıklı bir bebek kucağınıza almanız için sizlere profesyonel yardımda bulunmayı dört gözle bekliyoruz."
+    },
+    "treatments": {
+      "ivfIcsi": {
+        "name": "Tüp Bebek (IVF) - ICSI",
+        "href": "/treatments/ivf-icsi"
+      },
+      "eggDonation": {
+        "name": "Yumurta Donasyonu",
+        "href": "/treatments/egg-donation"
+      },
+      "spermDonation": {
+        "name": "Sperm Donasyonu",
+        "href": "/treatments/sperm-donation"
+      },
+      "embryoDonation": {
+        "name": "Embriyo Donasyonu",
+        "href": "/treatments/embryo-donation"
+      },
+      "prp": {
+        "name": "Ovarian ve Endometrial PRP",
+        "href": "/treatments/prp"
+      },
+      "embryoGeneticScreeningNgs": {
+        "name": "Embriyo Genetik Tarama (NGS, Tek Gen)",
+        "href": "/treatments/ngs-single-gene"
+      },
+      "genderSelection": {
+        "name": "Cinsiyet Seçimi (PGD)",
+        "href": "/treatments/pgd-gender-selection"
+      },
+      "eggFreezing": {
+        "name": "Yumurta Dondurma",
+        "href": "/treatments/egg-freezing"
+      },
+      "surrogacy": {
+        "name": "Taşıyıcı Annelik",
+        "href": "/treatments/surrogacy"
+      },
+      "embryoGeneticScreeningPgd": {
+        "name": "Embriyo Genetik Tarama (PGD)",
+        "href": "/treatments/pgd-screening"
+      }
+    },
+    "contactButton": "Bizimle İletişime Geçin"
+
+  },
+
+  "Footer": {
+    "address": {
+      "title": "Adresimiz",
+      "iconAlt": "address-img",
+      "isoAlt": "iso-logo",
+      "text": "Şehit Erdoğan Yıldız Cd. No:5 Kızılay, Lefkoşa Kuzey Kıbrıs (KKTC)"
+    },
+    "contact": {
+      "title": "İletişim",
+      "iconAlt": "contact-img",
+      "phoneLink": "https://wa.me/+905488252821",
+      "phoneText": "Tel : +90 548 825 28 21",
+      "emailLink": "mailto:info@aydaivf.com",
+      "emailText": "E-mail : info@aydaivf.com"
+    },
+    "quickAccess": {
+      "title": "Hızlı Erişim",
+      "iconAlt": "access-img",
+      "homeLink": "/tr",
+      "homeText": "Anasayfa",
+      "treatmentsLink": "#",
+      "treatmentsText": "Tedaviler",
+      "travelLink": "/travel",
+      "travelText": "Seyahat"
+    },
+    "copyright": {
+      "text": "© 2025 Tüm hakları saklıdır"
+    },
+
+  "contactMap": {
+    "mapTitle": "Konumumuz",
+    "imageAlt": "İletişim görseli"
+  }
+
+},
+
+
+  "travel_2": {
+    "title": "Seyahat",
+    "aboutCyprus": {
+      "title": "Kıbrıs Adası Hakkında",
+      "description1": "Kıbrıs adasında iki farklı ülke bulunup iki farklı devlet tarafından yönetilmektedir. Kuzey ve Güney olarak bölünmüş olan Kıbrıs adasında ülkeler arası geçiş sınırı bulunmaktadır.",
+      "description2": "Kıbrıs'ın Kuzeyi Türk ülkesi olup para birimi Türk Lirası dır. Kıbrıs'ın Güneyi Avrupa ülkesi olup para birimleri Euro dur."
+    },
+    "northCyprus": {
+      "title": "Kuzey Kıbrıs",
+      "description1": "Kıbrıs; Suriye, Lübnan, İsrail, Mısır, Yunanistan ve Türkiye'ye komşu olup Akdeniz'de yer alan bir adadır.",
+      "description2": "K.K.T.C Kıbrıs adasının Kuzey kısmında yer almakta olup, tüp bebek hastanemiz Kuzey Kıbrıs (K.K.T.C.)'nin başkenti Lefkoşa'da bulunmaktadır.",
+      "description3": "Kıbrıs'ın iklimi tipik bir Akdeniz iklimidir. Nisan ayından yaklaşık Ekim ayına kadar dayanan uzun bir yaz mevsimi geçirir. Bu dönemlerde sıcaklık genellikle 22-38 °C civarlarındadır. Kasım ayından genellikle mayıs ayı sonuna kadar uzanan bir Kış dönemi vardır. Kışın sıcaklık genellikle 10-18 °C civarlarında olmaktadır."
+    },
+    "ourCare": {
+      "title": "Sizin için her detayı düşündük!",
+      "description1": "Tüp bebek tedavinize gelirken stresten uzakta bir ortamda tedavi görmenizi sağlamak için her detayı düşünmeye çalıştık.",
+      "description2": "Stressiz bir ortamın tüp bebek tedavinizi olumlu bir şekilde etkileyeceğini düşündüğümüzden sizler için konaklayabileceğiniz her bütçeye uygun hotel ve evler ile anlaşmalarımız bulunmaktadır. Böylelikle tedaviye geldiğinizde nerede kalacağınızı düşünmenize gerek kalmayacaktır.",
+      "description3": "Havaalanından alınıp hotelinize ve kalacağınız yerden kliniğimize getirilebilmeniz için yine sizler için uygun fiyatlara ulaşımımız bulunmaktadır.",
+      "description4": "Tedaviniz boyunca size stresten uzak, huzurlu ve konforlu bir misafirlik sağlamayı umuyoruz."
+    },
+    "byAir": {
+      "title": "Havayolları ile Kuzey Kıbrıs'a geliş",
+      "subtitle": "Havayolları ile Kuzey Kıbrıs'a geliş 2 türlü olmaktadır;",
+      "ercan": {
+        "title": "1. Ercan Havalimanı",
+        "description1": "Kuzey Kıbrıs'ın başkenti Lefkoşa'da konumlanan Ercan Havalimanı'na uçuş yapabilirsiniz.",
+        "description2": "Ercan havalimanı Kuzey Kıbrıs'ın tek aktif havalimanıdır. Hastanemiz Ercan havalimanına Taksi ile yaklaşık 20 dakikalık sürüş mesafesinde bulunmaktadır.",
+        "description3": "Dünyanın 4 bir yanından Ercan havalimanına en aktif olarak uçuşu bulunan havayolu şirketleri 'Türk havayolları' ile 'Pegasus havayolları' dır.",
+        "description4": "Ercan havayollarına yapılan uçuşlarda Türk ve Avrupa vatandaşları için vize koşulu yoktur. Kimlik veya Pasaportunuz ile rahatlıkla Kuzey Kıbrıs'a giriş yapabilirsiniz.",
+        "description5": "Ercan havalimanına geliş sadece Türkiye (genellikle İstanbul) bağlantılı bir transit uçuş ile olmaktadır."
+      },
+      "south": {
+        "title": "2. Güney Kıbrıs Havalimanları",
+        "description": "Kıbrıs'ın Güneyinde konumlanan (Güney Kıbrıs Rum Yönetimi) havaalanlarından birine gelerek de Kuzey Kıbrıs'a geçiş yapılabilmektedir. Güney Kıbrıs'a seyahatinizi gerçekleştirebilmeniz için Avrupa birliği vatandaşı olmanız gerekmektedir.",
+        "airportsTitle": "Kıbrıs'ın Güneyinde bulunan havaalanları;",
+        "larnaca": {
+          "title": "Larnaka (Larnaca) Havaalanı",
+          "description": "Güney Kıbrıs'ın Larnaka şehrinde bulunmaktadır. Kliniğimize Taksi ile uzaklığı yaklaşık 1 saat olmaktadır."
+        },
+        "paphos": {
+          "title": "Baf (Paphos) Havaalanı",
+          "description": "Güney Kıbrıs'ın Baf şehrinde bulunmaktadır. Kliniğimize Taksi ile uzaklığı yaklaşık 2 saat olmaktadır."
+        }
+      }
+    },
+    "bySea": {
+      "title": "Deniz yolları ile Kuzey Kıbrıs'a geliş",
+      "description1": "Türkiye'den Kıbrıs'a feribotla da ulaşım sağlayabilirsiniz. Mersin, Taşucu veya Alanya Limanlarından Kuzey Kıbrıs'a feribot seferleri bulunmaktadır. Feribot kalkış saatinden iki saat önce limanda olmanız gerektiğini ve biletlerin tükenme ihtimaline karşı önceden rezerve etmeniz gerektiğini lütfen unutmayınız.",
+      "description2": "Türk vatandaşları için Kuzey Kıbrıs'ı seyahatlerinde vize veya pasaport gerekli değildir. Nüfus cüzdanı ile Kıbrıs'ta en fazla 3 ay konaklayabilirsiniz.",
+      "description3": "Kullanmış olduğunuz operatöre bağlı olarak cep telefonu hattınızı Kıbrıs'ta uluslararası kullanım için kullanmaya açmayı unutmayın!"
+    },
+    "contact": {
+      "description": "Ulaşım ve Konaklama hakkında ayrıntılı bilgiyi sizinle ilgilenen koordinatörümüzden edinebilirsiniz.",
+      "farewell": "Yakın zamanda görüşmek dileği ile..."
+    }
+  },
+
+
+  "title": "Sıkça Sorulan Sorular",
+  "items": {
+    "shipping": {
+      "question": "Kargom ne zaman gelir?",
+      "answer": "Siparişiniz 1-3 iş günü içinde kargoya verilir. Teslimat süresi bulunduğunuz şehre göre değişebilir."
+    },
+    "returns": {
+      "question": "İade süreci nasıl işler?",
+      "answer": "Ürünü teslim aldıktan sonra 14 gün içinde iade talebi oluşturabilirsiniz. İade şartları sayfamızda detaylar yer alır."
+    },
+    "payment": {
+      "question": "Hangi ödeme yöntemlerini kabul ediyorsunuz?",
+      "answer": "Kredi kartı, banka kartı, havale/EFT ve kapıda ödeme seçenekleri mevcuttur."
+    },
+    "account": {
+      "question": "Hesap oluşturmam gerekiyor mu?",
+      "answer": "Hayır, misafir olarak da sipariş verebilirsiniz; ancak hesap oluşturmak sipariş geçmişinizi takip etmenizi kolaylaştırır."
+    }
+  },
+
+  "hero_2": {
+    "preTitle": "Aşağıdaki formu doldurarak",
+    "title": "bizimle iletişime geçebilirsiniz",
+    "image": "https://api.aydaivf.com/uploads/elitebig_7bc1166778.jpg"
+  },
+  "form": {
+    "name": {
+      "label": "Ad - Soyad",
+      "placeholder": "Lütfen Ad - Soyad giriniz"
+    },
+    "email": {
+      "label": "E-posta",
+      "placeholder": "Lütfen E-posta giriniz",
+      "invalid": "Geçerli bir e-posta girin"
+    },
+    "subject": {
+      "label": "Konu",
+      "placeholder": "Lütfen bir konu seçin",
+      "options": ["Randevu", "Tedavi Bilgisi", "Fiyat", "Diğer"]
+    },
+    "message": {
+      "label": "Mesaj",
+      "placeholder": "Lütfen mesajınızı yazınız"
+    },
+    "submit": "Gönder",
+    "success": "Mesajınız gönderildi. Teşekkürler!",
+    "error": "Bir hata oluştu. Lütfen daha sonra tekrar deneyin."
+  }
+
+
+
+
+}

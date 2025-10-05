@@ -1,0 +1,30 @@
+{
+  "hero": {
+    "preTitle": "Aşağıdaki formu doldurarak",
+    "title": "bizimle iletişime geçebilirsiniz",
+    "image": "https://api.aydaivf.com/uploads/elitebig_7bc1166778.jpg"
+  },
+  "form": {
+    "name": {
+      "label": "Ad - Soyad",
+      "placeholder": "Lütfen Ad - Soyad giriniz"
+    },
+    "email": {
+      "label": "E-posta",
+      "placeholder": "Lütfen E-posta giriniz",
+      "invalid": "Geçerli bir e-posta girin"
+    },
+    "subject": {
+      "label": "Konu",
+      "placeholder": "Lütfen bir konu seçin",
+      "options": ["Randevu", "Tedavi Bilgisi", "Fiyat", "Diğer"]
+    },
+    "message": {
+      "label": "Mesaj",
+      "placeholder": "Lütfen mesajınızı yazınız"
+    },
+    "submit": "Gönder",
+    "success": "Mesajınız gönderildi. Teşekkürler!",
+    "error": "Bir hata oluştu. Lütfen daha sonra tekrar deneyin."
+  }
+}

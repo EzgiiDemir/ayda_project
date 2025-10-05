@@ -1,0 +1,218 @@
+{
+  "welcome": {
+    "titleTop": "Welcome to Ayda IVF Website",
+    "title": "Welcome",
+    "p1": "Located in the heart of Nicosia, the capital of Northern Cyprus, our clinic operates within Elite Hospital, working passionately for years to help you achieve pregnancy.",
+    "p2": "I started my 8-year career in IVF in Wiesbaden, Germany. Since the first day I began, ethical practice has always been my top priority.",
+    "p3": "Trust is a great responsibility. You and your patient embark on a meaningful journey together. You share laughter and tears; you provide comfort and understanding throughout the process.",
+    "p4": "Helping our patients achieve their dream of parenthood is an indescribable joy. The gratitude and prayers we receive make every effort worthwhile.",
+    "p5": "To everyone who has trusted and chosen us, I offer my heartfelt thanks. If we haven’t met yet, let’s take this journey toward parenthood together.",
+    "signatureName": "Tanyel FELEK, MS",
+    "signatureTitle": "Director of Ayda IVF Team & Head of Embryology Laboratory"
+  },
+
+  "hero": {
+    "slides": [
+      {
+        "title": "Let’s Give the Most Beautiful Gift",
+        "subtitle": "The Gift of Life"
+      }
+    ],
+    "rightText": "MON - FRI : 9:00 - 14:00",
+    "bottomText": "Ayda IVF Center"
+  },
+
+  "about": "About Us",
+  "whyUs": "Why Us?",
+  "prices": "Prices",
+  "team": "Our Team",
+  "successRates": "Success Rates",
+
+  "treatments": "Treatments",
+  "ivfIcsi": "IVF (In Vitro Fertilization) - ICSI",
+  "eggDonation": "Egg Donation",
+  "spermDonation": "Sperm Donation",
+  "embryoDonation": "Embryo Donation",
+  "eggFreezing": "Egg Freezing",
+  "ovarianEndometrialPrp": "Ovarian and Endometrial PRP",
+  "acupuncture": "Acupuncture",
+
+  "faq": "FAQ",
+  "travel": "Travel",
+  "contact": "Contact",
+
+  "phoneNumber": "+905488252821",
+  "logoAlt": "ayda-logo",
+
+  "tm": {
+    "mostPreferred": "Most Preferred",
+    "title": "Our Treatment Methods",
+    "p1": "Before visiting the Ayda IVF Team, take a look at our carefully prepared treatment methods designed to help you learn more about your options.",
+    "p2": "After reviewing our treatments, remember that we are just one call away to answer all your questions. We look forward to meeting you and helping you hold your healthy baby soon.",
+    "contactCta": "Contact Us"
+  },
+
+  "TreatmentMethods": {
+    "subtitle": "Most Preferred",
+    "title": "Our Treatment Methods",
+    "description": {
+      "part1": "Before visiting the Ayda IVF Team, take a look at our carefully prepared treatment methods tailored to your needs.",
+      "part2": "After reviewing our treatments, remember that we are just one call away to answer all your questions."
+    },
+    "treatments": {
+      "ivfIcsi": { "name": "IVF (In Vitro Fertilization) - ICSI", "href": "/treatments/ivf-icsi" },
+      "eggDonation": { "name": "Egg Donation", "href": "/treatments/egg-donation" },
+      "spermDonation": { "name": "Sperm Donation", "href": "/treatments/sperm-donation" },
+      "embryoDonation": { "name": "Embryo Donation", "href": "/treatments/embryo-donation" },
+      "prp": { "name": "Ovarian and Endometrial PRP", "href": "/treatments/prp" },
+      "embryoGeneticScreeningNgs": { "name": "Embryo Genetic Screening (NGS, Single Gene)", "href": "/treatments/ngs-single-gene" },
+      "genderSelection": { "name": "Gender Selection (PGD)", "href": "/treatments/pgd-gender-selection" },
+      "eggFreezing": { "name": "Egg Freezing", "href": "/treatments/egg-freezing" },
+      "surrogacy": { "name": "Surrogacy", "href": "/treatments/surrogacy" },
+      "embryoGeneticScreeningPgd": { "name": "Embryo Genetic Screening (PGD)", "href": "/treatments/pgd-screening" }
+    },
+    "contactButton": "Contact Us"
+  },
+
+  "Footer": {
+    "address": {
+      "title": "Our Address",
+      "iconAlt": "address-img",
+      "isoAlt": "iso-logo",
+      "text": "Şehit Erdoğan Yıldız Cd. No:5 Kızılay, Nicosia, North Cyprus (TRNC)"
+    },
+    "contact": {
+      "title": "Contact",
+      "iconAlt": "contact-img",
+      "phoneLink": "https://wa.me/+905488252821",
+      "phoneText": "Tel : +90 548 825 28 21",
+      "emailLink": "mailto:info@aydaivf.com",
+      "emailText": "E-mail : info@aydaivf.com"
+    },
+    "quickAccess": {
+      "title": "Quick Access",
+      "iconAlt": "access-img",
+      "homeLink": "/en",
+      "homeText": "Home",
+      "treatmentsLink": "#",
+      "treatmentsText": "Treatments",
+      "travelLink": "/travel",
+      "travelText": "Travel"
+    },
+    "copyright": {
+      "text": "© 2025 All rights reserved"
+    },
+    "contactMap": {
+      "mapTitle": "Our Location",
+      "imageAlt": "Contact image"
+    }
+  },
+
+  "travel_2": {
+    "title": "Travel",
+    "aboutCyprus": {
+      "title": "About Cyprus Island",
+      "description1": "Cyprus island has two different countries governed by two different states. The island of Cyprus, divided into North and South, has a border crossing between countries.",
+      "description2": "Northern Cyprus is a Turkish country and its currency is Turkish Lira. Southern Cyprus is a European country and its currency is Euro."
+    },
+    "northCyprus": {
+      "title": "North Cyprus",
+      "description1": "Cyprus is an island in the Mediterranean, neighboring Syria, Lebanon, Israel, Egypt, Greece and Turkey.",
+      "description2": "TRNC is located in the northern part of Cyprus island, and our IVF hospital is located in Nicosia, the capital of North Cyprus (TRNC).",
+      "description3": "Cyprus has a typical Mediterranean climate. It has a long summer season lasting from April to approximately October. During these periods, the temperature is usually around 22-38 °C. There is a winter period that generally extends from November to the end of May. In winter, the temperature is usually around 10-18 °C."
+    },
+    "ourCare": {
+      "title": "We thought of every detail for you!",
+      "description1": "We tried to think of every detail to ensure that you receive treatment in a stress-free environment when coming for your IVF treatment.",
+      "description2": "Since we believe that a stress-free environment will positively affect your IVF treatment, we have agreements with hotels and houses suitable for every budget where you can stay. Thus, you will not need to think about where to stay when you come for treatment.",
+      "description3": "We also have transportation at affordable prices for you to be picked up from the airport to your hotel and from your accommodation to our clinic.",
+      "description4": "We hope to provide you with a stress-free, peaceful and comfortable hospitality throughout your treatment."
+    },
+    "byAir": {
+      "title": "Coming to North Cyprus by Air",
+      "subtitle": "There are 2 ways to come to North Cyprus by air;",
+      "ercan": {
+        "title": "1. Ercan Airport",
+        "description1": "You can fly to Ercan Airport located in Nicosia, the capital of North Cyprus.",
+        "description2": "Ercan airport is the only active airport in North Cyprus. Our hospital is approximately 20 minutes drive from Ercan airport by taxi.",
+        "description3": "The airlines that have the most active flights to Ercan airport from all over the world are 'Turkish Airlines' and 'Pegasus Airlines'.",
+        "description4": "There is no visa requirement for Turkish and European citizens on flights to Ercan airlines. You can easily enter North Cyprus with your ID or Passport.",
+        "description5": "Arrival to Ercan airport is only via a transit flight connected to Turkey (usually Istanbul)."
+      },
+      "south": {
+        "title": "2. South Cyprus Airports",
+        "description": "It is also possible to cross to North Cyprus by coming to one of the airports located in the South of Cyprus (Greek Cypriot Administration of South Cyprus). You must be a European Union citizen to travel to South Cyprus.",
+        "airportsTitle": "Airports in the South of Cyprus;",
+        "larnaca": {
+          "title": "Larnaca Airport",
+          "description": "It is located in the city of Larnaca in South Cyprus. The taxi distance to our clinic is approximately 1 hour."
+        },
+        "paphos": {
+          "title": "Paphos Airport",
+          "description": "It is located in the city of Paphos in South Cyprus. The taxi distance to our clinic is approximately 2 hours."
+        }
+      }
+    },
+    "bySea": {
+      "title": "Coming to North Cyprus by Sea",
+      "description1": "You can also reach Cyprus from Turkey by ferry. There are ferry services from Mersin, Taşucu or Alanya Ports to North Cyprus. Please do not forget that you need to be at the port two hours before the ferry departure time and reserve your tickets in advance in case they sell out.",
+      "description2": "Turkish citizens do not need a visa or passport to travel to North Cyprus. You can stay in Cyprus for a maximum of 3 months with your ID card.",
+      "description3": "Don't forget to activate your mobile phone line for international use in Cyprus, depending on the operator you use!"
+    },
+    "contact": {
+      "description": "You can get detailed information about Transportation and Accommodation from your coordinator.",
+      "farewell": "Hope to see you soon..."
+    }
+  },
+
+  "title": "Frequently Asked Questions",
+  "items": {
+    "shipping": {
+      "question": "When will my order arrive?",
+      "answer": "Your order will be shipped within 1-3 business days. Delivery time may vary depending on your location."
+    },
+    "returns": {
+      "question": "How does the return process work?",
+      "answer": "You can request a return within 14 days of receiving your item. Please check our Return Policy page for details."
+    },
+    "payment": {
+      "question": "What payment methods do you accept?",
+      "answer": "We accept credit cards, debit cards, bank transfer, and cash on delivery."
+    },
+    "account": {
+      "question": "Do I need to create an account?",
+      "answer": "No, you can order as a guest; however, having an account makes it easier to track your orders."
+    }
+  },
+  "hero_2": {
+    "preTitle": "By filling out the form below,",
+    "title": "you can contact us",
+    "image": "https://api.aydaivf.com/uploads/elitebig_7bc1166778.jpg"
+  },
+  "form": {
+    "name": {
+      "label": "Full Name",
+      "placeholder": "Please enter your full name"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "Please enter your email",
+      "invalid": "Please enter a valid email"
+    },
+    "subject": {
+      "label": "Subject",
+      "placeholder": "Please select a subject",
+      "options": ["Appointment", "Treatment Info", "Price", "Other"]
+    },
+    "message": {
+      "label": "Message",
+      "placeholder": "Please write your message"
+    },
+    "submit": "Send",
+    "success": "Your message has been sent. Thank you!",
+    "error": "An error occurred. Please try again later."
+  }
+
+
+
+}

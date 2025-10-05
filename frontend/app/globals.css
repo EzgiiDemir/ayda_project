@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+
+@layer base {
+    :root {
+        /* Primary Colors */
+        --color-primary-pink: oklch(71.8% 0.202 349.761);
+        --color-primary-blue: oklch(91.7% 0.08 205.041);
+        --color-primary-pink-light: oklch(82.3% 0.12 346.018);
+
+        /* Neutral Colors */
+        --color-black: oklch(0% 0 0);
+        --color-white: oklch(100% 0 0);
+        --color-gray-light: oklch(95% 0 0);
+        --color-gray-medium: oklch(85% 0 0);
+
+
+        --ayda-pink-dark: #c61e5e;
+        --ayda-pink-light: #e8638b;
+        --ayda-blue: #004d80;
+        --ayda-black: #1a1a1a;
+        --ayda-gray-dark: #474d66;
+        --ayda-white: #ffffff;
+    }
+}
+
+@layer utilities {
+    /* Background Colors */
+    .bg-primary-pink {
+        background-color: var(--color-primary-pink);
+    }
+
+    .bg-primary-blue {
+        background-color: var(--color-primary-blue);
+    }
+
+    .bg-primary-pink-light {
+        background-color: var(--color-primary-pink-light);
+    }
+
+    /* Text Colors */
+    .text-primary-pink {
+        color: var(--color-primary-pink);
+    }
+
+    .text-primary-blue {
+        color: var(--color-primary-blue);
+    }
+
+    .text-primary-pink-light {
+        color: var(--color-primary-pink-light);
+    }
+    .border-primary-pink-light {
+        color: var(--color-primary-pink-light);
+    }
+
+    /* Hover States */
+    .hover-primary-pink:hover {
+        color: var(--color-primary-pink);
+    }
+
+    .hover-bg-primary-pink:hover {
+        background-color: var(--color-primary-pink);
+    }
+
+    .hover-bg-primary-blue:hover {
+        background-color: var(--color-primary-blue);
+    }
+}
+

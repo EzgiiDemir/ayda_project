@@ -1,0 +1,21 @@
+{
+  "title": "Sıkça Sorulan Sorular",
+  "items": {
+    "shipping": {
+      "question": "Kargom ne zaman gelir?",
+      "answer": "<p>Siparişiniz 1-3 iş günü içinde kargoya verilir. Teslimat süresi bulunduğunuz şehre göre değişebilir.</p>"
+    },
+    "returns": {
+      "question": "İade süreci nasıl işler?",
+      "answer": "<p>Ürünü teslim aldıktan sonra 14 gün içinde iade talebi oluşturabilirsiniz. İade şartları sayfamızda detaylıca yer alır.</p>"
+    },
+    "payment": {
+      "question": "Hangi ödeme yöntemlerini kabul ediyorsunuz?",
+      "answer": "<p>Kredi kartı, banka kartı, havale/EFT ve kapıda ödeme seçenekleri mevcuttur.</p>"
+    },
+    "account": {
+      "question": "Hesap oluşturmam gerekiyor mu?",
+      "answer": "<p>Hayır, misafir olarak da sipariş verebilirsiniz; ancak hesap oluşturmak sipariş geçmişinizi takip etmenizi kolaylaştırır.</p>"
+    }
+  }
+}

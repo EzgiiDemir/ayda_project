@@ -1,0 +1,30 @@
+{
+  "hero": {
+    "preTitle": "By filling out the form below,",
+    "title": "you can contact us",
+    "image": "https://api.aydaivf.com/uploads/elitebig_7bc1166778.jpg"
+  },
+  "form": {
+    "name": {
+      "label": "Full Name",
+      "placeholder": "Please enter your full name"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "Please enter your email",
+      "invalid": "Please enter a valid email"
+    },
+    "subject": {
+      "label": "Subject",
+      "placeholder": "Please select a subject",
+      "options": ["Appointment", "Treatment Info", "Price", "Other"]
+    },
+    "message": {
+      "label": "Message",
+      "placeholder": "Please write your message"
+    },
+    "submit": "Send",
+    "success": "Your message has been sent. Thank you!",
+    "error": "An error occurred. Please try again later."
+  }
+}
