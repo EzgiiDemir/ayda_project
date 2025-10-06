@@ -1,10 +1,13 @@
+
+import { Suspense } from 'react';
 import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
+import { getTravelConfig } from '@/lib/api/travel';
 import {
     TravelSection,
     TravelContent,
     TravelSubtitle,
-    TravelHighlight
+    TravelHighlight,
 } from '@/components/sections/travel/TravelSection';
 
 interface PageProps {
@@ -15,18 +18,20 @@ export async function generateMetadata({ params: { locale } }: PageProps) {
     const t = await getTranslations({ locale, namespace: 'travel' });
     return {
         title: t('title'),
-        description: t('aboutCyprus.description1')
+        description: t('aboutCyprus.description1'),
     };
 }
 
-export default async function SeyahatPage({ params: { locale } }: PageProps) {
+export default async function TravelPage({ params: { locale } }: PageProps) {
     const t = await getTranslations({ locale, namespace: 'travel' });
+    const config = await getTravelConfig(locale);
 
     return (
         <main className="flex-1 flex flex-col">
+            {/* Hero Image */}
             <div className="relative w-full aspect-[16/7] md:aspect-[16/5] max-h-[400px] bg-gray-300">
                 <Image
-                    src="https://api.aydaivf.com/uploads/elitebig_7bc1166778.jpg"
+                    src={config.heroImage}
                     alt={t('title')}
                     fill
                     className="object-cover object-center"
@@ -34,27 +39,31 @@ export default async function SeyahatPage({ params: { locale } }: PageProps) {
                 />
             </div>
 
+            {/* Content */}
             <div className="container mx-auto px-4 py-5 md:py-10">
                 <p className="text-ayda-blue text-lg md:text-xl text-center uppercase font-medium mb-5 md:mb-7">
                     {t('title')}
                 </p>
 
                 <div className="flex flex-col gap-7 md:gap-10 max-w-4xl mx-auto">
+                    {/* About Cyprus */}
                     <TravelSection title={t('aboutCyprus.title')} icon="info">
                         <TravelContent content={t('aboutCyprus.description1')} />
                         <TravelContent
                             content={t.rich('aboutCyprus.description2', {
-                                strong: (chunks) => <TravelHighlight>{chunks}</TravelHighlight>
+                                strong: (chunks) => <TravelHighlight>{chunks}</TravelHighlight>,
                             })}
                         />
                     </TravelSection>
 
+                    {/* North Cyprus */}
                     <TravelSection title={t('northCyprus.title')} icon="mapPin">
                         <TravelContent content={t('northCyprus.description1')} />
                         <TravelContent content={t('northCyprus.description2')} />
                         <TravelContent content={t('northCyprus.description3')} />
                     </TravelSection>
 
+                    {/* Our Care */}
                     <TravelSection title={t('ourCare.title')} icon="hotel">
                         <TravelContent content={t('ourCare.description1')} />
                         <TravelContent content={t('ourCare.description2')} />
@@ -62,6 +71,7 @@ export default async function SeyahatPage({ params: { locale } }: PageProps) {
                         <TravelContent content={t('ourCare.description4')} />
                     </TravelSection>
 
+                    {/* By Air */}
                     <TravelSection title={t('byAir.title')} icon="plane">
                         <TravelSubtitle>
                             <TravelHighlight>{t('byAir.subtitle')}</TravelHighlight>
@@ -116,12 +126,14 @@ export default async function SeyahatPage({ params: { locale } }: PageProps) {
                         </div>
                     </TravelSection>
 
+                    {/* By Sea */}
                     <TravelSection title={t('bySea.title')} icon="ship">
                         <TravelContent content={t('bySea.description1')} />
                         <TravelContent content={t('bySea.description2')} />
                         <TravelContent content={t('bySea.description3')} />
                     </TravelSection>
 
+                    {/* Contact Info */}
                     <div className="mt-6 text-ayda-gray-dark text-sm md:text-base leading-relaxed">
                         <TravelContent content={t('contact.description')} />
                         <TravelContent content={t('contact.farewell')} />

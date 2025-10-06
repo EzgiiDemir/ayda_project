@@ -1,0 +1,58 @@
+{
+
+    "title": "Travel Information",
+    "aboutCyprus": {
+      "title": "About Cyprus",
+      "description1": "Cyprus, the third largest island in the Mediterranean, is a unique destination where you can enjoy the sun all year round.",
+      "description2": "With <strong>more than 300 days of sunshine</strong> per year, the island offers an ideal environment for both vacation and treatment."
+    },
+    "northCyprus": {
+      "title": "North Cyprus",
+      "description1": "North Cyprus stands out with its unspoiled natural beauty, historical richness and warm hospitality.",
+      "description2": "It offers an unforgettable holiday experience with ancient cities, sandy beaches and crystal clear seas.",
+      "description3": "In addition, North Cyprus is a preferred destination for IVF treatment and is known for its quality healthcare services."
+    },
+    "ourCare": {
+      "title": "Our Care",
+      "description1": "We prioritize the comfort and satisfaction of our guests.",
+      "description2": "We organize all your transfers from the airport.",
+      "description3": "We recommend the most suitable hotels for your accommodation.",
+      "description4": "In addition to your treatment process, we can also organize tour programs for you to explore the island."
+    },
+    "byAir": {
+      "title": "Travel by Air",
+      "subtitle": "You can reach North Cyprus through two different airports:",
+      "ercan": {
+        "title": "Ercan Airport:",
+        "description1": "The main airport of North Cyprus.",
+        "description2": "Direct flights are available from various cities in Turkey.",
+        "description3": "Daily flights from Istanbul, Ankara, Izmir, Antalya and other cities.",
+        "description4": "Transfer from the airport to our clinic takes approximately 20 minutes.",
+        "description5": "Transfer service is available, please inform in advance."
+      },
+      "south": {
+        "title": "South Cyprus Airports:",
+        "description": "Our guests from Europe generally prefer South Cyprus airports.",
+        "airportsTitle": "Two main airports:",
+        "larnaca": {
+          "title": "Larnaca Airport",
+          "description": "The largest airport in the South. Crossing to the North takes approximately 1 hour."
+        },
+        "paphos": {
+          "title": "Paphos Airport",
+          "description": "Located on the west coast of the island. Crossing to the North takes approximately 1.5-2 hours."
+        }
+      }
+    },
+    "bySea": {
+      "title": "Travel by Sea",
+      "description1": "You can also reach North Cyprus from Turkey by ferry.",
+      "description2": "Ferries departing from Mersin and Taşucu ports operate to Girne port.",
+      "description3": "The sea journey takes approximately 6-10 hours and is ideal for those who want to travel with their own vehicle."
+    },
+    "contact": {
+      "description": "For detailed information and assistance regarding transportation and accommodation, please contact us.",
+      "farewell": "We look forward to welcoming you!"
+    }
+
+}

@@ -1,45 +1,73 @@
+import { Suspense } from 'react';
 import { getTranslations } from 'next-intl/server';
+import Image from 'next/image';
 import ContactForm from '@/components/sections/contact/ContactForm';
+import { getContactConfig } from '@/lib/api/contact';
 
 interface PageProps {
     params: { locale: string };
 }
 
+export async function generateMetadata({ params: { locale } }: PageProps) {
+    const t = await getTranslations({ locale, namespace: 'contact' });
+    return {
+        title: t('meta.title'),
+        description: t('meta.description'),
+    };
+}
+
 export default async function ContactPage({ params: { locale } }: PageProps) {
     const t = await getTranslations({ locale, namespace: 'contact' });
-
-    const preTitle = t('hero.preTitle', { fallback: 'Aşağıdaki formu doldurarak' });
-    const title = t('hero.title', { fallback: 'bizimle iletişime geçebilirsiniz' });
-    const heroImage = t('hero.image', {
-        fallback: 'https://api.aydaivf.com/uploads/elitebig_7bc1166778.jpg'
-    }) as string;
+    const config = await getContactConfig(locale);
 
     return (
         <main className="flex-1 flex flex-col">
-            <div className="">
-                <div
-                    className="bg-gray-300 w-full aspect-[16/7] md:aspect-[16/5] max-h-[400px]"
-                    style={{
-                        backgroundImage: `url("${heroImage}")`,
-                        backgroundRepeat: 'no-repeat',
-                        backgroundPosition: 'center center',
-                        backgroundSize: 'cover'
-                    }}
+            {/* Hero */}
+            <div className="relative w-full aspect-[16/7] md:aspect-[16/5] max-h-[400px] bg-gray-300">
+                <Image
+                    src={config.heroImage}
+                    alt="Contact"
+                    fill
+                    className="object-cover object-center"
+                    priority
                 />
             </div>
 
-            <div className="container flex flex-col gap-5 py-5 md:py-10">
+            {/* Content */}
+            <div className="flex flex-col gap-5 py-5 md:py-10 bg-white">
                 <div>
                     <p className="text-xs md:text-base text-primary-pink uppercase text-center font-medium">
-                        {preTitle}
+                        {t('hero.preTitle')}
                     </p>
                     <p className="text-ayda-black capitalize text-2xl md:text-4xl font-medium text-center">
-                        {title}
+                        {t('hero.title')}
                     </p>
                 </div>
 
-                <ContactForm locale={locale} />
+                <Suspense fallback={<ContactFormSkeleton />}>
+                    <ContactForm
+                        locale={locale}
+                        subjects={config.form.subjects}
+                        apiEndpoint={config.form.apiEndpoint}
+                    />
+                </Suspense>
             </div>
         </main>
+    );
+}
+
+function ContactFormSkeleton() {
+    return (
+        <div className="w-full flex justify-center px-4 py-8">
+            <div className="w-full max-w-3xl animate-pulse">
+                <div className="flex flex-col md:flex-row md:gap-4 w-full mb-6">
+                    <div className="flex-1 h-20 bg-gray-200 rounded-md" />
+                    <div className="flex-1 h-20 bg-gray-200 rounded-md" />
+                </div>
+                <div className="h-20 bg-gray-200 rounded-md mb-6" />
+                <div className="h-48 bg-gray-200 rounded-md mb-6" />
+                <div className="h-12 bg-gray-200 rounded-full w-32 mx-auto" />
+            </div>
+        </div>
     );
 }

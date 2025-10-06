@@ -4,63 +4,55 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import axios from 'axios';
-
-// Types
-interface WelcomeConfig {
-    image: {
-        url: string;
-        alt: string;
-    };
-    gradient: {
-        from: string;
-        via: string;
-        to: string;
-    };
-    signature: {
-        name: string;
-        title: string;
-    };
-}
-
-// Default Config
-const defaultConfig: WelcomeConfig = {
-    image: {
-        url: 'https://api.aydaivf.com/uploads/1617890130_4018_org_74c04c13d4.png',
-        alt: 'Ayda CEO',
-    },
-    gradient: {
-        from: 'rgb(30, 170, 207)',
-        via: 'rgb(240, 143, 178)',
-        to: 'rgba(250, 250, 250, 0)',
-    },
-    signature: {
-        name: 'Dr. Ayda Surname',
-        title: 'CEO & Founder',
-    },
-};
+import { welcomeService } from '@/services/welcome.service';
+import { WelcomeConfig } from '@/types/welcome.types';
+import { DEFAULT_WELCOME_CONFIG } from '@/config/welcome.config';
 
 export default function Welcome() {
     const t = useTranslations('welcome');
-    const [config, setConfig] = useState<WelcomeConfig>(defaultConfig);
-
     const params = useParams();
     const locale = (params?.locale as string) || 'tr';
+
+    const [config, setConfig] = useState<WelcomeConfig>(DEFAULT_WELCOME_CONFIG);
+    const [isLoading, setIsLoading] = useState(true);
 
     // Fetch config from API
     useEffect(() => {
         const fetchConfig = async () => {
             try {
-                const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/welcome`, {
-                    params: { locale },
-                });
-                setConfig(response.data);
+                setIsLoading(true);
+                const data = await welcomeService.getWelcomeConfig(locale);
+                setConfig(data);
             } catch (error) {
-                console.error('Using default welcome config:', error);
+                console.error('Error fetching welcome config:', error);
+                setConfig(DEFAULT_WELCOME_CONFIG);
+            } finally {
+                setIsLoading(false);
             }
         };
         fetchConfig();
     }, [locale]);
+
+    // Loading skeleton
+    if (isLoading) {
+        return (
+            <section className="py-7 md:py-14 bg-white">
+                <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-8 lg:gap-12 lg:items-center">
+                    <div className="lg:flex-[0.4] flex items-center justify-center">
+                        <div className="w-full max-w-[400px] lg:max-w-none aspect-square bg-gray-200 animate-pulse rounded-br-[37%] rounded-bl-[37%]" />
+                    </div>
+                    <div className="lg:flex-[0.6] space-y-4">
+                        <div className="h-8 bg-gray-200 animate-pulse rounded w-3/4 mx-auto" />
+                        <div className="space-y-3">
+                            {[...Array(5)].map((_, i) => (
+                                <div key={i} className="h-4 bg-gray-200 animate-pulse rounded" />
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        );
+    }
 
     return (
         <section className="py-7 md:py-14 bg-white">
@@ -75,7 +67,7 @@ export default function Welcome() {
                     >
                         <Image
                             src={config.image.url}
-                            alt={config.image.alt}
+                            alt={config.image.alt || t('imageAlt')}
                             width={400}
                             height={400}
                             className="w-full h-full object-contain rounded-br-[37%] rounded-bl-[37%]"

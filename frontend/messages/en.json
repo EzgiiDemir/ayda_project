@@ -1,17 +1,18 @@
 {
+
   "welcome": {
-    "titleTop": "Welcome to Ayda IVF Website",
+    "titleTop": "Welcome to Ayda IVF Center",
     "title": "Welcome",
-    "p1": "Located in the heart of Nicosia, the capital of Northern Cyprus, our clinic operates within Elite Hospital, working passionately for years to help you achieve pregnancy.",
-    "p2": "I started my 8-year career in IVF in Wiesbaden, Germany. Since the first day I began, ethical practice has always been my top priority.",
-    "p3": "Trust is a great responsibility. You and your patient embark on a meaningful journey together. You share laughter and tears; you provide comfort and understanding throughout the process.",
-    "p4": "Helping our patients achieve their dream of parenthood is an indescribable joy. The gratitude and prayers we receive make every effort worthwhile.",
-    "p5": "To everyone who has trusted and chosen us, I offer my heartfelt thanks. If we haven’t met yet, let’s take this journey toward parenthood together.",
+    "p1": "Our clinic, located in the heart of Nicosia, the capital of Northern Cyprus, operates within the Elite Hospital and has been working tirelessly for years to help you achieve pregnancy. We are here to assist every individual who comes to us with the dream of becoming a parent — using science, a variety of techniques and methods, and the most modern, innovative, and cutting-edge infrastructure available.",
+    "p2": "I took my first professional step in the field of IVF eight years ago in Wiesbaden, Germany. Since the very first day, practicing my profession within the framework of ethical principles has always been my top priority. I realized how sacred and meaningful my profession was the moment I performed my first embryo transfer and shared in my patient’s joy of pregnancy.",
+    "p3": "When someone chooses you and places their trust in you, it comes with great responsibility and requires dedication. You embark on a meaningful and important journey together with your patient — you laugh together, you cry together. Your patient may be stressed; you are the one who must provide the best and most sincere comfort. Your patient may be anxious; you are the one who stands by them and understands them. When the day of the pregnancy test finally arrives, you are the one who shares in that immense excitement. You become a part of your patient’s most private hope and secret. That is why being sincere, honest, and transparent with your patient is so essential.",
+    "p4": "At the end of the day, when mutual effort leads to beautiful outcomes — granting our patients the joy of becoming parents — the gratitude and prayers they offer each time they look at their child are truly priceless. Once you share in these feelings, you naturally find the best path for your patients to achieve pregnancy, and with mutual understanding and effort, you move step by step toward success. The answer to the question my patients have asked me for years — ‘How do you stay so positive and successful?’ — lies right here. We draw our energy from you, and we give it back to you.",
+    "p5": "I can never thank enough each and every individual who has believed in us, trusted us, and walked this journey by our side. If you haven’t met us yet and are ready to embark on your IVF journey, come take this step with us. Let’s take you one step closer to becoming a family.",
     "signatureName": "Tanyel FELEK, MS",
     "signatureTitle": "Director of Ayda IVF Team & Head of Embryology Laboratory"
   },
 
-  "hero": {
+"hero": {
     "slides": [
       {
         "title": "Let’s Give the Most Beautiful Gift",
@@ -50,28 +51,6 @@
     "p1": "Before visiting the Ayda IVF Team, take a look at our carefully prepared treatment methods designed to help you learn more about your options.",
     "p2": "After reviewing our treatments, remember that we are just one call away to answer all your questions. We look forward to meeting you and helping you hold your healthy baby soon.",
     "contactCta": "Contact Us"
-  },
-
-  "TreatmentMethods": {
-    "subtitle": "Most Preferred",
-    "title": "Our Treatment Methods",
-    "description": {
-      "part1": "Before visiting the Ayda IVF Team, take a look at our carefully prepared treatment methods tailored to your needs.",
-      "part2": "After reviewing our treatments, remember that we are just one call away to answer all your questions."
-    },
-    "treatments": {
-      "ivfIcsi": { "name": "IVF (In Vitro Fertilization) - ICSI", "href": "/treatments/ivf-icsi" },
-      "eggDonation": { "name": "Egg Donation", "href": "/treatments/egg-donation" },
-      "spermDonation": { "name": "Sperm Donation", "href": "/treatments/sperm-donation" },
-      "embryoDonation": { "name": "Embryo Donation", "href": "/treatments/embryo-donation" },
-      "prp": { "name": "Ovarian and Endometrial PRP", "href": "/treatments/prp" },
-      "embryoGeneticScreeningNgs": { "name": "Embryo Genetic Screening (NGS, Single Gene)", "href": "/treatments/ngs-single-gene" },
-      "genderSelection": { "name": "Gender Selection (PGD)", "href": "/treatments/pgd-gender-selection" },
-      "eggFreezing": { "name": "Egg Freezing", "href": "/treatments/egg-freezing" },
-      "surrogacy": { "name": "Surrogacy", "href": "/treatments/surrogacy" },
-      "embryoGeneticScreeningPgd": { "name": "Embryo Genetic Screening (PGD)", "href": "/treatments/pgd-screening" }
-    },
-    "contactButton": "Contact Us"
   },
 
   "Footer": {
@@ -211,8 +190,67 @@
     "submit": "Send",
     "success": "Your message has been sent. Thank you!",
     "error": "An error occurred. Please try again later."
+  },
+  "Footer": {
+    "address": {
+      "title": "Address",
+      "iconAlt": "Location icon",
+      "isoAlt": "ISO Certificate",
+      "text": "Küçükkaymaklı, Dr. Fazıl Küçük Blv No:24, 99010 Nicosia"
+    },
+    "contact": {
+      "title": "Contact",
+      "iconAlt": "Phone icon",
+      "phoneLabel": "Call us",
+      "emailLabel": "Send email",
+      "navLabel": "Social media links",
+      "social": {
+        "facebook": "Visit our Facebook page",
+        "instagram": "Follow us on Instagram",
+        "youtube": "Watch our YouTube channel",
+        "twitter": "Follow us on Twitter",
+        "linkedin": "View our LinkedIn profile"
+      }
+    },
+    "quickAccess": {
+      "title": "Quick Access",
+      "iconAlt": "Link icon",
+      "navLabel": "Quick access menu",
+      "links": {
+        "home": {
+          "text": "Home",
+          "label": "Go to home page"
+        },
+        "treatments": {
+          "text": "Treatments",
+          "label": "Go to treatments page"
+        },
+        "travel": {
+          "text": "Travel",
+          "label": "Go to travel information"
+        },
+        "about": {
+          "text": "About Us",
+          "label": "Go to about page"
+        },
+        "contact": {
+          "text": "Contact",
+          "label": "Go to contact page"
+        },
+        "blog": {
+          "text": "Blog",
+          "label": "Go to blog page"
+        },
+        "faq": {
+          "text": "FAQ",
+          "label": "Go to frequently asked questions"
+        }
+      }
+    },
+    "copyright": {
+      "text": "© 2025 Ayda IVF. All rights reserved.",
+      "logoAlt": "Copyright logo"
+    }
   }
-
-
 
 }

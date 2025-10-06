@@ -1,126 +1,84 @@
-'use client';
-
-import { useState, useEffect } from 'react';
-import { useParams } from 'next/navigation';
-import { useTranslations } from 'next-intl';
-import Link from 'next/link';
+import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
-import { MapPin, Phone, Link as LinkIcon, Facebook, Instagram, Youtube } from 'lucide-react';
-import axios from 'axios';
+import Link from 'next/link';
+import { Facebook, Instagram, Youtube } from 'lucide-react';
+import { FooterConfig } from '@/types/footer';
+import { getFooterConfig } from '@/lib/api/footer';
 
-// Types
-interface SocialLink {
-    id: string;
-    platform: 'facebook' | 'instagram' | 'youtube';
-    url: string;
+// Social Icon Component
+function SocialIcon({ platform }: { platform: string }) {
+    const icons = {
+        facebook: Facebook,
+        instagram: Instagram,
+        youtube: Youtube,
+    };
+
+    const Icon = icons[platform as keyof typeof icons];
+    return Icon ? <Icon className="text-white" size={20} /> : null;
 }
 
-interface FooterConfig {
-    address: {
-        icon: string;
-        isoLogo: string;
-    };
-    contact: {
-        icon: string;
-        phone: string;
-        phoneLink: string;
-        email: string;
-        emailLink: string;
-        socialLinks: SocialLink[];
-    };
-    quickAccess: {
-        icon: string;
-        links: Array<{
-            id: string;
-            label: string;
-            href: string;
-        }>;
-    };
-    copyrightLogo: string;
+// Footer Card Wrapper
+function FooterCard({ children }: { children: React.ReactNode }) {
+    return (
+        <div className="bg-white rounded-md p-5 flex flex-col justify-center items-center w-full">
+            {children}
+        </div>
+    );
 }
 
-// Default Config
-const defaultConfig: FooterConfig = {
-    address: {
-        icon: 'https://api.aydaivf.com/uploads/map_white_1bd6772a21.svg',
-        isoLogo: 'https://api.aydaivf.com/uploads/iso1_659752db23.png',
-    },
-    contact: {
-        icon: 'https://api.aydaivf.com/uploads/phone_white_10236cf66a.svg',
-        phone: '+90 533 123 4567',
-        phoneLink: 'tel:+905331234567',
-        email: 'info@aydaivf.com',
-        emailLink: 'mailto:info@aydaivf.com',
-        socialLinks: [
-            { id: '1', platform: 'facebook', url: '#' },
-            { id: '2', platform: 'instagram', url: '#' },
-            { id: '3', platform: 'youtube', url: '#' },
-        ],
-    },
-    quickAccess: {
-        icon: 'https://api.aydaivf.com/uploads/link_white_8ce9830683.svg',
-        links: [
-            { id: '1', label: 'home', href: '/' },
-            { id: '2', label: 'treatments', href: '/' },
-            { id: '3', label: 'travel', href: '/travel' },
-        ],
-    },
-    copyrightLogo: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYEAAAAlCAYAAACko1VoAAAACXBIWXMAAA7DAAAOwwHHb6hkAAATX0lEQVR4nO1dS28j2XU+t5Q9NWtJZHGG/diRswgSOHDENmwggBfkBAYmswjEtjOTQbRo6hdI+gViL2QbfomCjYxhIx4yCJDYMCIKsA0HCdzkbtzDMavY4trUVirqBrd4LnV069aDFEX2434AQdb71H2c97lknHMwWCx+tpEtMGBlCwAsBmABa5f6XzRmIeL/7Ae2xaDMgK1a410OADTyvc+GgZMNDAwMFBghsGD8ZN0uWGwsABhAwQJWQmFwagErl/pfJGbev7PvVyyAIwuYuJcUKGABnANAOd/7rBW4yMDAwIDACIEl45ONbNECaFjAUhZAhzEo/n3/T7GCoJW5V7EYO/IFCIAr7oHWQNlikEJh8G6+91k7cLGBgYEBwjINsVx88KLX8gDKHnDwgOdHHGpJCBoB1DzOweO86XFe+GvnefWvnD9WPOAFj0PHPwY80b0MDAzeXBhLYIH4H/tBYQVgz2JsdWX82Fa+99me+PHjdVvs30XN/vH7L3r1MMr+M50rWgxOfBcQsLe+6n4+bGXuFSwA52/dz4e/te8L6+IErYG3/tL5o4kPGBgYaGEsgQXhNHOvcAn82QXw0iXnmxecb46A73ayD313zT+eOXse56djDR5qn2xkC2GUjbV9DiMOp0IA/CqTsz0AYVH4MYC/cZ6L34DWReh9DAwMDIwQWBAugdsXnGe/5DxnF8Czl8CfXnKAC87zf8g+8LV+D3jZAzj3OE95nNd/spFd1VHnAV+VTN7f5mB7wFPCnTQ5Z+wqEgLFwMDAIBRGCCwIX3W7ja+4n4v0Tfiy89z5kvO8egF8/xI4XHDY+l/7QeVbZ+5wLAh85p0fcb1P3+PI5KUQAGT4xLM3Gt/D329gYGAQBiMElogvO8/3Ljg/9QUB8Nrv7fuFD8/clsdhB105W0frdkWlcMzgr5m+2B4RywCkoAB+Y5+BgYGBir8I7DG4MzzLPrQtAMHURaC2Lgq6LoGXRxycFYDUiLG6COr+88CtfWctXfRrCBiv/WA90/6nM3eS6im0e8ZE0HfiDvJ/M3ZNuWD+Fge4AmY69CVDzs7aACA+w67Tey1TeHO2H9OS7syX+j1zdrZINp2u03MCJ93+GTO1xyLa8Y0TAtjh2sbM2b4PvnAXA0FkBlkALZLDv9fJPix+ze22/yudK48YnKxwyIvUTwCoXPkf3rY4ZCxg9e+tZ4ofnbl+lo9w81icwxXe22f4/r5rhu+hmWdFWAI5Oysyk3Zx82nX6VU154j2OsHN/a7T28P9Igi9GbipBl2np5VEOTsrYiFbUc/X0KlCFMaJvqx3nfCMKs09503/Ttfpad13cD22xPEyAKTIfvHVBICqHHMx76vitOv0ioG9M7yn7N8pn/+o6/QmRYk5OyuUHHF9RqHDFftpHym03bgPOYfSQscfHdhh14beHwWxuNeW5rpTpLWl7J88M2xMKOeLPq/iJ6UcC7SHcjysHc9xrNSVc49wUxwv6PhX2HmWPCgaTPPZw8Z6nXCCk1GHAh4PuGBuixHwPT94O/bnn4vfVwCtdvZh4e/63dYl5zsXnIsA8tavM/cq24O+YPjlqzGTvxEfkG6ekdzGAPBNdxC/ETdIgCdL6OtyyO9pkMKJfoRMeVn0h44ZbFcHGU4qcAJASQgy1PpeWWD7H6mMC5HBPgoVWLfA3jSXYju3dQIAIcbTSc7OzjompQBooQDT9blsjwAvIsxa144pvG4y3lAgnJLjgfZAeuj+mhQUMiZg44vTbJQCvsArPzhfBnh8ktHzFAu6xllAwOt/yD5c/Xr/i9ol8KYvCDiv/TKTK2wP+mKg7gjyrwC2DtfSfsePBQnJDiJMX8KbBIanevlZmWgHB2HYJwCcYHRyZBKOM1d5xjk5toWa47QIo/sUktOfjxCiNeVcofnv47ekXxyX60c5yvM7Ee8fsGgVtJXzXXJY7beA9qg5R/0MSXtQpiqOPcbPMdnfuAN+skmZYgLQ/jjHvniEc422Tx2Z5ywQ2n+eXPcUAN7D9qBj6gkVjNiOR+T4MV6zo7TjkdKO1Ire0ozFKhEqrrSoQOMOqkoTiJgyu8gcjCC4BYgLZ7jpfu781r5fswB2Lc7yV+PK3soF55UVBu0RQGaFQ10UhW0P+rXDtXQRtUXx25/0V/79xvRM3EGguoP4tJF/MZmKOtM6BtUZrtFpWRVlMOtQpwMYgi6Dik4TikKUOyUCOvrLIVZmifzWuSV6uOkLQtTsqLlPXXKB94+C6mJT2ipJvyXtW8qEj7tOj27X0TVTw49O2NwWwmvR6Dq9yMJIZJzSRSQEgE2uaaE100IGnsI+nUU5ou2uuqvqiiuxgs8EpR33NWOdtuPkXYV7O2dnj8k99+S9CC/X0RbOI0TDIAHnVKKJRhQvkLOzTs7ODkXDS6mDx1pUKosBjPuotJPup4IkUphFyj1XyfnSNVXF4wWFliFeG5gc+CwH75l0sov7ikbleG1VeT91YslBHoooF84I+Nbv7QeVb7z40/CC8/Ll2C2Uv7he9qGCGkoKB+QqHy8d4WOE6aHU9TOavU5Ax8TuApKJdoj2pWOssSDjFEJM6Lukv0noj9NGXZWhokm+H2V1vCKgcysgyIVg6zq9VdFXcYx6RmR0z9WAKrOCphu04DadA1Mrv8gPpaXRCRGilFfRZ9B2DMxFpR1VYVol82CL8DsakxAxpBsrFocKAbiWICllu4XSxkFJJP2Zqxhs3VQmQyVkXwGll7znE7xnG+9JG24TtZcDqUWgIJC0yHN3pY8NBUubmFY20abiUELB18TBdSCECb5fgQ427PAw3+IEUS4cFAa139n3C++/6LUvAeMDnG/9Iv32JD6A98qrzGYk00YVd9BotjqB/JSm9dRQXCl14gZJ6hLS4S60Sy0U+huE/iiXEOD7BdoWJ3QRP69qttCET9wRk0+CagL3De2fMDrpWJplPMY+Q2Hg1G00cztqBJiM6dIgf2D8hQoBlCLSDGrit/SlPcIBa6OviwYjmko2gmReVMJtKuZPHrMrimiaH+OEopqhkHCPu06vgBNF0vJu1+mVkRYXfWyr+Nw8Zp0Ik68g/esJ0JH3Fd+yQfG7oTAr+V6RJqM3ye3nN7fBX+zNHfnxAaj/xr6/+sGLXu2S8+YFjOMDP994+0Z8QBdo4ugimjxv+joB6m+s3cIXmgS0XxtK2wUGaRywL+REcmNOv2v6ddZMk/w+Qqu0fMdt/CaBBkUD2vObBLSK5RzYJAoKIC8MKEtqTOAEU9YoXKL5FjXmTQ21eMkUxbESMUVSOAlKSs5rg9xTwCHXSEIL5Ly2kk5VQNpWyXVt1NwLhJ7JNSKFL2dnDxKMiYbUyNBacYmbQfrypP9aTvrIP4UZ++3ZROqO/PgAA4vxoagdsIA9szjPX2GK6AVAZYXzcXyAQf2nG1k1PhAJWSdgJa8TkHEf6QutTuFbF+0aprXoUjcnriCSFinbuBxj1tuKW6+sMF6d6R2JGFdeFP1N1L7oGKloGFEVx7kU3iXZhzk728TxFqlELBFRfdsOS+udAWHPibKsaPs+w9/CDVJ73eovcMwH3Nkh8aEK8XpI5eg8bD6rQuBYMYVaCsPPqGa3mMQ5O9sh2n8D3TZFZPjnSNSf4bpQCshklS/2aYC6EKAwSeEnzMUjhUBA8s0A6XYS79vCCV/GGESJMINQyIIuC3my5/+pzJhRf73/RfuXmdyOBXDAgG39d+Ze65tnTv3765nyCsCzEYf8CgoH/EhhZx+upUO1ySv/M5U7qErac3eKlMt8YM811Fxr1RUk0UBlQgZHwybxVoT77TxGgIQhKo8+in4q+CX9vkuIalw4R2wUDirtJVSQBN2ViPdeFqL6dp6Y+TmaoGhNxzBfcRRDajcCjB151KkyrqthPEoVAvWQIAaFzkdmS5OMCIUyCgE/Yo8aTxGFQIdMEgcHwFthRGogz+ugmycAjAds4jMjtfQEULUROeGrZDsSwmfvu2ywoEu4hYRAkBW9Hudta2wZCOZd+3XmXvvDM7f93bXMzgrjByOArfq63doe9OuHa+kyaj4ZZKRzMYFx8DSJpVFLeO9OmO9TI4Sp1l4gwXwqzJJkCak4xuKbMDqiEBWQnYX+QJYQ0lXB88vEDSqRx+wUe4k+dR2i+naeAivsOXbCYH+VFOJt3ibH/zVBhWSddaIszWkrhjuo6RRJKqlseCo8ZKAXCINskCDtPjm3jROgrKTFVcIIR0HjqloXalsFjH7LAToRAlMMjCIGuoekipj6mqULbBe1z1ghMGb6zNf+YeKuIUs/yJTOsQsndcV4/VeZXPHjgeu7gFYASiMGRz9cz7RFfOBwLb2DFlesa2hKVMk9Swkn+jQporQPwjT6KJfQMY4TSmdTSUmcClOmiFL6nwSOjqFzCfnAsVpD94dNBJ60bEOvXRJmSf+dBdrnJK1exrlaI+feVSrqUoBun8TV+sgj5aZOuE4QGhgOgZyYJyQt8lNkkHTgUqbY0uyjv2vISI9IKmg7QXWh1MDaSMueXD4AGXcD7/sE79uYwuW0iTEKOZBSSmzBIQU8sbnJQLKBRpxkB5HArazu9QBcP7OH87x3/S9jlRGAeznOGGp8bz2zKuIDJOA4N0FAUhYlwpjx1NAUWIUhKkvIQWZRIelwpUVoflPQH5cl5EO0NU5u2sZRY94gAkpQNDPFchlvNKYSAjj53sOG3kINWTCiMmWEeN459ZXjt1/hSf2e+LuITFWmgq5iJlBAMyDX1bGSboi07CLDLmKNwxBNyX2ks6TkdEdBZso8QcHySBOAaSjfkSDZQD6uU0NxG1cF9Th3POA7KCS2/iP9TpWmiIpA8SXnUiBV7igbpqZUss4LlFHLKk36eUqOR2r22L83yuAXkG1D6d/R0H+snotKDceP1rKN09ReEUwqt2OUt7tGnNJCLduw8UL3h/KgCMQ+Qxmr1B3ZCZwcRJiCNBN8dxA1NeKArpZYxicKGjT7tIOD5N9rEbZYk1pZqTkuGUXSd2v58dpkKKJASyYEOGYHMeL+4dcVvSMM4ort9/u92r9tvC3+QrLEgR38e/qdluoCOlxLVzFbqEwyI+YCNK2rSvn6PECZaE21oERhHnGxRLmEZH/VMO8+j5qfqlXPG5T+QKERZrfQKtAaWT8GMJlgVWM5Uppf1ayWFo0loct48p7YTzUZw9KlKs4DYj5qgqIU9Ll+jCamP6amE+fPOSpQ+ZAq/LBnSPc4IG1qxXBgMbrbwiwlPSXQTVHGQXac9GqZqWOR/wC4Iks9eCgQrnA9aA94xeKsbQHPMAaNRvqdgpIienC4llaFAwjhECUYk0IIWBxwSbI2KjHan0w/lYNXm01FkgryCbKEJGhGk3D91afNsNFVms9IP00VlfGqFtmXku5LcllRYVi3TWKYN+L6VmYQ1ogQyCvvWSDHFhHzqIYpRthHUkiI/vgzJkO00XNAXX5uWH9EjBnaHlL4n+C4rpNn0GA3bQ+6nMQuCs8WWovqdXOBEQLTo4YDqDOL1jlZ/hktgytGAsXAxD//+9vvv+gNP9nIli2AZ4yzjAW+C6ispIg2DtfSUjgUcPAcKJbPbTSuakQKLkVYgFeiNUUuf4sIntgsIWSyt00PjAs8qvRrGQM5Rq0ZuXx0C5lLJuJ5T1/CFNHYanjJ+JR+CHvP4l1ZARKalFEVkrFKhlrSxNXOo9IqQ95NooVLclMBn5eKmoJ9xT0u2nGf3D+jeY/zeVoD5p/FpkcV/b/FiAESiyu5tIMSKB6RvP4PXvTaHsDO+J/DeOlnG29XlSUkMkTrr5JAsRwgT7cH/ZknHGo0zcCB2ZCUicZV3+pA10yZdkXJpJiFfp8O4u4MsxyFxvneHAuvlgLM0HovJE4l33FRQq6qrDA7AQoh2R+6c5o4v6P6ORbo/t4PaY8OtkfAosB9jzTXnSPNcx3fjJv/oF0IhOsGtYL97UF/73AtLVPfTrcH/eK3x/8kdmIBnH40cG9osj9etxsWYyU2ltrv/sOLXhuXlZY++x3MFgKMEfjrKm0P+lEat8GSsIh/slo2SGr1S/+OdCUDje9+Xs+wSb1RexoFMuqPsOYB4w56ScBJnECFJ5aV8IvJIHPFWONfN7IFLBorSheQjA9sD/qJAvcGy8OC8u6X/Y7DGLffS4NFWCcoBGcShHc9Xow76CWDzi57fOYMPeBlD+B8xHnGu04RrdJ6haglJAwMDAx0MELgFcG3zty2B7yKtQal+rot4wOyaErEB9roDhJuoVX5T2QGBgYGYTBCYHmQJqj8jtXiPzxz6x6H49G48OzgR+u2XGJaBhSFIPj0cC3NccE+U31qYGAQCSMEFgfpD/QZM/ruH20P+pKBJ8qE8a0Bzjuj8f8FNH4wXkKijtkETfIPVSIAbSwBAwODSJjsoAUBg7gy5/4xMm4fSqbPjWM6YE1AywJIMWDNjwfum75iooGBwYwwQmCBOFxLN0hRSgezeMqkOKqzPeiHLp9BQQUHAzi2gFU/Hrivwxo0BgYGC4QRAgsEZu/UNdWJgC6cMgZ7EwEFgfybTZcBNCyAoQVs+NHAfaP/Zs/AwCAZjBBYAtCdc2MZhVkLuw7X0nItEhlYdoQw+JcphImBgcEbCgD4f1/4R2cX/ad1AAAAAElFTkSuQmCC',
-};
+// Icon Badge Component
+function IconBadge({ src, alt }: { src: string; alt: string }) {
+    return (
+        <div className="relative w-8 h-8 md:w-10 md:h-10 rounded-md bg-primary-pink p-2 hover:bg-primary-blue transition-colors duration-300 flex justify-center items-center my-2 md:my-4">
+            <Image
+                src={src}
+                alt={alt}
+                width={28}
+                height={28}
+                className="object-contain"
+                loading="lazy"
+            />
+        </div>
+    );
+}
 
-export default function Footer() {
-    const t = useTranslations('Footer');
-    const [config, setConfig] = useState<FooterConfig>(defaultConfig);
+// Card Title Component
+function CardTitle({ children }: { children: React.ReactNode }) {
+    return (
+        <p className="text-gray-900 capitalize text-lg md:text-[22px] font-medium text-center">
+            {children}
+        </p>
+    );
+}
 
-    const params = useParams();
-    const locale = (params?.locale as string) || 'tr';
+// Main Footer Component (Server Component)
+export default async function Footer({ locale }: { locale: string }) {
+    const t = await getTranslations('Footer');
 
-    // Fetch config from API
-    useEffect(() => {
-        const fetchConfig = async () => {
-            try {
-                const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/footer`, {
-                    params: { locale },
-                });
-                setConfig(response.data);
-            } catch (error) {
-                console.error('Using default footer config:', error);
-            }
-        };
-        fetchConfig();
-    }, [locale]);
-
-    const getSocialIcon = (platform: string) => {
-        switch (platform) {
-            case 'facebook':
-                return <Facebook className="text-white" size={20} />;
-            case 'instagram':
-                return <Instagram className="text-white" size={20} />;
-            case 'youtube':
-                return <Youtube className="text-white" size={20} />;
-            default:
-                return null;
-        }
-    };
+    // Fetch config server-side with error handling
+    let config: FooterConfig;
+    try {
+        config = await getFooterConfig(locale);
+    } catch (error) {
+        console.error('Footer config fetch failed:', error);
+        return (
+            <footer className="mt-auto bg-primary-blue py-4">
+                <div className="container text-center text-white">
+                    <p className="text-sm">{t('copyright.text')}</p>
+                </div>
+            </footer>
+        );
+    }
 
     return (
         <footer className="mt-auto bg-primary-blue pt-10 flex flex-col gap-10">
             <div className="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-7xl mx-auto px-4">
+
                 {/* Address Card */}
-                <div className="bg-white rounded-md p-5 flex flex-col justify-center items-center w-full">
-                    <div className="relative w-8 h-8 md:w-10 md:h-10 rounded-md bg-primary-pink p-2 hover-bg-primary-blue transition-colors duration-300 flex justify-center items-center my-2 md:my-4">
-                        <Image
-                            src={config.address.icon}
-                            alt={t('address.iconAlt')}
-                            width={28}
-                            height={28}
-                            className="object-contain"
-                        />
-                    </div>
+                <FooterCard>
+                    <IconBadge src={config.address.icon} alt={t('address.iconAlt')} />
                     <div className="flex flex-col gap-2 md:gap-4 flex-1 items-center">
-                        <p className="text-gray-900 capitalize text-lg md:text-[22px] font-medium text-center">
-                            {t('address.title')}
-                        </p>
+                        <CardTitle>{t('address.title')}</CardTitle>
                         <div className="flex flex-col gap-3 items-center">
                             <div className="w-[65px] h-[65px] relative">
                                 <Image
@@ -129,35 +87,29 @@ export default function Footer() {
                                     width={65}
                                     height={65}
                                     className="w-full h-full object-cover"
+                                    loading="lazy"
                                 />
                             </div>
-                            <p className="text-center text-base text-gray-700">{t('address.text')}</p>
+                            <p className="text-center text-base text-gray-700">
+                                {config.address.text || t('address.text')}
+                            </p>
                         </div>
                     </div>
-                </div>
+                </FooterCard>
 
                 {/* Contact Card */}
-                <div className="bg-white rounded-md p-5 flex flex-col justify-center items-center w-full">
-                    <div className="relative w-8 h-8 md:w-10 md:h-10 rounded-md bg-primary-pink p-2 hover-bg-primary-blue transition-colors duration-300 flex justify-center items-center my-2 md:my-4">
-                        <Image
-                            src={config.contact.icon}
-                            alt={t('contact.iconAlt')}
-                            width={28}
-                            height={28}
-                            className="object-contain"
-                        />
-                    </div>
+                <FooterCard>
+                    <IconBadge src={config.contact.icon} alt={t('contact.iconAlt')} />
                     <div className="flex flex-col flex-1 gap-2 md:gap-4 items-center">
-                        <p className="text-gray-900 capitalize text-lg md:text-[22px] font-medium">
-                            {t('contact.title')}
-                        </p>
+                        <CardTitle>{t('contact.title')}</CardTitle>
                         <div className="flex flex-col gap-2 items-center">
                             <p className="text-base text-gray-700 capitalize">
                                 <a
                                     href={config.contact.phoneLink}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-primary-pink-light font-medium hover-primary-pink"
+                                    className="text-primary-pink-light font-medium hover:text-primary-pink transition-colors"
+                                    aria-label={t('contact.phoneLabel')}
                                 >
                                     {config.contact.phone}
                                 </a>
@@ -165,69 +117,64 @@ export default function Footer() {
                             <p className="text-base text-gray-700 capitalize">
                                 <a
                                     href={config.contact.emailLink}
-                                    className="text-primary-pink-light lowercase font-medium hover-primary-pink"
+                                    className="text-primary-pink-light lowercase font-medium hover:text-primary-pink transition-colors"
+                                    aria-label={t('contact.emailLabel')}
                                 >
                                     {config.contact.email}
                                 </a>
                             </p>
-                            <div className="flex items-center gap-2 justify-center">
+                            <div className="flex items-center gap-2 justify-center" role="list">
                                 {config.contact.socialLinks.map((social) => (
                                     <Link
                                         key={social.id}
                                         href={social.url}
-                                        className="w-10 h-10 cursor-pointer rounded-md bg-primary-pink p-2 hover-bg-primary-blue transition-colors duration-300 flex justify-center items-center"
+                                        className="w-10 h-10 cursor-pointer rounded-md bg-primary-pink p-2 hover:bg-primary-blue transition-colors duration-300 flex justify-center items-center"
                                         target="_blank"
                                         rel="noopener noreferrer"
+                                        aria-label={t(`contact.social.${social.platform}`)}
+                                        role="listitem"
                                     >
-                                        {getSocialIcon(social.platform)}
+                                        <SocialIcon platform={social.platform} />
                                     </Link>
                                 ))}
                             </div>
                         </div>
                     </div>
-                </div>
+                </FooterCard>
 
                 {/* Quick Access Card */}
-                <div className="bg-white rounded-md p-5 flex flex-col justify-center items-center w-full">
-                    <div className="relative w-8 h-8 md:w-10 md:h-10 rounded-md bg-primary-pink p-2 hover-bg-primary-blue transition-colors duration-300 flex justify-center items-center my-2 md:my-4">
-                        <Image
-                            src={config.quickAccess.icon}
-                            alt={t('quickAccess.iconAlt')}
-                            width={28}
-                            height={28}
-                            className="object-contain"
-                        />
-                    </div>
+                <FooterCard>
+                    <IconBadge src={config.quickAccess.icon} alt={t('quickAccess.iconAlt')} />
                     <div className="flex flex-col flex-1 gap-2 md:gap-4 items-center">
-                        <p className="text-gray-900 capitalize text-lg md:text-[22px] font-medium">
-                            {t('quickAccess.title')}
-                        </p>
-                        <div className="flex flex-col gap-2 items-center">
+                        <CardTitle>{t('quickAccess.title')}</CardTitle>
+                        <nav className="flex flex-col gap-2 items-center" aria-label={t('quickAccess.navLabel')}>
                             {config.quickAccess.links.map((link) => (
                                 <Link
                                     key={link.id}
-                                    className="text-base text-primary-pink-light font-medium hover-primary-pink capitalize"
+                                    className="text-base text-primary-pink-light font-medium hover:text-primary-pink transition-colors capitalize"
                                     href={`/${locale}${link.href}`}
+                                    aria-label={t(`quickAccess.links.${link.label}.label`)}
                                 >
-                                    {t(`quickAccess.${link.label}`)}
+                                    {t(`quickAccess.links.${link.label}.text`)}
                                 </Link>
                             ))}
-                        </div>
+                        </nav>
                     </div>
-                </div>
+                </FooterCard>
             </div>
 
             {/* Copyright Bar */}
             <div className="flex flex-col md:flex-row justify-center items-center gap-1 py-4 bg-gray-600/30 text-gray-300">
-                <p className="text-sm">{t('copyright.text')}</p>
-                <span className="text-gray-300 hidden md:inline-block">|</span>
+                <p className="text-sm">{config.copyrightText || t('copyright.text')}</p>
+                <span className="text-gray-300 hidden md:inline-block" aria-hidden="true">|</span>
                 <div className="w-[180px] h-[18px]">
                     <Image
                         src={config.copyrightLogo}
-                        alt="Copyright Logo"
+                        alt={t('copyright.logoAlt')}
                         width={180}
                         height={18}
                         className="w-full h-full object-contain"
+                        loading="lazy"
                     />
                 </div>
             </div>

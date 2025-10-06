@@ -1,90 +1,75 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { Check } from 'lucide-react';
-import axios from 'axios';
-
-interface Treatment {
-    id: string;
-    label: string;
-    href: string;
-    order: number;
-}
-
-interface TreatmentsConfig {
-    backgroundLogo: string;
-    treatments: Treatment[];
-}
-
-const defaultConfig: TreatmentsConfig = {
-    backgroundLogo: '/images/logoonly.svg',
-    treatments: [
-        { id: '1', label: 'Tüp Bebek (IVF) - ICSI', href: '#', order: 1 },
-        { id: '2', label: 'Yumurta Donasyonu', href: '#', order: 2 },
-        { id: '3', label: 'Sperm Donasyonu', href: '#', order: 3 },
-        { id: '4', label: 'Embriyo Donasyonu', href: '#', order: 4 },
-        { id: '5', label: 'Ovarian ve Endometrial PRP', href: '#', order: 5 },
-        { id: '6', label: 'Embriyo Genetik Tarama (NGS, Tek Gen)', href: '#', order: 6 },
-        { id: '7', label: 'Cinsiyet Seçimi (PGD)', href: '#', order: 7 },
-        { id: '8', label: 'Yumurta Dondurma', href: '#', order: 8 },
-        { id: '9', label: 'Taşıyıcı Annelik', href: '#', order: 9 },
-        { id: '10', label: 'Embriyo Genetik Tarama (PGD)', href: '#', order: 10 }
-    ]
-};
+import { treatmentsService } from '@/services/treatments.service';
+import { TreatmentsConfig } from '@/types/treatments.types';
+import { DEFAULT_TREATMENTS_CONFIG } from '@/config/treatments.config';
 
 export default function Treatments() {
     const t = useTranslations('treatments');
-    const [config, setConfig] = useState<TreatmentsConfig>(defaultConfig);
-
     const params = useParams();
     const locale = (params?.locale as string) || 'tr';
 
-    const endpoint = useMemo(() => {
-        const base = process.env.NEXT_PUBLIC_API_URL?.trim();
-        return `${base ? base : ''}/api/treatments`;
-    }, []);
+    const [config, setConfig] = useState<TreatmentsConfig>(DEFAULT_TREATMENTS_CONFIG);
+    const [isLoading, setIsLoading] = useState(true);
 
+    // Fetch config from API
     useEffect(() => {
-        let mounted = true;
-        (async () => {
+        const fetchConfig = async () => {
             try {
-                const { data } = await axios.get(endpoint, { params: { locale } });
-                const treatments = (data?.treatments ?? []).sort(
-                    (a: Treatment, b: Treatment) => (a?.order ?? 0) - (b?.order ?? 0)
-                );
-                if (mounted) {
-                    setConfig({
-                        backgroundLogo: data?.backgroundLogo || defaultConfig.backgroundLogo,
-                        treatments: treatments.length ? treatments : defaultConfig.treatments
-                    });
-                }
+                setIsLoading(true);
+                const data = await treatmentsService.getTreatmentsConfig(locale);
+                setConfig(data);
             } catch (error) {
-                console.error('Using default treatments config:', error);
-                if (mounted) setConfig(defaultConfig);
+                console.error('Error fetching treatments config:', error);
+                setConfig(DEFAULT_TREATMENTS_CONFIG);
+            } finally {
+                setIsLoading(false);
             }
-        })();
-        return () => {
-            mounted = false;
         };
-    }, [endpoint, locale]);
+        fetchConfig();
+    }, [locale]);
+
+    // Loading skeleton
+    if (isLoading) {
+        return (
+            <section className="w-full bg-white py-7 md:py-14">
+                <div className="w-full flex justify-center">
+                    <div className="container max-w-4xl mx-auto flex flex-col items-center text-center">
+                        <div className="h-6 w-32 bg-gray-200 animate-pulse rounded mb-2" />
+                        <div className="h-8 w-64 bg-gray-200 animate-pulse rounded mb-4" />
+                        <div className="space-y-2 w-full">
+                            <div className="h-4 bg-gray-200 animate-pulse rounded w-3/4 mx-auto" />
+                            <div className="h-4 bg-gray-200 animate-pulse rounded w-2/3 mx-auto" />
+                        </div>
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6 w-full">
+                            {[...Array(6)].map((_, i) => (
+                                <div key={i} className="h-6 bg-gray-200 animate-pulse rounded" />
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        );
+    }
 
     return (
-        // Beyaz arkaplan tüm alanı kapsasın
         <section className="w-full bg-white py-7 md:py-14">
-            {/* Tam genişlik wrapper: arka plan (logo + beyaz overlay) burada */}
+            {/* Background with logo overlay */}
             <div
                 className="w-full flex justify-center"
                 style={{
                     backgroundImage: `linear-gradient(90deg, rgba(255,255,255,0.68), rgba(255,255,255,0.68)), url("${config.backgroundLogo}")`,
                     backgroundRepeat: 'no-repeat',
                     backgroundPosition: 'center center',
-                    backgroundSize: 'auto 80%'
+                    backgroundSize: 'auto 80%',
                 }}
             >
-                {/* İçerik: ortalanmış container */}
+                {/* Content container */}
                 <div className="container max-w-4xl mx-auto flex flex-col items-center text-center">
                     {/* Header */}
                     <p className="text-sm md:text-base text-primary-pink uppercase font-medium">
@@ -105,13 +90,13 @@ export default function Treatments() {
                         {config.treatments.map((treatment) => (
                             <Link
                                 key={treatment.id}
-                                href={treatment.href}
+                                href={`/${locale}${treatment.href}`}
                                 className="text-xs md:text-sm text-gray-700 font-medium flex gap-1 items-center"
                             >
                                 <Check size={16} className="text-primary-pink flex-shrink-0" />
                                 <span className="hover:text-primary-pink transition-colors duration-300 cursor-pointer">
-                  {treatment.label}
-                </span>
+                                    {t(`list.${treatment.id}`) || treatment.label}
+                                </span>
                             </Link>
                         ))}
                     </div>
@@ -121,9 +106,9 @@ export default function Treatments() {
                         href={`/${locale}/contact`}
                         className="bg-primary-pink px-5 md:px-8 py-2 md:py-4 rounded-full cursor-pointer hover:bg-primary-blue transition-colors duration-300 mt-4 md:mt-6 flex items-center justify-center"
                     >
-            <span className="text-sm md:text-base text-white capitalize font-medium">
-              {t('contactButton')}
-            </span>
+                        <span className="text-sm md:text-base text-white capitalize font-medium">
+                            {t('contactButton')}
+                        </span>
                     </Link>
                 </div>
             </div>

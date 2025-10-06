@@ -3,47 +3,43 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
-import axios from 'axios';
-
-// Types
-interface ContactMapConfig {
-    image: string;
-    mapUrl?: string;
-    showIframe: boolean;
-}
-
-// Default Config
-const defaultConfig: ContactMapConfig = {
-    image: '/images/showcase.png',
-    mapUrl: '',
-    showIframe: false,
-};
+import { contactMapService } from '@/services/contactMap.service';
+import { ContactMapConfig } from '@/types/contactMap.types';
+import { DEFAULT_CONTACT_MAP_CONFIG } from '@/config/contactMap.config';
 
 export default function ContactMap() {
     const t = useTranslations('contactMap');
-    const [config, setConfig] = useState<ContactMapConfig>(defaultConfig);
-
     const params = useParams();
     const locale = (params?.locale as string) || 'tr';
+
+    const [config, setConfig] = useState<ContactMapConfig>(DEFAULT_CONTACT_MAP_CONFIG);
+    const [isLoading, setIsLoading] = useState(true);
 
     // Fetch config from API
     useEffect(() => {
         const fetchConfig = async () => {
             try {
-                const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/contact-map`, {
-                    params: { locale },
-                });
-                setConfig({
-                    image: response.data.image || defaultConfig.image,
-                    mapUrl: response.data.mapUrl || defaultConfig.mapUrl,
-                    showIframe: response.data.showIframe || defaultConfig.showIframe,
-                });
+                setIsLoading(true);
+                const data = await contactMapService.getContactMapConfig(locale);
+                setConfig(data);
             } catch (error) {
-                console.error('Using default contact map config:', error);
+                console.error('Error fetching contact map config:', error);
+                setConfig(DEFAULT_CONTACT_MAP_CONFIG);
+            } finally {
+                setIsLoading(false);
             }
         };
         fetchConfig();
     }, [locale]);
+
+    // Loading skeleton
+    if (isLoading) {
+        return (
+            <section>
+                <div className="w-full aspect-[16/11] md:aspect-[16/6] bg-gray-200 animate-pulse" />
+            </section>
+        );
+    }
 
     return (
         <section>

@@ -6,7 +6,7 @@ const iconMap = {
     ship: Ship,
     mapPin: MapPin,
     hotel: Hotel,
-    info: Info
+    info: Info,
 };
 
 type IconKey = keyof typeof iconMap;
@@ -18,18 +18,13 @@ interface TravelSectionProps {
     className?: string;
 }
 
-export function TravelSection({
-                                  title,
-                                  children,
-                                  icon,
-                                  className = ''
-                              }: TravelSectionProps) {
+export function TravelSection({ title, children, icon, className = '' }: TravelSectionProps) {
     const IconComponent = icon ? iconMap[icon] : null;
 
     return (
         <section className={`flex flex-col gap-3 ${className}`}>
             <h3 className="text-primary-pink text-center text-2xl md:text-[1.75rem] font-bold leading-tight flex items-center justify-center gap-3">
-                {IconComponent ? <IconComponent className="w-6 h-6 md:w-7 md:h-7" /> : null}
+                {IconComponent && <IconComponent className="w-6 h-6 md:w-7 md:h-7" />}
                 {title}
             </h3>
             <div className="text-ayda-gray-dark text-sm md:text-base leading-relaxed">

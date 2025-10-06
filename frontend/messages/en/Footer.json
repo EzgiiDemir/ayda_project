@@ -1,22 +1,61 @@
 {
   "address": {
-    "title": "Our Address",
-    "iconAlt": "address icon",
-    "isoAlt": "ISO logo",
-    "text": "Sehit Erdogan Yildiz St. No:5 Kizilay, Nicosia, Northern Cyprus (TRNC)"
+    "title": "Address",
+    "iconAlt": "Location icon",
+    "isoAlt": "ISO Certificate",
+    "text": "Küçükkaymaklı, Dr. Fazıl Küçük Blv No:24, 99010 Nicosia"
   },
   "contact": {
     "title": "Contact",
-    "iconAlt": "contact icon"
+    "iconAlt": "Phone icon",
+    "phoneLabel": "Call us",
+    "emailLabel": "Send email",
+    "navLabel": "Social media links",
+    "social": {
+      "facebook": "Visit our Facebook page",
+      "instagram": "Follow us on Instagram",
+      "youtube": "Watch our YouTube channel",
+      "twitter": "Follow us on Twitter",
+      "linkedin": "View our LinkedIn profile"
+    }
   },
   "quickAccess": {
     "title": "Quick Access",
-    "iconAlt": "quick access icon",
-    "home": "Home",
-    "treatments": "Treatments",
-    "travel": "Travel"
+    "iconAlt": "Link icon",
+    "navLabel": "Quick access menu",
+    "links": {
+      "home": {
+        "text": "Home",
+        "label": "Go to home page"
+      },
+      "treatments": {
+        "text": "Treatments",
+        "label": "Go to treatments page"
+      },
+      "travel": {
+        "text": "Travel",
+        "label": "Go to travel information"
+      },
+      "about": {
+        "text": "About Us",
+        "label": "Go to about page"
+      },
+      "contact": {
+        "text": "Contact",
+        "label": "Go to contact page"
+      },
+      "blog": {
+        "text": "Blog",
+        "label": "Go to blog page"
+      },
+      "faq": {
+        "text": "FAQ",
+        "label": "Go to frequently asked questions"
+      }
+    }
   },
   "copyright": {
-    "text": "© 2025 All rights reserved"
+    "text": "© 2025 Ayda IVF. All rights reserved.",
+    "logoAlt": "Copyright logo"
   }
 }

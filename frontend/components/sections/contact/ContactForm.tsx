@@ -1,47 +1,56 @@
 'use client';
 
-import {Form, Input, Select, message, Button} from 'antd';
+import { Form, Input, Select, message } from 'antd';
 import { useTranslations } from 'next-intl';
+import { useState } from 'react';
 
-type Props = { locale: string };
+interface ContactFormProps {
+    locale: string;
+    subjects: string[];
+    apiEndpoint?: string;
+}
 
-export default function ContactForm({ locale }: Props) {
-    const t = useTranslations('contact');
+export default function ContactForm({ locale, subjects, apiEndpoint }: ContactFormProps) {
+    const t = useTranslations('contact.form');
+    const [form] = Form.useForm();
+    const [loading, setLoading] = useState(false);
 
     const labels = {
-        name: t('form.name.label', { defaultMessage: 'Ad - Soyad' }),
-        email: t('form.email.label', { defaultMessage: 'E-posta' }),
-        subject: t('form.subject.label', { defaultMessage: 'Konu' }),
-        message: t('form.message.label', { defaultMessage: 'Gönder' }),
-        submit: t('form.submit', { defaultMessage: 'Gönder' }),
+        name: t('name.label'),
+        email: t('email.label'),
+        subject: t('subject.label'),
+        message: t('message.label'),
+        submit: t('submit'),
     };
 
     const placeholders = {
-        name: t('form.name.placeholder', { defaultMessage: 'Lütfen Ad - Soyad giriniz' }),
-        email: t('form.email.placeholder', { defaultMessage: 'Lütfen E-posta giriniz' }),
-        subject: t('form.subject.placeholder', { defaultMessage: 'Lütfen bir konu seçin' }),
-        message: t('form.message.placeholder', { defaultMessage: 'Lütfen Gönder giriniz' }),
+        name: t('name.placeholder'),
+        email: t('email.placeholder'),
+        subject: t('subject.placeholder'),
+        message: t('message.placeholder'),
     };
 
-    const defaultSubjects = ['Randevu', 'Tedavi Bilgisi', 'Fiyat', 'Diğer'];
-    const raw: any = t as any;
-    const subjects: string[] =
-        typeof raw.raw === 'function'
-            ? (raw.raw('form.subject.options', { defaultMessage: defaultSubjects }) as string[])
-            : defaultSubjects;
-
-    const [form] = Form.useForm();
-
     const onFinish = async (values: any) => {
+        setLoading(true);
         try {
-            console.log('Contact submit:', { ...values, locale });
-            message.success(t('form.success', { defaultMessage: 'Mesajınız gönderildi. Teşekkürler!' }));
+            const endpoint = apiEndpoint || '/api/contact';
+            const response = await fetch(endpoint, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ ...values, locale }),
+            });
+
+            if (!response.ok) throw new Error('Failed to send message');
+
+            message.success(t('success'));
             form.resetFields();
-        } catch (e) {
-            console.error(e);
-            message.error(
-                t('form.error', { defaultMessage: 'Bir hata oluştu. Lütfen daha sonra tekrar deneyin.' })
-            );
+        } catch (error) {
+            console.error('Contact form error:', error);
+            message.error(t('error'));
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -61,13 +70,19 @@ export default function ContactForm({ locale }: Props) {
                         name="name"
                         label={
                             <label htmlFor="name" className="ant-form-item-required">
-                                <p className="text-[14px] leading-5 text-[#474D66]">{labels.name}                                <span className="text-red-500 ml-[2px]">*</span>
+                                <p className="text-[14px] leading-5 text-[#474D66]">
+                                    {labels.name}
+                                    <span className="text-red-500 ml-[2px]">*</span>
                                 </p>
                             </label>
                         }
                         rules={[{ required: true, message: placeholders.name }]}
                     >
-                        <Input id="name" placeholder={placeholders.name} className="!h-[48px] !rounded-md" />
+                        <Input
+                            id="name"
+                            placeholder={placeholders.name}
+                            className="!h-[48px] !rounded-md"
+                        />
                     </Form.Item>
 
                     {/* Email */}
@@ -76,16 +91,22 @@ export default function ContactForm({ locale }: Props) {
                         name="email"
                         label={
                             <label htmlFor="email" className="ant-form-item-required">
-                                <p className="text-[14px] leading-5 text-[#474D66]">{labels.email}                                <span className="text-red-500 ml-[2px]">*</span>
+                                <p className="text-[14px] leading-5 text-[#474D66]">
+                                    {labels.email}
+                                    <span className="text-red-500 ml-[2px]">*</span>
                                 </p>
                             </label>
                         }
                         rules={[
                             { required: true, message: placeholders.email },
-                            { type: 'email', message: t('form.email.invalid', { defaultMessage: 'Geçerli bir e-posta girin' }) },
+                            { type: 'email', message: t('email.invalid') },
                         ]}
                     >
-                        <Input id="email" placeholder={placeholders.email} className="!h-[48px] !rounded-md" />
+                        <Input
+                            id="email"
+                            placeholder={placeholders.email}
+                            className="!h-[48px] !rounded-md"
+                        />
                     </Form.Item>
                 </div>
 
@@ -95,7 +116,9 @@ export default function ContactForm({ locale }: Props) {
                     className="w-full"
                     label={
                         <label htmlFor="subject" className="ant-form-item-required">
-                            <p className="text-[14px] leading-5 text-[#474D66]">{labels.subject}                            <span className="text-red-500 ml-[2px]">*</span>
+                            <p className="text-[14px] leading-5 text-[#474D66]">
+                                {labels.subject}
+                                <span className="text-red-500 ml-[2px]">*</span>
                             </p>
                         </label>
                     }
@@ -119,7 +142,9 @@ export default function ContactForm({ locale }: Props) {
                     className="w-full"
                     label={
                         <label htmlFor="message" className="ant-form-item-required">
-                            <p className="text-[14px] leading-5 text-[#474D66]">{labels.message}                            <span className="text-red-500 ml-[2px]">*</span>
+                            <p className="text-[14px] leading-5 text-[#474D66]">
+                                {labels.message}
+                                <span className="text-red-500 ml-[2px]">*</span>
                             </p>
                         </label>
                     }
@@ -135,16 +160,16 @@ export default function ContactForm({ locale }: Props) {
 
                 <button
                     type="submit"
+                    disabled={loading}
                     className="mx-auto bg-primary-pink px-5 md:px-8 py-2 md:py-4
-             rounded-full cursor-pointer lg:hover:bg-ayda-blue
-             transition-colors duration-300 ease-in mt-4 md:mt-6
-             flex items-center justify-center gap-2"
+            rounded-full cursor-pointer lg:hover:bg-ayda-blue
+            transition-colors duration-300 ease-in mt-4 md:mt-6
+            flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-  <span className="text-sm md:text-base text-white capitalize font-medium">
-    {labels.submit}
-  </span>
+          <span className="text-sm md:text-base text-white capitalize font-medium">
+            {loading ? t('sending') : labels.submit}
+          </span>
                 </button>
-
             </Form>
         </div>
     );

@@ -1,19 +1,19 @@
 {
   "topTitle": "En Sık Tercih Edilen",
   "title": "Tedavi Yöntemlerimiz",
-  "description1": "Tedaviniz hakkında daha detaylı bilgiye hızlıca ulaşabilmeniz için özenle hazırladığımız yöntemlerimize göz atın.",
-  "description2": "Sorularınız için her zaman yanınızdayız. Sağlıklı bir bebek için profesyonel destek vermek üzere buradayız.",
+  "description1": "Ayda Tüp Bebek Ekibini ziyaret etmeden önce tedaviniz hakkında daha detaylı bilgiye ulaşabilmeniz için sizlere özel olarak, her bir detayı özenle düşünerek hazırlamış olduğumuz tedavi yöntemlerimize mutlaka bir göz atınız. Burada size uygun tedavinizi daha yakından inceleme fırsatına ve detaylı bilgi edinebilme şansına sahip olacaksınız.",
+  "description2": "Tedavilerimizi inceledikten sonra merak ettiğiniz tüm sorularınız için bir telefon kadar uzağınızda olduğumuzu unutmayınız. Sizlerle tanışmak ve sağlıklı bir bebek kucağınıza almanız için sizlere profesyonel yardımda bulunmayı dört gözle bekliyoruz.",
   "contactButton": "Bizimle İletişime Geçin",
   "list": {
-    "1": "Tüp Bebek (IVF) - ICSI",
-    "2": "Yumurta Donasyonu",
-    "3": "Sperm Donasyonu",
-    "4": "Embriyo Donasyonu",
-    "5": "Ovarian ve Endometrial PRP",
-    "6": "Embriyo Genetik Tarama (NGS, Tek Gen)",
-    "7": "Cinsiyet Seçimi (PGD)",
-    "8": "Yumurta Dondurma",
-    "9": "Taşıyıcı Annelik",
-    "10": "Embriyo Genetik Tarama (PGD)"
+    "ivf-icsi": "Tüp Bebek (IVF) - ICSI",
+    "egg-donation": "Yumurta Donasyonu",
+    "sperm-donation": "Sperm Donasyonu",
+    "embryo-donation": "Embriyo Donasyonu",
+    "ovarian-prp": "Ovarian ve Endometrial PRP",
+    "genetic-screening": "Embriyo Genetik Tarama (NGS, Tek Gen)",
+    "gender-selection": "Cinsiyet Seçimi (PGD)",
+    "egg-freezing": "Yumurta Dondurma",
+    "surrogacy": "Taşıyıcı Annelik",
+    "pgd": "Embriyo Genetik Tarama (PGD)"
   }
 }

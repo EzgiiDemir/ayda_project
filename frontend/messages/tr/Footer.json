@@ -1,22 +1,61 @@
 {
   "address": {
-    "title": "Adresimiz",
-    "iconAlt": "adres simgesi",
-    "isoAlt": "ISO logosu",
-    "text": "Şehit Erdoğan Yıldız Cd. No:5 Kızılay, Lefkoşa Kuzey Kıbrıs (KKTC)"
+    "title": "Adres",
+    "iconAlt": "Konum ikonu",
+    "isoAlt": "ISO Sertifikası",
+    "text": "Küçükkaymaklı, Dr. Fazıl Küçük Blv No:24, 99010 Lefkoşa"
   },
   "contact": {
     "title": "İletişim",
-    "iconAlt": "iletişim simgesi"
+    "iconAlt": "Telefon ikonu",
+    "phoneLabel": "Telefon ile iletişime geç",
+    "emailLabel": "E-posta gönder",
+    "navLabel": "Sosyal medya linkleri",
+    "social": {
+      "facebook": "Facebook sayfamızı ziyaret edin",
+      "instagram": "Instagram profilimizi takip edin",
+      "youtube": "YouTube kanalımızı izleyin",
+      "twitter": "Twitter hesabımızı takip edin",
+      "linkedin": "LinkedIn profilimizi görüntüleyin"
+    }
   },
   "quickAccess": {
     "title": "Hızlı Erişim",
-    "iconAlt": "hızlı erişim simgesi",
-    "home": "Anasayfa",
-    "treatments": "Tedaviler",
-    "travel": "Seyahat"
+    "iconAlt": "Link ikonu",
+    "navLabel": "Hızlı erişim menüsü",
+    "links": {
+      "home": {
+        "text": "Ana Sayfa",
+        "label": "Ana sayfaya git"
+      },
+      "treatments": {
+        "text": "Tedaviler",
+        "label": "Tedaviler sayfasına git"
+      },
+      "travel": {
+        "text": "Seyahat",
+        "label": "Seyahat bilgilerine git"
+      },
+      "about": {
+        "text": "Hakkımızda",
+        "label": "Hakkımızda sayfasına git"
+      },
+      "contact": {
+        "text": "İletişim",
+        "label": "İletişim sayfasına git"
+      },
+      "blog": {
+        "text": "Blog",
+        "label": "Blog sayfasına git"
+      },
+      "faq": {
+        "text": "SSS",
+        "label": "Sık sorulan sorular sayfasına git"
+      }
+    }
   },
   "copyright": {
-    "text": "© 2025 Tüm hakları saklıdır"
+    "text": "© 2025 Ayda IVF. Tüm hakları saklıdır.",
+    "logoAlt": "Telif hakkı logosu"
   }
 }

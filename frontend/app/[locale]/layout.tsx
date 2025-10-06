@@ -5,6 +5,8 @@ import { routing } from '@/i18n/routing';
 import '../globals.css';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import FooterSkeleton from '@/components/FooterSkeleton';
+import {Suspense} from "react";
 
 export function generateStaticParams() {
     return routing.locales.map((locale) => ({ locale }));
@@ -33,7 +35,9 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
             <Navbar />
             <main className="min-h-screen">{children}</main>
-            <Footer />
+            <Suspense fallback={<FooterSkeleton />}>
+                <Footer locale={locale} />
+            </Suspense>
         </NextIntlClientProvider>
         </body>
         </html>

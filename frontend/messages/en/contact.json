@@ -1,30 +1,42 @@
 {
-  "hero": {
-    "preTitle": "By filling out the form below,",
-    "title": "you can contact us",
-    "image": "https://api.aydaivf.com/uploads/elitebig_7bc1166778.jpg"
-  },
-  "form": {
-    "name": {
-      "label": "Full Name",
-      "placeholder": "Please enter your full name"
+
+    "meta": {
+      "title": "Contact - Ayda IVF",
+      "description": "Get in touch with us. Ask your questions about IVF treatment."
     },
-    "email": {
-      "label": "Email",
-      "placeholder": "Please enter your email",
-      "invalid": "Please enter a valid email"
+    "hero": {
+      "preTitle": "You can contact us by filling",
+      "title": "the form below"
     },
-    "subject": {
-      "label": "Subject",
-      "placeholder": "Please select a subject",
-      "options": ["Appointment", "Treatment Info", "Price", "Other"]
+    "form": {
+      "name": {
+        "label": "Full Name",
+        "placeholder": "Please enter your full name",
+        "subjects": ["General", "Info", "Application", "IVF"],
+        "apiEndpoint": "/api/contact"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "Please enter your email",
+        "invalid": "Please enter a valid email"
+      },
+      "subject": {
+        "label": "Subject",
+        "placeholder": "Please select a subject",
+        "options": ["Appointment", "Treatment Information", "Price", "Other"]
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Write your message here"
+      },
+      "submit": "Send",
+      "sending": "Sending...",
+      "success": "Your message has been sent. Thank you!",
+      "error": "An error occurred. Please try again later."
     },
-    "message": {
-      "label": "Message",
-      "placeholder": "Please write your message"
-    },
-    "submit": "Send",
-    "success": "Your message has been sent. Thank you!",
-    "error": "An error occurred. Please try again later."
-  }
+
+  "heroImage": "https://api.aydaivf.com/uploads/elitebig_7bc1166778.jpg",
+  "heroPreTitle": "Fill out the form below",
+  "heroTitle": "to get in touch with us"
+
 }

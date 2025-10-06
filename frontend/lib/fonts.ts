@@ -1,4 +1,3 @@
-// lib/fonts.ts
 import { Inter, Roboto_Mono } from "next/font/google";
 
 export const geistSans = Inter({

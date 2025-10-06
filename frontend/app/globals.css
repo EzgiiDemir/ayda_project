@@ -49,16 +49,14 @@
     .text-ayda-gray-dark {
         color: var(--ayda-gray-dark);
     }
-    .border-primary-blue {
-        color: var(--color-primary-blue);
-    }
+    .border-primary-blue { border-color: var(--color-primary-blue); }
+
 
     .text-primary-pink-light {
         color: var(--color-primary-pink-light);
     }
-    .border-primary-pink-light {
-        color: var(--color-primary-pink-light);
-    }
+    .border-primary-pink-light { border-color: var(--color-primary-pink-light); }
+
 
     /* Hover States */
     .hover-primary-pink:hover {
@@ -74,3 +72,328 @@
     }
 }
 
+/* styles/navbar.module.css */
+
+/* Custom animations */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.dropdown {
+    animation: slideDown 0.2s ease-out;
+}
+
+.mobileMenu {
+    animation: slideIn 0.3s ease-out;
+}
+
+/* Backdrop blur fallback */
+@supports not (backdrop-filter: blur(30px)) {
+    .navbar {
+        background-color: rgba(255, 255, 255, 0.95);
+    }
+}
+
+/* Smooth height transitions */
+.collapsible {
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Focus styles for accessibility */
+.navLink:focus-visible {
+    outline: 2px solid var(--primary-pink);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Loading skeleton */
+.skeleton {
+    background: linear-gradient(
+            90deg,
+            rgba(229, 231, 235, 1) 25%,
+            rgba(243, 244, 246, 1) 50%,
+            rgba(229, 231, 235, 1) 75%
+    );
+    background-size: 200% 100%;
+    animation: loading 1.5s ease-in-out infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Hover effects */
+.hoverScale {
+    transition: transform 0.2s ease-in-out;
+}
+
+.hoverScale:hover {
+    transform: scale(1.05);
+}
+
+/* Mobile menu scroll behavior */
+.mobileMenuContent {
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent text selection on rapid clicks */
+.noSelect {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* styles/hero.module.css */
+
+/* Slide animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Slide container */
+.slideContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Active slide animation */
+.slideActive {
+    animation: slideIn 1s ease-out;
+}
+
+/* Text animations */
+.titleEnter {
+    animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+.subtitleEnter {
+    animation: fadeInDown 0.8s ease-out 0.1s both;
+}
+
+.descriptionEnter {
+    animation: fadeInUp 0.8s ease-out 0.5s both;
+}
+
+.ctaEnter {
+    animation: zoomIn 0.6s ease-out 0.7s both;
+}
+
+/* Ken Burns effect for images */
+@keyframes kenBurns {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+.kenBurnsEffect {
+    animation: kenBurns 20s ease-out infinite alternate;
+}
+
+/* Control buttons hover effects */
+.controlButton {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.controlButton:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.controlButton:active {
+    transform: scale(0.95);
+}
+
+/* Indicator pulse animation */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.indicatorActive {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Loading skeleton specific */
+.skeletonShimmer {
+    background: linear-gradient(
+            90deg,
+            rgba(229, 231, 235, 1) 0%,
+            rgba(243, 244, 246, 1) 50%,
+            rgba(229, 231, 235, 1) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .slideContainer {
+        min-height: calc(70dvh - 80px);
+    }
+}
+
+@media (min-width: 769px) {
+    .slideContainer {
+        min-height: calc(100dvh - 80px);
+    }
+}
+
+/* Accessibility - High contrast mode */
+@media (prefers-contrast: high) {
+    .controlButton {
+        background-color: rgba(0, 0, 0, 0.8);
+        border: 2px solid white;
+    }
+
+    .indicator {
+        border: 2px solid white;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .slideActive,
+    .titleEnter,
+    .subtitleEnter,
+    .descriptionEnter,
+    .ctaEnter,
+    .kenBurnsEffect,
+    .indicatorActive {
+        animation: none;
+    }
+
+    .controlButton {
+        transition: none;
+    }
+}
+
+/* Dark overlay variants */
+.overlayLight {
+    background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.4)
+    );
+}
+
+.overlayMedium {
+    background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.6)
+    );
+}
+
+.overlayDark {
+    background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.8)
+    );
+}
+
+/* Text shadow for better readability */
+.textReadable {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3),
+    0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Backdrop blur support check */
+@supports not (backdrop-filter: blur(10px)) {
+    .controlButton,
+    .indicator {
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+}

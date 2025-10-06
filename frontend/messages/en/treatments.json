@@ -1,19 +1,19 @@
 {
   "topTitle": "Most Preferred",
   "title": "Our Treatment Methods",
-  "description1": "Browse the treatment options we’ve carefully prepared so you can quickly learn more about your journey.",
-  "description2": "We’re always here for your questions and happy to support you professionally toward a healthy baby.",
+  "description1": "Before visiting the Ayda IVF Team, we invite you to take a look at our carefully prepared treatment methods — thoughtfully designed to provide you with detailed information about your treatment options. Here, you’ll have the chance to explore which treatment suits you best and gain more in-depth knowledge about each one.",
+  "description2": "After reviewing our treatments, remember that we’re only a phone call away for any questions you may have. We’re eagerly looking forward to meeting you and providing professional support on your journey to holding a healthy baby in your arms.",
   "contactButton": "Contact Us",
   "list": {
-    "1": "In Vitro Fertilization (IVF) – ICSI",
-    "2": "Egg Donation",
-    "3": "Sperm Donation",
-    "4": "Embryo Donation",
-    "5": "Ovarian & Endometrial PRP",
-    "6": "Embryo Genetic Screening (NGS, Single Gene)",
-    "7": "Gender Selection (PGD)",
-    "8": "Egg Freezing",
-    "9": "Surrogacy",
-    "10": "Embryo Genetic Screening (PGD)"
+    "ivf-icsi": "In Vitro Fertilization (IVF) - ICSI",
+    "egg-donation": "Egg Donation",
+    "sperm-donation": "Sperm Donation",
+    "embryo-donation": "Embryo Donation",
+    "ovarian-prp": "Ovarian and Endometrial PRP",
+    "genetic-screening": "Embryo Genetic Screening (NGS, Single Gene)",
+    "gender-selection": "Gender Selection (PGD)",
+    "egg-freezing": "Egg Freezing",
+    "surrogacy": "Surrogacy",
+    "pgd": "Embryo Genetic Screening (PGD)"
   }
 }

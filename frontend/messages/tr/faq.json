@@ -1,21 +1,46 @@
 {
   "title": "Sıkça Sorulan Sorular",
+  "subtitle": "Tüp bebek tedavisi hakkında merak ettikleriniz",
   "items": {
-    "shipping": {
-      "question": "Kargom ne zaman gelir?",
-      "answer": "<p>Siparişiniz 1-3 iş günü içinde kargoya verilir. Teslimat süresi bulunduğunuz şehre göre değişebilir.</p>"
+    "faq-1": {
+      "question": "Tüp bebek tedavisi nasıl biri işlemdir?",
+      "answer": "Tüp bebek tedavisi doğal yollar ile çocuk sahibi olamayan kişilere uygulanan tıbbi bir tedavi yöntemidir.Her bir bireyin tüp bebek tedavisi yaptırmasındaki sebebi farklı olabilmekte olup kişiye uygun farklı tedavi yöntemleri mevcuttur."
     },
-    "returns": {
-      "question": "İade süreci nasıl işler?",
-      "answer": "<p>Ürünü teslim aldıktan sonra 14 gün içinde iade talebi oluşturabilirsiniz. İade şartları sayfamızda detaylıca yer alır.</p>"
+    "faq-2": {
+      "question": "Hangi durumlarda tüp bebek tedavisine başvurulmalıdır?",
+      "answer": "<strong>Yeni evlenen genç çiftlerde;</strong> 1 sene korunmasız ilişki önerilir. 1 yıl dolup hamilelik oluşmadıysa kontrol önerilir.<strong>Yaşı 35’i geçen bayanlarda;</strong> 6 ay korunmasız ilişki önerilir. 6 ay sonunda hamilelik yoksa kontrol önerilir.<strong>Yaşı 40’ı geçen bayanların;</strong> erken zamanda doktor kontrolünden geçmesi önerilir.<strong>Bunun yanında,</strong><ul class='list-disc ml-[30px]'><li>2–3 kez düşük yaşamış ve halen çocuk sahibi olamayan çiftler,</li><li>Kalıtımsal olarak bebeğe aktarılabilecek önemli kromozomal bozukluğu olan çiftler,</li><li>Sperm bozukluğu görülen beyler,</li><li>Rahim ile ilgili problemi olan bayanlar,</li><li>Menopoza girmiş veya genç yaşta hiç adet görmeyen bayanlar,</li><li>AMH düşük olan, polikistik over veya endometriozis tanısı olan bayanlar; <strong>mutlaka ön kontrolden geçmelidir.</strong></li></ul>"
     },
-    "payment": {
-      "question": "Hangi ödeme yöntemlerini kabul ediyorsunuz?",
-      "answer": "<p>Kredi kartı, banka kartı, havale/EFT ve kapıda ödeme seçenekleri mevcuttur.</p>"
+    "faq-3": {
+      "question": "Tüp bebek tedavisinde bir başkasının yumurta ve spermi mi kullanılıyor?",
+      "answer": "Sadece yumurta ve/veya sperm bağışçısı tedavisi için gelen hastalarda donör kullanılır.Sizin kendi sperm ve yumurtanız sizden başka hiç kimseye kullanılmamakta ve de sperm ile yumurtalarınızın bir başkasına karışma riski olmamaktadır.Tüp bebek tedavisinde sizin rızanız olmadan hiçbir işlem yapılmamaktadır."
     },
-    "account": {
-      "question": "Hesap oluşturmam gerekiyor mu?",
-      "answer": "<p>Hayır, misafir olarak da sipariş verebilirsiniz; ancak hesap oluşturmak sipariş geçmişinizi takip etmenizi kolaylaştırır.</p>"
+    "faq-4": {
+      "question": "Tüp bebek tedavisinde kendi yumurtalarım ile çocuk sahibi olabilmem için sınır yaş nedir?",
+      "answer": "Bunun için net bir şey söylemek mümkün değildir. Bu durum kişiye göre değişebilmekte olup, bu sorunun yanıtını belirli testler ve ultrason kontrolünden sonra kişiye özel anlatmak daha sağlıklıdır.Bunun dışında; kendi yumurtalarınız ile sağlıklı bir tedavi görebilmeniz için öncelikle menapozda olmamanız ve belirli bir yaşı geçirmemeniz gerekmektedir. Genellikle 35 yaşı geçirmemeniz en ideali olarak görülmekle birlikte, bazı insanlarda bu yaş sınırı çok aşağılarda veya yukarılarda olabilmektedir. Unutulmamalıdır ki yaş ilerledikçe vücuttaki yumurta sayısı, kalitesi ve enerjisi azalıp çoğu yumurtada genetik bozukluklar oluşmaktadır.35 yaşına gelmiş ve halen evli değilseniz veya yakın zamanda çocuk sahibi olmayı planlamıyorsanız yumurtalarınızı dondurup saklama işlemini düşünebilirsiniz."
+    },
+    "faq-5": {
+      "question": "Yumurta dondurma işlemi nasıl bir işlemdir? Hangi durumlarda uygulanması tavsiye edilmektedir?",
+      "answer": "Yumurta dondurma tedavisi; bayanın adeti ile yumurtalıklarda var olan yumurta foliküllerinin iğne tedavisi ile olgunlaştırılmasıdır.Yaklaşık 12 günlük bir tedavi sonunda folikül bezleri hafif anestezi altında toplanılır ve kaliteli olanlar dondurulup saklanılır.Daha sonra partner spermi ile döllenip embriyo geliştirilebilir; kaliteli embriyolar transfer edilerek gebelik şansı verilir.Böylelikle kişi dondurulmuş olarak saklanan yumurtalarını dilediği zaman partnerinin spermi ile birleştirterek embriyo haline getirebilir. Laboratuvar ortamında geliştirilen embriyolardan kaliteli olanlar bayana transfer edilerek gebeliğe şans verilir.Yumurta dondurma işlemi; yakın zamanda çocuk sahibi olmayı planlamayan ve yaşı ilerlemekte olan bayanlara, kanser vb. tedavi görecek olup kemoterapi veya ağır ilaçlara maruz kalacak olan bayanlara, herhangi bir sebepten ötürü yumurtalıkları alınması gereken bayanlara önerilmektedir."
+    },
+    "faq-6": {
+      "question": "Tüp bebek tedavisi için evli olmak şart mı?",
+      "answer": "K.K.T.C.’de tüp bebek tedavisi için evlilik şartı <strong>aranmamaktadır.</strong>"
+    },
+    "faq-7": {
+      "question": "Kaç yaşına kadar tüp bebek tedavisi yaptırabilirim?",
+      "answer": "<strong>K.K.T.C.’de tüp bebek tedavisi için yaş sınırı daha esnek olsa da bunun için belirli kurallar mevcuttur.</strong><strong>Genel olarak,</strong>44 yaşına kadar kişide gebeliği engelleyici sorunlar olmadığı sürece tedavi görülmesinde bir sakınca yoktur.45-54 yaş arasındaki bayanlar için; belirli kan testleri ve dahiliye-kardiyoloji raporlarını içeren bir dosya hazırlanarak sağlık bakanlığına başvuru yapılır. 55 yaş ve üzeri bayanlarda bu dosyaya mal varlığı belgeleri de eklenir."
+    },
+    "faq-8": {
+      "question": "Menopozdan sonra hamile kalınabilir mi?",
+      "answer": "Menopoza girmiş bir bayanın endometrium ile alakalı problemi ve/veya gebeliği engelleyici sağlık sorunları yok ise yumurta donasyonu tedavisi ile hamile kalabilir."
+    },
+    "faq-9": {
+      "question": "Tüp bebek işleminde başarı garantisi veriyor musunuz?",
+      "answer": "<strong>Tüp bebek işlemine başarı garantisi verebilmek imkansızdır.</strong>Başarı oranı özellikle bayanın yaşına, endometrium yapısına, erkekte sperm kalitesine ve de embriyonun kalitesine göre değişmektedir. Bu nedenle hiçbir klinik işlemin yüzde yüz başarılı olacağını garanti edemez."
+    },
+    "faq-10": {
+      "question": "Tüp bebek işleminde başarı oranımızı nasıl arttırabiliriz?",
+      "answer": "Tüp bebek işleminizde birçok yolla başarı oranınızı arttırabilirsiniz. Sağlıklı beslenme, spor, bol su tüketimi, az kafein ve sigaradan uzak durmak; yumurta ve sperm kalitenizin artmasında büyük rol oynar.Ayrıca tedavinize ekleyeceğiniz çeşitli tıbbi yöntemler başarı şansınızı arttırabilir. Kliniğimizde en çok önerilen teknikler arasında Embryoscope, mikrochip ve PGD bulunmaktadır.Daha detaylı bilgi için ana sayfamızdaki <strong>BLOG</strong> bölümünde videolar ve yazılara ulaşabilirsiniz."
     }
   }
 }

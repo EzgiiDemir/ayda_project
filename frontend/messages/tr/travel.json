@@ -1,0 +1,58 @@
+{
+
+    "title": "Seyahat Bilgileri",
+    "aboutCyprus": {
+      "title": "Kıbrıs Hakkında",
+      "description1": "Akdeniz'in üçüncü büyük adası olan Kıbrıs, yıl boyunca güneşin keyfini çıkarabileceğiniz eşsiz bir destinasyondur.",
+      "description2": "Yılda <strong>300 günden fazla güneşli hava</strong> ile misafirlerini karşılayan ada, hem tatil hem de tedavi için ideal bir ortam sunmaktadır."
+    },
+    "northCyprus": {
+      "title": "Kuzey Kıbrıs",
+      "description1": "Kuzey Kıbrıs, bozulmamış doğal güzellikleri, tarihi zenginlikleri ve sıcak misafirperverliği ile dikkat çeker.",
+      "description2": "Antik kentler, kumlu plajlar ve berrak denizleri ile unutulmaz bir tatil deneyimi sunar.",
+      "description3": "Ayrıca Kuzey Kıbrıs, tüp bebek tedavisi için de tercih edilen bir destinasyon olup, kaliteli sağlık hizmetleri ile bilinmektedir."
+    },
+    "ourCare": {
+      "title": "Bizim İlgimiz",
+      "description1": "Misafirlerimizin konforunu ve memnuniyetini en ön planda tutuyoruz.",
+      "description2": "Havaalanından itibaren tüm transferlerinizi organize ediyoruz.",
+      "description3": "Konaklama konusunda size en uygun otelleri öneriyoruz.",
+      "description4": "Tedavi sürecinizin yanı sıra, adayı keşfetmeniz için gezi programları da düzenleyebiliriz."
+    },
+    "byAir": {
+      "title": "Havayolu ile Ulaşım",
+      "subtitle": "Kuzey Kıbrıs'a iki farklı havalimanı üzerinden ulaşabilirsiniz:",
+      "ercan": {
+        "title": "Ercan Havalimanı:",
+        "description1": "Kuzey Kıbrıs'ın ana havalimanıdır.",
+        "description2": "Türkiye'nin çeşitli şehirlerinden direkt uçuşlar mevcuttur.",
+        "description3": "İstanbul, Ankara, İzmir, Antalya ve diğer şehirlerden günlük uçuşlar yapılmaktadır.",
+        "description4": "Havalimanından kliniğimize ulaşım yaklaşık 20 dakika sürmektedir.",
+        "description5": "Transfer hizmetimiz mevcuttur, lütfen önceden bildiriniz."
+      },
+      "south": {
+        "title": "Güney Kıbrıs Havalimanları:",
+        "description": "Avrupa'dan gelen misafirlerimiz genellikle Güney Kıbrıs havalimanlarını tercih etmektedir.",
+        "airportsTitle": "İki ana havalimanı:",
+        "larnaca": {
+          "title": "Larnaka Havalimanı",
+          "description": "Güney'in en büyük havalimanıdır. Buradan Kuzey'e geçiş yaklaşık 1 saat sürmektedir."
+        },
+        "paphos": {
+          "title": "Baf (Paphos) Havalimanı",
+          "description": "Adanın batı kıyısında yer alır. Buradan Kuzey'e geçiş yaklaşık 1.5-2 saat sürmektedir."
+        }
+      }
+    },
+    "bySea": {
+      "title": "Deniz Yolu ile Ulaşım",
+      "description1": "Kuzey Kıbrıs'a Türkiye'den feribot ile de ulaşabilirsiniz.",
+      "description2": "Mersin ve Taşucu limanlarından kalkan feribotlar Girne limanına seferler yapmaktadır.",
+      "description3": "Deniz yolculuğu yaklaşık 6-10 saat sürmektedir ve kendi aracınızla seyahat etmek isteyenler için idealdir."
+    },
+    "contact": {
+      "description": "Ulaşım ve konaklama konusunda detaylı bilgi ve yardım için lütfen bizimle iletişime geçiniz.",
+      "farewell": "Sizi aramızda görmekten mutluluk duyacağız!"
+    }
+
+}

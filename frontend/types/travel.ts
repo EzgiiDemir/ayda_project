@@ -1,38 +1,27 @@
-export interface TravelImage {
-    id: number;
-    url: string;
-    alternativeText?: string;
-    caption?: string;
-    width?: number;
-    height?: number;
-}
-
-export interface TravelSection {
-    id: number;
+export interface TravelConfig {
+    heroImage: string;
     title: string;
-    content: string;
+    sections: TravelSectionData[];
+}
+
+export interface TravelSectionData {
+    id: string;
+    title: string;
+    icon?: 'plane' | 'ship' | 'mapPin' | 'hotel' | 'info';
+    content: TravelContentItem[];
     order: number;
-    icon?: string;
-    images?: TravelImage[];
+    isActive?: boolean;
 }
 
-export interface TravelPage {
-    id: number;
-    heroImage?: TravelImage;
-    sections: TravelSection[];
-    locale: string;
-    publishedAt: string;
-    updatedAt: string;
+export interface TravelContentItem {
+    id: string;
+    type: 'paragraph' | 'subtitle' | 'highlight';
+    text: string;
+    order: number;
 }
 
-export interface TravelApiResponse {
-    data: TravelPage;
-    meta: {
-        pagination?: {
-            page: number;
-            pageSize: number;
-            pageCount: number;
-            total: number;
-        };
-    };
-}
+export const DEFAULT_TRAVEL_CONFIG: TravelConfig = {
+    heroImage: 'https://api.aydaivf.com/uploads/elitebig_7bc1166778.jpg',
+    title: 'Seyahat Bilgileri',
+    sections: [],
+};
