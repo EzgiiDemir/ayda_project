@@ -20,7 +20,6 @@ export async function generateMetadata({ params: { locale } }: PageProps) {
 }
 
 export default async function SeyahatPage({ params: { locale } }: PageProps) {
-    // layout zaten setRequestLocale yapıyor; burada ekstra gerek yok.
     const t = await getTranslations({ locale, namespace: 'travel' });
 
     return (

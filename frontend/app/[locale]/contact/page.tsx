@@ -30,7 +30,7 @@ export default async function ContactPage({ params: { locale } }: PageProps) {
 
             <div className="container flex flex-col gap-5 py-5 md:py-10">
                 <div>
-                    <p className="text-xs md:text-base text-ayda-pink-dark uppercase text-center font-medium">
+                    <p className="text-xs md:text-base text-primary-pink uppercase text-center font-medium">
                         {preTitle}
                     </p>
                     <p className="text-ayda-black capitalize text-2xl md:text-4xl font-medium text-center">

@@ -3,7 +3,6 @@ import './css/style.css'
 import { Inter } from 'next/font/google'
 import Theme from './theme-provider'
 import AppProvider from './app-provider'
-import 'antd/dist/reset.css';
 
 const inter = Inter({
   subsets: ['latin'],

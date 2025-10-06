@@ -1,0 +1,58 @@
+{
+  "hero": {
+    "imageUrl": "https://api.aydaivf.com/uploads/elitebig_7bc1166778.jpg",
+    "imageAlt": "Acupuncture"
+  },
+  "title": "ACUPUNCTURE",
+  "figure": {
+    "src": "https://api.aydaivf.com/uploads/1694162651_9619_org_c063f84eee.jpg",
+    "alt": "Acupuncture session",
+    "srcset": "https://api.aydaivf.com/uploads/thumbnail_1694162651_9619_org_c063f84eee.jpg 234w, https://api.aydaivf.com/uploads/small_1694162651_9619_org_c063f84eee.jpg 500w, https://api.aydaivf.com/uploads/medium_1694162651_9619_org_c063f84eee.jpg 750w, https://api.aydaivf.com/uploads/large_1694162651_9619_org_c063f84eee.jpg 1000w",
+    "sizes": "100vw"
+  },
+  "intro": {
+    "paragraphs": [
+      "Acupuncture derives from Latin: acus (needle) and puncture (to pierce).",
+      "With a history of ~4,000 years, it involves stimulating specific body points using fine needles."
+    ]
+  },
+  "qi": {
+    "paragraphs": [
+      "The aim is to support a balanced flow of Qi through meridians so the body functions harmoniously as a whole."
+    ]
+  },
+  "ivfEffects": {
+    "title": "Effects on infertility and IVF",
+    "paragraphs": [
+      "Research on acupuncture in infertility dates back to the 1990s. Some clinical approaches report that acupuncture may play a supportive role in IVF.",
+      "Commonly cited potential effects include:"
+    ],
+    "benefits": [
+      "Supporting blood flow to uterus and ovaries.",
+      "Reducing uterine motility to aid embryo implantation.",
+      "Modulating stress response (lowering stress hormones; promoting relaxation), which may help during treatment.",
+      "Some reports suggest potential support of oocyte quality."
+    ]
+  },
+  "sideEffects": {
+    "title": "Side effects",
+    "paragraphs": [
+      "Serious adverse effects are uncommon.",
+      "Mild, transient pain on insertion, minor bleeding or bruising may occur; these usually resolve within a few days. Single-use sterile needles are used."
+    ]
+  },
+  "how": {
+    "title": "How is it applied in IVF?",
+    "paragraphs": [
+      "Protocols vary across clinics and practitioners.",
+      "Often started ~1 month before IVF, continued during ovarian stimulation; additional sessions are done on embryo transfer day and shortly after.",
+      "Some protocols use two sessions on transfer day: before and after transfer.",
+      "If only one session is preferred, it is commonly done before transfer.",
+      "Points may include specific areas on the head, hands, lower abdomen, below the knee and feet. No special preparation is required."
+    ]
+  },
+  "price": {
+    "title": "Pricing",
+    "value": "Single session: €125"
+  }
+}

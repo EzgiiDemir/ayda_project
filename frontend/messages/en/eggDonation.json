@@ -1,0 +1,25 @@
+{
+  "metaTitle": "Egg Donation | Ayda IVF",
+  "metaDescription": "Learn about egg donation treatment in detail.",
+  "title": "Egg Donation",
+  "whatIs": {
+    "title": "What Is Egg Donation?",
+    "paragraph1": "When a woman’s own eggs are insufficient, low-quality, or absent, egg donation is a method that allows pregnancy by using donor eggs.",
+    "paragraph2": "Our team selects a suitable egg donor matching the recipient’s blood type and physical features. The eggs are fertilized, embryos are created, and transferred to the recipient to achieve pregnancy."
+  },
+  "who": {
+    "title": "Who Is Egg Donation Suitable For?",
+    "items": [
+      "Women who entered menopause",
+      "Women with decreased egg reserves due to age",
+      "Women whose embryos are genetically unhealthy",
+      "Those with low egg quality due to genetic disorders",
+      "Early menopause (low AMH, high FSH)",
+      "Women after chemotherapy or ovary removal"
+    ]
+  },
+  "why": {
+    "title": "Why Choose Egg Donation Instead of Adoption?",
+    "paragraph": "Experiencing pregnancy and motherhood is every woman’s right. Science offers this opportunity through egg donation."
+  }
+}

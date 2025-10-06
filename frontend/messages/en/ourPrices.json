@@ -1,0 +1,19 @@
+{
+  "title": "Our Prices",
+  "metaDescription": "Learn about Ayda IVF pricing and treatment options.",
+  "intro": "At Ayda IVF, we provide transparent and affordable treatment options for every patient.",
+  "services": {
+    "ivf": {
+      "title": "IVF Treatment",
+      "desc": "The standard IVF process performed in our advanced embryology laboratory."
+    },
+    "eggDonation": {
+      "title": "Egg Donation",
+      "desc": "Achieve healthy pregnancy rates with our trusted egg donation program."
+    },
+    "spermDonation": {
+      "title": "Sperm Donation",
+      "desc": "Our sperm donation program meets international quality and safety standards."
+    }
+  }
+}

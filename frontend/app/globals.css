@@ -46,6 +46,12 @@
     .text-primary-blue {
         color: var(--color-primary-blue);
     }
+    .text-ayda-gray-dark {
+        color: var(--ayda-gray-dark);
+    }
+    .border-primary-blue {
+        color: var(--color-primary-blue);
+    }
 
     .text-primary-pink-light {
         color: var(--color-primary-pink-light);

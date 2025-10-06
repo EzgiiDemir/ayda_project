@@ -1,0 +1,59 @@
+{
+  "hero": {
+    "imageUrl": "https://api.aydaivf.com/uploads/elitebig_7bc1166778.jpg",
+    "imageAlt": "Ovarian and Endometrial PRP"
+  },
+  "title": "Ovarian & Endometrial PRP",
+  "whatIs": {
+    "title": "What is PRP (Platelet-Rich Plasma)?",
+    "paragraphs": [
+      "PRP is prepared by processing a patient’s own blood to concentrate platelets and growth factors, then injecting the plasma into a target tissue.",
+      "It is a natural and relatively new approach used across orthopedics, plastic surgery and reproductive medicine."
+    ]
+  },
+  "ivfUse": {
+    "title": "Where is PRP used in IVF?",
+    "paragraphs": [
+      "Aimed at supporting tissue regeneration, PRP has been explored in infertility care to assist ovarian function and endometrial conditions.",
+      "Main targets: endometrium and ovaries. As this is newer in some clinics, practices may vary."
+    ]
+  },
+  "endometrial": {
+    "title": "Endometrial PRP",
+    "benefitsTitle": "Potential benefits",
+    "benefitsParagraphs": [
+      "May be considered to support thickening in cases with thin endometrium.",
+      "After procedures (e.g., curettage) or certain conditions, endometrium can be thin; reaching adequate thickness before transfer may help implantation."
+    ],
+    "moreTitle": "Application & notes",
+    "moreParagraphs": [
+      "Often planned during endometrial preparation or 1–2 months before embryo transfer.",
+      "Can be applied intra-cavitary or via hysteroscopic techniques depending on need.",
+      "Candidacy is individualized; discuss expected benefits and limitations with your physician."
+    ],
+    "timingTitle": "Timing & pricing",
+    "timingText": "Commonly performed during hormonal preparation or 1–2 months prior to transfer.",
+    "priceLabel": "Fee:",
+    "price": "from €550"
+  },
+  "ovarian": {
+    "title": "Ovarian PRP",
+    "benefitsTitle": "Possible benefits",
+    "benefitsParagraphs": [
+      "Egg number and quality drive embryo competence; both may decline with age.",
+      "Ovarian PRP is an exploratory approach aiming to activate dormant follicles and/or support oocyte quality.",
+      "Considered in advanced reproductive age, low AMH, or risk of premature ovarian insufficiency after clinical evaluation."
+    ],
+    "detailsTitle": "Procedure details",
+    "detailsParagraphs": [
+      "Autologous PRP is injected into the ovaries.",
+      "Performed under general anesthesia; typically around 20 minutes.",
+      "Some clinicians may plan 1–2 months of adjuvant therapy (e.g., growth hormone) beforehand based on the case."
+    ],
+    "pretxTitle": "Preparation & pricing",
+    "pretxText": "Pre-treatment protocols vary by patient and are finalized with the care team.",
+    "priceLabel": "Fee:",
+    "price": "€1,500",
+    "afterText": "Egg retrieval treatment can often be scheduled ~1–2 months after the procedure if appropriate."
+  }
+}

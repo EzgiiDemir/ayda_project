@@ -1,0 +1,71 @@
+{
+  "metaTitle": "Sperm Donation | AYDA IVF",
+  "metaDescription": "What sperm donation is, who can apply, 8-step process, stay duration in Cyprus, remote follow-up option, partner sperm banks and pricing.",
+  "title": "Sperm Donation",
+  "hero": {
+    "imageUrl": "https://api.aydaivf.com/uploads/elitebig_7bc1166778.jpg",
+    "imageAlt": "AYDA IVF - Sperm Donation hero image"
+  },
+  "whatIs": {
+    "title": "What is sperm donation?",
+    "paragraphs": [
+      "It is a treatment used when the intended father’s own sperm is insufficient or absent. Since pregnancy is not possible with the patient’s own sperm, a suitable sperm donor is selected based on blood group and key traits, and—after obtaining the patient’s consent—the donor’s sperm cells are used in treatment.",
+      "Mature oocytes are combined with donor sperm in the AYDA IVF laboratory to create embryos. High-quality embryos with a higher chance of pregnancy are then transferred to the mother-to-be."
+    ]
+  },
+  "who": {
+    "title": "Who can apply for sperm donation?",
+    "items": [
+      "Those who, for various reasons, have no sperm or sperm cells in the reproductive organs,",
+      "Patients who have undergone chemotherapy (e.g., due to cancer) or experienced removal/damage of the gonads,",
+      "Cases where sperm are present but cannot fertilize the egg or support healthy embryo development,",
+      "Individuals entering andropause,",
+      "Single women who wish to become parents (single mothers)."
+    ]
+  },
+  "steps8": {
+    "title": "Sperm donation in 8 steps",
+    "items": [
+      "First, patients considering sperm donation should contact us.",
+      "We follow up by phone or email to review their prior fertility journey.",
+      "We prepare a personalized treatment plan and share the list of required blood tests, examinations and documents.",
+      "Once we receive the tests and documents, we start the treatment process and confirm the month of arrival.",
+      "On day 2 or 3 of the patient’s period, daily tablets and/or injections are started to stimulate and mature the follicles.",
+      "The oocyte maturation phase typically takes about 12 days, varying by patient.",
+      "After maturation, the oocytes are collected under anesthesia in a ~30-minute procedure, and fertilization with donor sperm is performed on the same day.",
+      "Embryos are cultured in the lab (commonly to day 5) and high-quality embryos are transferred. Twelve days after transfer, a blood β-hCG test reveals the pregnancy result."
+    ]
+  },
+  "stayInCyprus": {
+    "title": "How many days do I need to stay in Cyprus for sperm donation?",
+    "summary": "In total, the treatment generally lasts 17–21 days. The length of stay in Cyprus varies according to the oocyte maturation phase and the planned embryo transfer day.",
+    "phasesTitle": "The procedure consists of 3 phases:",
+    "phases": [
+      "1) Phase one: ovarian stimulation and oocyte maturation (starts on cycle day 2 or 3), ~12 days.",
+      "2) From oocyte pickup to embryo development: ~4 days if transferring on day 3, or ~6 days if transferring on day 5.",
+      "3) Embryo transfer on day 3 or day 5; we recommend spending the transfer night in Cyprus when possible."
+    ]
+  },
+  "remoteOption": {
+    "title": "For patients coming from abroad who cannot stay 17–21 days in TRNC",
+    "paragraphs": [
+      "On cycle day 2 or 3, required examinations can be done by the patient’s local OB-GYN, who also monitors follicular growth.",
+      "With remote follow-up, the patient must be in Cyprus by a maximum of day 9 of stimulation.",
+      "Before starting, patients should inform and obtain approval from their local OB-GYN; we maintain regular communication with the local physician.",
+      "With this remote-monitoring approach, the time required to stay in Cyprus can be reduced by up to 9 days."
+    ]
+  },
+  "banks": {
+    "title": "Which banks supply the donor sperm?",
+    "paragraphs": [
+      "We source sperm from Denmark, which hosts Europe’s largest and most diverse sperm banks.",
+      "Our center mainly works with European Sperm Bank and Cryos International.",
+      "All imported donor samples are certified and include all blood tests required by the TRNC Ministry of Health.",
+      "Before treatment you can choose the donor profile, view childhood photos (if available) and review extended donor information."
+    ]
+  },
+  "pricing": {
+    "procedure": "Sperm Donation Procedure Fee: €5,500.00",
+    "storage": "CRYOSTORAGE OF REMAINING EMBRYOS: €600.00 / year"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "metaTitle": "Sperm Donasyonu | AYDA IVF",
+  "metaDescription": "Sperm donasyonu nedir, kimler başvurabilir, 8 adımda süreç, Kıbrıs'ta kalış süresi, uzaktan takip seçeneği, çalıştığımız sperm bankaları ve ücret bilgileri.",
+  "title": "Sperm Donasyonu",
+  "hero": {
+    "imageUrl": "https://api.aydaivf.com/uploads/elitebig_7bc1166778.jpg",
+    "imageAlt": "AYDA IVF - Sperm Donasyonu kahraman görseli"
+  },
+  "whatIs": {
+    "title": "Sperm donasyonu nedir ?",
+    "paragraphs": [
+      "Baba olmak isteyen kişinin kendi spermlerinin yetersiz olduğu veya hiç olmadığı durumlarda uygulanan işlemdir. Kişinin kendi spermi ile hamilelik mümkün olamayacağından, baba olmak isteyen kişinin kan grubu ve özelliklerine uygun sperm bağışçısı seçilir ve merkezimize başvurup baba olmak isteyen kişinin onayı alındıktan sonra bağışçının sperm hücreleri tedavide kullanılır.",
+      "Uygun ve olgun yumurta hücreleri sperm hücreleri ile Ayda tüp bebek laboratuvarında birleştirilerek embriyolar oluşturulur. Oluşan embriyolardan gebelik oranı yüksek olanlar anne adayına transfer edilir."
+    ]
+  },
+  "who": {
+    "title": "Sperm donasyonu tedavisine kimler başvurabilir ?",
+    "items": [
+      "Çeşitli sebeplerden ötürü üreme organlarında sperm veya sperm hücresi bulunmayanlar,",
+      "Kanser vb. sebepler ile kemoterapi gören, gonadların alınması veya zarar görmesi durumlarına maruz kalanlar,",
+      "Üreme organlarında sperm hücresi bulunan ancak yumurtayı dölleyecek veya sağlıklı ve kaliteli geliştirerek embriyo oluşturmasını sağlayacak güce sahip olamayan sperm varlığında,",
+      "Andropoza giren kişilerde,",
+      "Bekar anne (single mother) olarak kliniğimize başvurup ebeveyn olmak isteyen bayanlar."
+    ]
+  },
+  "steps8": {
+    "title": "8 adımda sperm donasyonu süreci",
+    "items": [
+      "Öncelikle sperm donasyonu tedavisini düşünen hastalarımızın bizimle iletişime geçmeleri gerekmektedir.",
+      "Sonrasında hastalarımız ile telefon veya e-mail yolu ile haberleşerek çocuk sahibi olmak için geçirdikleri önceki süreçleri dinliyoruz.",
+      "Kişiye özel tedavi/öneri planı çizilerek, istenen kan testleri ve diğer gerekli testler ile dökümanların listesi paylaşılır.",
+      "İstenen test ve dökümanlar ulaştıktan sonra hastamız için gerekli tedavi süreci başlatılır ve gelmek istedikleri ay netleştirilir.",
+      "Bayanda o ayın adetin 2. veya 3. gününde günlük hap ve/veya iğne tedavisi başlatılarak yumurtalıklardaki foliküllerin olgunlaştırma sürecine girilir.",
+      "Yumurta olgunlaştırma süreci kişiye göre değişmekle birlikte yaklaşık 12 gün sürer.",
+      "Olgunlaştırma süreci sonrası anne adayı yaklaşık 30 dakika süren anestezi altında bir işlem ile yumurtalarını toplatır; aynı gün sperm hücreleri ile döllenme yapılır.",
+      "Döllenen yumurtalar embriyoloji laboratuvarında geliştirilir; genellikle 5. günde kaliteli embriyolar seçilerek rahme transfer edilir. Transferden 12 gün sonra kanda BHCG ile gebelik sonucu öğrenilir."
+    ]
+  },
+  "stayInCyprus": {
+    "title": "Sperm donasyonu işlemi için yaklaşık kaç gün Kıbrıs’ta kalmam gerekmektedir ?",
+    "summary": "Kısacası, tedavi süreci toplam 17 ile 21 gün arasında olup; yumurta olgunlaşma sürecine ve embriyoların transfer edileceği güne göre Kıbrıs’ta kalma süresi değişmektedir.",
+    "phasesTitle": "Sperm donasyonu işlemi 3 aşamadan oluşmaktadır;",
+    "phases": [
+      "1) İlk aşama: iğne tedavisi ile yumurtaların olgunlaştırılması (adet 2. veya 3. gün başlar). Yaklaşık 12 gün sürer.",
+      "2) Yumurta toplama gününden embriyo gelişimine kadar geçen süre: Embriyolar 3. gün transfer edilecekse toplam ~4 gün, 5. gün transfer edilecekse ~6 gün.",
+      "3) Embriyo transferi: Yumurta gelişiminin 3. veya 5. günü yapılır ve mümkünse transfer gecesinin Kıbrıs’ta geçirilmesi önerilir."
+    ]
+  },
+  "remoteOption": {
+    "title": "Yurtdışından gelecek olup yaklaşık 17–21 gün KKTC’de kalamayacak olan hastalarımız için",
+    "paragraphs": [
+      "Bayanın, adetin 2. veya 3. gününde yaşadığı yerdeki kadın doğum doktorunda gerekli muayeneler yapılır ve foliküllerin geliştirilmesi süreci yerel hekim tarafından takip edilir.",
+      "Uzaktan tedavi yapılan hastalarımızda bayanın tedavisinin maksimum 9. gününde Kıbrıs’ta olması gerekmektedir.",
+      "Bu şekilde tedavi görecek hastalarımız, kadın doğum hekimlerine tedaviye başlamadan önce durumu anlatıp onay almalıdır; hekimlerimizin bizimle düzenli iletişimde olması gerekir.",
+      "Uzaktan takip yöntemi ile Kıbrıs’ta kalma süresi en fazla 9 gün azaltılabilmektedir."
+    ]
+  },
+  "banks": {
+    "title": "Sperm donasyonu için spermler hangi bankalardan temin ediliyor ?",
+    "paragraphs": [
+      "Sperm hücrelerini, Avrupa’nın en büyük ve çeşitliliği yüksek sperm bankalarına sahip olan Danimarka’dan temin ediyoruz.",
+      "Merkezimiz en çok European Sperm Bank ve Cryos International ile çalışmaktadır.",
+      "Getirtilen tüm sperm hücreleri sertifikalı olup K.K.T.C. Sağlık Bakanlığı’nın talep ettiği tüm kan testlerine sahiptir.",
+      "Tedavinize başlamadan önce sperm bağışçı profilinizi seçebilir, varsa bağışçının çocukluk fotoğrafını görebilir ve geniş profil bilgilerini inceleyebilirsiniz."
+    ]
+  },
+  "pricing": {
+    "procedure": "Sperm Donasyonu İşlem Ücreti: €5.500,00",
+    "storage": "KALAN EMBRİYOLARIN SAKLANMASI: Yıllık €600,00"
+  }
+}

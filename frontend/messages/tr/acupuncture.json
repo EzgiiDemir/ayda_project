@@ -1,0 +1,58 @@
+{
+  "hero": {
+    "imageUrl": "https://api.aydaivf.com/uploads/elitebig_7bc1166778.jpg",
+    "imageAlt": "Akupunktur"
+  },
+  "title": "AKUPUNKTUR",
+  "figure": {
+    "src": "https://api.aydaivf.com/uploads/1694162651_9619_org_c063f84eee.jpg",
+    "alt": "Akupunktur uygulaması",
+    "srcset": "https://api.aydaivf.com/uploads/thumbnail_1694162651_9619_org_c063f84eee.jpg 234w, https://api.aydaivf.com/uploads/small_1694162651_9619_org_c063f84eee.jpg 500w, https://api.aydaivf.com/uploads/medium_1694162651_9619_org_c063f84eee.jpg 750w, https://api.aydaivf.com/uploads/large_1694162651_9619_org_c063f84eee.jpg 1000w",
+    "sizes": "100vw"
+  },
+  "intro": {
+    "paragraphs": [
+      "Akupunktur, Latince acus (iğne) ve puncture (batırma) sözcüklerinden türeyen bir tıp uygulamasıdır.",
+      "Yaklaşık 4 bin yıllık geçmişi olan akupunktur, vücudun belirli noktalarının ince iğnelerle uyarılmasıyla uygulanır."
+    ]
+  },
+  "qi": {
+    "paragraphs": [
+      "Akupunktur tedavisinin amacı; vücutta dolaştığı kabul edilen Qi enerjisinin meridyenlerde dengeli akışını destekleyerek organizmanın bir bütün olarak uyumlu çalışmasına katkı sağlamaktır."
+    ]
+  },
+  "ivfEffects": {
+    "title": "Akupunkturun infertilite ve IVF üzerindeki etkileri",
+    "paragraphs": [
+      "Akupunktur ve infertilite ilişkisine dair çalışmalar 1990’lara uzanır. Bazı klinik yaklaşımlar akupunkturun IVF süreçlerinde destekleyici rol oynayabileceğini bildirmiştir.",
+      "Aşağıdaki başlıklarda, sık atfedilen olası etkiler özetlenmiştir:"
+    ],
+    "benefits": [
+      "Uterus ve over kan akımının desteklenmesi.",
+      "Uterin kontraksiyonların azaltılarak embriyonun tutunmasının desteklenmesi.",
+      "Stres hormonlarının azalmasına, rahatlatıcı nöromediyatörlerin artışına katkı; tedavi sürecinde kaygının azaltılması.",
+      "Bazı yayınlarda, yumurta kalitesinin desteklenebileceğine dair bulgular."
+    ]
+  },
+  "sideEffects": {
+    "title": "Akupunkturun yan etkileri var mıdır?",
+    "paragraphs": [
+      "Genellikle ciddi bir yan etki beklenmez.",
+      "İğne girişinde kısa süreli batma hissi, çıkış yerinde hafif kanama veya morarma görülebilir; bu bulgular çoğu kez birkaç gün içinde kendiliğinden düzelir. Uygulama tek kullanımlık steril iğnelerle yapılır."
+    ]
+  },
+  "how": {
+    "title": "Tüp bebek tedavisinde akupunktur nasıl uygulanır?",
+    "paragraphs": [
+      "Klinikler arası protokoller değişebilir; uygulama, merkez ve akupunkturistin deneyimine göre planlanır.",
+      "Sıklıkla tüp bebek tedavisinden yaklaşık 1 ay önce başlayarak, ovulasyon indüksiyonu döneminde; ayrıca embriyo transferi günü ve hemen sonrasında seanslar yapılabilir.",
+      "Sadece transfer gününde, transferden önce ve sonra iki seanslık protokoller de mevcuttur.",
+      "Tek seans tercih edilecekse, transferden önce uygulanması önerilebilir.",
+      "Baş, el, göbek altı, diz altı ve ayakta belirli noktalara uygulanır. Anne adayının önceden özel bir hazırlık yapması gerekmez."
+    ]
+  },
+  "price": {
+    "title": "Akupunktur Ücreti",
+    "value": "Tek seans: 125 €"
+  }
+}

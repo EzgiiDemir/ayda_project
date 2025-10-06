@@ -60,70 +60,64 @@ export default function FAQAccordion() {
         setOpenIndex(openIndex === index ? null : index);
     };
 
-    return (
-        <div className="container flex flex-col items-center gap-5 py-10">
-            {/* Title */}
-            <p className="text-primary-blue text-lg md:text-2xl text-center uppercase font-medium">
-                {t('title', {
-                    defaultMessage: config.title || 'Sıkça Sorulan Sorular',
-                })}
-            </p>
+    {
+        return (
+            <div className="w-full flex justify-center py-5 md:py-10">
+                <div className="w-full max-w-3xl flex flex-col gap-5">
+                    {/* Accordion list */}
+                    {config.faqs.map((faq, index) => {
+                        const question = t(`items.${faq.id}.question`, {
+                            defaultMessage: faq.question,
+                        });
+                        const answer = t(`items.${faq.id}.answer`, {
+                            defaultMessage: faq.answer,
+                        });
 
-            {/* Accordion list */}
-            <div className="w-full max-w-2xl flex flex-col gap-4">
-                {config.faqs.map((faq, index) => {
-                    const question = t(`items.${faq.id}.question`, {
-                        defaultMessage: faq.question,
-                    });
-                    const answer = t(`items.${faq.id}.answer`, {
-                        defaultMessage: faq.answer,
-                    });
-
-                    return (
-                        <div
-                            key={faq.id}
-                            className="border p-4 rounded-md border-primary-blue transition-all duration-300"
-                        >
-                            {/* Header */}
+                        return (
                             <div
-                                className="flex items-center justify-between gap-3 cursor-pointer"
-                                onClick={() => toggleAccordion(index)}
+                                key={faq.id}
+                                className="border p-4 md:p-6 rounded-md border-primary-blue transition-all duration-300"
                             >
-                                <p className="text-base md:text-lg text-primary-pink-light font-medium">
-                                    {question}
-                                </p>
-                                <div className="w-8 h-8 rounded-md bg-primary-pink p-2 hover:bg-primary-blue transition-all duration-300 flex justify-center items-center">
-                                    <ChevronDown
-                                        className={`text-white transition-transform duration-300 ${
-                                            openIndex === index ? 'rotate-180' : 'rotate-0'
-                                        }`}
-                                        size={20}
+                                {/* Header */}
+                                <div
+                                    className="flex items-center justify-between gap-3 cursor-pointer"
+                                    onClick={() => toggleAccordion(index)}
+                                >
+                                    <p className="text-left text-base md:text-lg text-primary-pink-light font-medium">
+                                        {question}
+                                    </p>
+                                    <div className="w-10 h-10 rounded-md bg-primary-pink p-2 hover:bg-primary-blue transition-all duration-300 flex justify-center items-center">
+                                        <ChevronDown
+                                            className={`text-white transition-transform duration-300 ${
+                                                openIndex === index ? "rotate-180" : "rotate-0"
+                                            }`}
+                                            size={28} // ikon büyütüldü
+                                        />
+                                    </div>
+                                </div>
+
+                                {/* Answer */}
+                                <div
+                                    ref={(el) => {
+                                        contentRefs.current[index] = el;
+                                    }}
+                                    className="text-left text-sm md:text-base text-gray-700 overflow-hidden transition-[max-height] duration-300"
+                                    style={{
+                                        maxHeight:
+                                            openIndex === index
+                                                ? `${contentRefs.current[index]?.scrollHeight}px`
+                                                : "0px",
+                                    }}
+                                >
+                                    <div
+                                        className="pt-2"
+                                        dangerouslySetInnerHTML={{ __html: answer }}
                                     />
                                 </div>
                             </div>
-
-                            {/* Answer */}
-                            <div
-                                ref={(el) => {
-                                    contentRefs.current[index] = el;
-                                }}
-                                className="text-sm md:text-base text-gray-700 overflow-hidden transition-[max-height] duration-300"
-                                style={{
-                                    maxHeight:
-                                        openIndex === index
-                                            ? `${contentRefs.current[index]?.scrollHeight}px`
-                                            : '0px',
-                                }}
-                            >
-                                <div
-                                    className="pt-2 text-center"
-                                    dangerouslySetInnerHTML={{ __html: answer }}
-                                />
-                            </div>
-                        </div>
-                    );
-                })}
+                        );
+                    })}
+                </div>
             </div>
-        </div>
-    );
-}
+        );
+    }  }

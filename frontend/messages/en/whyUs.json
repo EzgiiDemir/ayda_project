@@ -1,0 +1,25 @@
+{
+  "title": "Why Us?",
+  "metaDescription": "Ayda IVF: experienced team, advanced embryology and ethical patient care.",
+  "context": "Why Us? (context)",
+  "intro": { "highlight": "To explain “why us” better, we interviewed our manager Tanyel FELEK..." },
+  "sections": {
+    "about": {
+      "title": "Could you tell us about yourself?",
+      "p1": "...", "p2": "...", "p3": "...", "p4": "...", "p5": "...",
+      "p6": "...", "p7": "...", "p8": "...", "p9": "...", "p10": "..."
+    },
+    "team": {
+      "title": "You are known for a strong IVF team...",
+      "p1": "...",
+      "embryology": { "title": "Working in Embryology & Andrology Lab:", "i1": "1 Embryology Specialist", "i2": "1 Andrologist" },
+      "gynecology": { "title": "Working in Gynecology:", "i1": "4 Doctors", "i2": "1 Associate Prof. (IVF gynecology)", "i3": "1 Gynecology Doctor (IVF gynecology)", "i4": "2 OB/GYN Specialists", "i5": "and 1 Genetic Specialist" },
+      "p2": "Thus we have one of the largest and most knowledgeable teams..."
+    },
+    "process": { "title": "How do you run the process...", "p1": "...", "p2": "...", "p3": "..." },
+    "hospital": { "title": "Why work under a hospital? Why ELITE?", "p1": "...", "p2": "...", "p3": "...", "p4": "...", "p5": "...", "p6": "..." },
+    "tech": { "title": "Technologies you have...", "p1": "...", "p2": "..." },
+    "whyAyda": { "title": "Why choose Ayda IVF?", "p1": "...", "p2": "...", "p3": "..." },
+    "benefits": { "title": "Additional benefits", "p1": "..." }
+  }
+}

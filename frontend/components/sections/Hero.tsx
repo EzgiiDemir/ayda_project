@@ -101,7 +101,7 @@ export default function Hero() {
                                     backgroundSize: 'auto, cover',
                                 }}
                             />
-                            <div className="absolute inset-0 bg-black/20" />
+                            <div className="absolute inset-0 bg-black/40" />
                         </div>
                     ))}
                 </div>

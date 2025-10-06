@@ -1,0 +1,113 @@
+{
+  "hero": {
+    "imageUrl": "https://api.aydaivf.com/uploads/elitebig_7bc1166778.jpg",
+    "imageAlt": "Embryo donation"
+  },
+  "title": "Embryo Donation",
+  "whatIs": {
+    "title": "What is embryo donation?",
+    "paragraphs": [
+      "Embryo donation is a treatment for couples with poor or absent eggs and sperm. It is a commonly performed method in Cyprus.",
+      "It is often chosen when reproductive cells lose effectiveness with age and embryo donation offers a higher chance of success."
+    ]
+  },
+  "whoForWomen": {
+    "title": "Who is embryo donation suitable for?",
+    "items": [
+      "Women in menopause,",
+      "Women of advanced age with diminished ovarian reserve and recurrent implantation failure or miscarriage,",
+      "Cases where embryos from own eggs are genetically unsuitable,",
+      "Women with low-quality eggs due to genetic conditions,",
+      "Young women with low AMH and/or high FSH (premature ovarian insufficiency),",
+      "Women who had chemotherapy or ovarian surgery/damage."
+    ],
+    "andAlsoTitle": "And also for:",
+    "andAlsoItems": [
+      "Individuals with absent sperm cells,",
+      "Those who had chemotherapy or gonadal removal/damage,",
+      "Men with sperm that cannot fertilize or develop healthy embryos,",
+      "Men with andropause,",
+      "Couples with combined male and female factor wishing to build a family through embryo donation."
+    ]
+  },
+  "similarity": {
+    "title": "Will the baby resemble you?",
+    "paragraphs": [
+      "Pregnancy has benefits for women’s health; embryo donation can be a meaningful choice.",
+      "Experiencing pregnancy is a right for women who wish to become mothers. Science offers embryo donation to make this possible.",
+      "Egg and sperm donors are selected to match blood group and desired characteristics. After endometrial preparation, embryos are transferred ~17 days after medication starts."
+    ]
+  },
+  "processAyda": {
+    "title": "How does the process work at Ayda IVF?",
+    "paragraphs": [
+      "A common question before IVF is: Will I get pregnant?",
+      "We strive as much as our patients do for success and work wholeheartedly for the best outcome."
+    ]
+  },
+  "whyCyprus": {
+    "title": "Why choose Cyprus?",
+    "paragraphs": [
+      "Although presented as simple, embryo donation is detailed and requires dedication. Cyprus legally allows it and has strong expertise.",
+      "Marriage is not required. Cyprus offers one of the best cost–quality balances worldwide.",
+      "Patients often ask about success rates before treatment.",
+      "We value trust and communication and aim for the best possible process.",
+      "We work hard to maintain this trust and achieve high success by transferring top-quality embryos to an optimally prepared endometrium."
+    ]
+  },
+  "steps": {
+    "title": "Embryo donation in 7 steps",
+    "items": [
+      "Contact us by phone or e-mail.",
+      "We learn your history and expectations.",
+      "We create a treatment plan and send required blood tests and documents.",
+      "After confirming eligibility, we take a partial payment to start the process.",
+      "Together we select the most suitable egg and sperm donors.",
+      "We initiate donor procedures and prepare your embryos.",
+      "Using fresh donor eggs takes about 20 days–2 months depending on donor matching and cycle days."
+    ],
+    "note1": "If you don’t want to wait, we can also offer ready embryo donation profiles.",
+    "note2": "Once high-quality embryos are confirmed, we inform you and start transfer preparation."
+  },
+  "spermBanks": {
+    "title": "Which sperm banks do you use?",
+    "paragraphs": [
+      "We import sperm from Denmark, home to Europe’s largest and most diverse sperm banks. We mainly work with European Sperm Bank and Cryos.",
+      "All sperm is certified and meets all negative test requirements of the TRNC Ministry of Health.",
+      "Before treatment you can choose your profile, view childhood photos (if available) and review extended donor details."
+    ]
+  },
+  "unsuitable": {
+    "title": "When might embryo donation be unsuitable?",
+    "paragraphs": [
+      "If the recipient’s endometrium cannot carry a pregnancy, surrogacy may be required.",
+      "If the recipient has serious transmissible infections in serology, the procedure cannot be performed.",
+      "For recipients over 45, internal medicine and cardiology clearance (issued within the last 6 months) is required; if deemed risky, the procedure is not done."
+    ]
+  },
+  "pricing": {
+    "title": "How much does it cost? What is included?",
+    "priceLabel": "Embryo donation fee:",
+    "price": "€6,500",
+    "includesTitle": "Includes:",
+    "includes": [
+      "All consultations,",
+      "All donor treatment costs (drugs, visits, genetic and blood tests, etc.),",
+      "Egg retrieval,",
+      "Selection and preparation of certified Danish sperm stored at our clinic,",
+      "Embryo creation and culture in our lab,",
+      "Embryo cryostorage until transfer day,",
+      "Warming of embryos before transfer,",
+      "Recipient’s transfer preparation (medications/injections),",
+      "Embryo transfer."
+    ],
+    "excludesTitle": "Excludes:",
+    "excludes": [
+      "Recipient medications for preparation and ~2 months after transfer,",
+      "Required blood tests for the couple,",
+      "Post-transfer storage of surplus embryos (annual storage €600),",
+      "Any extra cost if a more premium sperm donor is requested beyond in-clinic options,",
+      "Flights, hotel and local transport."
+    ]
+  }
+}

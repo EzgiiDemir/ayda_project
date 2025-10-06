@@ -61,7 +61,7 @@ const defaultConfig: FooterConfig = {
         icon: 'https://api.aydaivf.com/uploads/link_white_8ce9830683.svg',
         links: [
             { id: '1', label: 'home', href: '/' },
-            { id: '2', label: 'treatments', href: '/treatments' },
+            { id: '2', label: 'treatments', href: '/' },
             { id: '3', label: 'travel', href: '/travel' },
         ],
     },

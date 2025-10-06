@@ -1,0 +1,77 @@
+{
+  "hero": {
+    "imageUrl": "https://api.aydaivf.com/uploads/elitebig_7bc1166778.jpg",
+    "imageAlt": "Yumurta dondurma"
+  },
+  "title": "Yumurta Dondurma",
+  "tagline": "Yumurta dondurma ile yumurta yaşınızı dondurmak mümkün.",
+  "whatIs": {
+    "title": "Yumurta dondurma (yumurta saklama) nedir?",
+    "paragraphs": [
+      "Bayanlarda yaş ilerledikçe yumurta kalitesinin ve sağlığının azaldığı bilinen bir gerçektir. Çeşitli sebeplerden ötürü şu an için çocuk yapma planı olmayan bayanların, ileride kendi yumurtaları ile çocuk sahibi olabilmesini riske atmamak amaçlı, daha genç yaşlarındayken yapılan tedavi sonrasında yumurtalıklardan alınan kaliteli yumurtaların embriyoloji laboratuvarında dondurulup saklanması işlemidir.",
+      "Her bayan doğarken belirli sayıda yumurta ile doğar. Yıllar geçtikçe ve her adet döngüsünde bu rezerv azalır. 40’lı yaşlara gelindiğinde sayı ve kalite ciddi biçimde düşer; hamile kalmak zorlaşır. 30’lu yaşlarda hâlâ çocuk düşünmüyorsanız yumurtalarınızı dondurmanız uzmanlar tarafından önerilir."
+    ]
+  },
+  "who": {
+    "title": "Özellikle hangi bayanlar için önemlidir?",
+    "items": [
+      "AMH seviyesi düşmeye başlayan ve buna bağlı olarak yumurta sayısı ile kalitesi azalanlar,",
+      "Kariyer planları olan veya çeşitli sebeplerle şu an çocuk düşünmeyenler,",
+      "Evlenip yuva kurmak için zamana ihtiyacı olanlar,",
+      "Kemoterapi gibi yumurtalık rezervini bozabilecek tedavilere başlamadan önce, yumurtalar hâlâ sağlıklı iken toplanıp dondurulması gereken durumlar."
+    ]
+  },
+  "infoNote1": {
+    "title": "Bilgi",
+    "text": "Yumurta dondurma işlemi için hastanın bakire olmaması gerekir. Vajinal girişim gerektirdiğinden bakirelik zarına zarar verme riski nedeniyle önerilmez."
+  },
+  "how": {
+    "title": "Yumurta dondurma tedavisi nasıl ilerler?",
+    "paragraphs": [
+      "Gerekli kan tahlilleri sonrası hasta, adetinin 2. veya 3. gününde ultrason için çağrılır.",
+      "Uygunluk varsa yaklaşık 12 gün süren hap ve iğne tedavisiyle yumurtalar büyütülür; bu süreçte belirli aralıklarla kontroller yapılır.",
+      "Tetikleme sonrası 35–36 saat geçince hasta sabah ameliyathaneye alınır. Yaklaşık 30 dakika süren tam anestezi altında yumurtalar toplanır; hasta ağrı hissetmez.",
+      "Toplanan yumurtalar aynı gün laboratuvarda değerlendirilir; dondurmaya uygun olanlar vitrifikasyonla dondurulup tanklarda saklanır."
+    ]
+  },
+  "useLater": {
+    "title": "Dondurulan yumurtalar gerektiğinde nasıl kullanılır?",
+    "paragraphs": [
+      "Hasta (varsa partneriyle) kliniğimize başvurur ve her iki taraftan gerekli tahliller istenir.",
+      "Embriyo oluşturmak için sperm örneği alınır; dondurulmuş yumurtalar embriyologlar tarafından çözdürülür.",
+      "Yumurta ve sperm birleştirilerek embriyolar geliştirilir.",
+      "Alıcı için adetinin 2.–3. gününde başlayan yaklaşık 12 günlük hap tedavisi, son günlerde iğnelerle desteklenir ve ~17. gün civarı uygun embriyolar rahme transfer edilir."
+    ]
+  },
+  "generalNotes": {
+    "title": "Genel notlar",
+    "paragraphs": [
+      "Yumurta dondurma, dünyada hızla yaygınlaşan ve önemli bir fertilite koruma yöntemidir.",
+      "Birçok ülkede genç kadınlar, ileride anne olabilme şansını artırmak için yumurtalarını dondurmayı tercih etmektedir.",
+      "Bilinçli karar ve doğru yönlendirmeyle, daha rahat bir psikoloji ile hayatınıza devam ederken ileride çocuk sahibi olma ihtimalinizi koruyabilirsiniz."
+    ]
+  },
+  "infoNote2": {
+    "title": "Bilgi",
+    "text": "Yumurtalar dondurulduktan sonra yıllarca saklanabilir; çözdürüldüğünde dondurulduğu zamanki canlılığını korur."
+  },
+  "pricing": {
+    "title": "Yumurta dondurma ücreti ve kapsamı",
+    "priceLabel": "Yumurta dondurma işlemi ücreti:",
+    "price": "2.500 €",
+    "includesTitle": "Ücrete dahil olanlar:",
+    "includes": [
+      "Tüm görüşmeler ve danışmanlık,",
+      "Yumurtalıkların iğne/hap tedavisi ile geliştirilmesi,",
+      "Genel anestezi altında yumurta toplama işlemi,",
+      "Dondurulabilecek kalitedeki yumurtaların ayrıştırılması, dondurulması ve 1 yıl saklanması."
+    ],
+    "excludesTitle": "Ücrete dahil olmayanlar:",
+    "excludes": [
+      "Uyarım sürecinde gereken hap ve iğneler,",
+      "İstenen zorunlu kan testleri,",
+      "Uçuş, otel ve ulaşım masrafları,",
+      "Devam eden yıllar için saklama ücreti (yıllık 600 €)."
+    ]
+  }
+}

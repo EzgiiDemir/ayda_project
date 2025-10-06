@@ -1,0 +1,77 @@
+{
+  "hero": {
+    "imageUrl": "https://api.aydaivf.com/uploads/elitebig_7bc1166778.jpg",
+    "imageAlt": "Egg freezing"
+  },
+  "title": "Egg Freezing",
+  "tagline": "Freeze your egg age with egg freezing.",
+  "whatIs": {
+    "title": "What is egg freezing?",
+    "paragraphs": [
+      "As women age, egg quality and health decline. For those not planning pregnancy now, eggs can be retrieved while younger and frozen in the embryology lab for future use.",
+      "Women are born with a finite egg reserve that declines with age and each cycle. In the 40s, number and quality drop markedly and pregnancy becomes harder. Freezing in the early 30s is commonly recommended if pregnancy is not planned soon."
+    ]
+  },
+  "who": {
+    "title": "Who should consider it?",
+    "items": [
+      "Those with falling AMH and diminishing reserve/quality,",
+      "Those prioritizing career or not planning pregnancy now,",
+      "Those needing more time before marriage/family building,",
+      "Before chemotherapy or other gonad-toxic treatments, while eggs are still healthy."
+    ]
+  },
+  "infoNote1": {
+    "title": "Note",
+    "text": "Egg freezing requires a non-virgin patient due to vaginal instrumentation; it is not recommended for virgins."
+  },
+  "how": {
+    "title": "How does the treatment proceed?",
+    "paragraphs": [
+      "After blood tests, ultrasound is scheduled on cycle day 2–3.",
+      "If suitable, ~12 days of stimulation with pills/injections; periodic monitoring.",
+      "35–36 hours after trigger, egg retrieval is performed under general anesthesia (≈30 minutes, painless for the patient).",
+      "Oocytes are assessed the same day; those suitable are vitrified and stored in tanks."
+    ]
+  },
+  "useLater": {
+    "title": "How are frozen eggs used later?",
+    "paragraphs": [
+      "The patient (and partner, if any) presents to the clinic; both complete required tests.",
+      "Semen is provided; frozen oocytes are thawed by embryologists.",
+      "Egg and sperm are combined; embryos are cultured.",
+      "Endometrial preparation starts on cycle day 2–3 (≈12 days with pills, supported by injections); around day ~17, embryo transfer is performed."
+    ]
+  },
+  "generalNotes": {
+    "title": "General notes",
+    "paragraphs": [
+      "Egg freezing is a rapidly growing and important fertility preservation method worldwide.",
+      "Many women choose to freeze eggs to protect future family-building options.",
+      "With informed planning, you can continue life with peace of mind while preserving the chance of future pregnancy."
+    ]
+  },
+  "infoNote2": {
+    "title": "Note",
+    "text": "Eggs can be stored for many years; upon thawing they retain the same viability as when frozen."
+  },
+  "pricing": {
+    "title": "Pricing & what’s included",
+    "priceLabel": "Egg freezing fee:",
+    "price": "€2,500",
+    "includesTitle": "Includes:",
+    "includes": [
+      "All consultations,",
+      "Ovarian stimulation with pills/injections,",
+      "Egg retrieval under general anesthesia,",
+      "Selection, vitrification, and storage of suitable eggs for 1 year."
+    ],
+    "excludesTitle": "Excludes:",
+    "excludes": [
+      "Medications during stimulation,",
+      "Required blood tests,",
+      "Flights, hotel, and local transport,",
+      "Storage after the first year (€600/year)."
+    ]
+  }
+}

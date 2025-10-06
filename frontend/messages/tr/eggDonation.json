@@ -1,0 +1,25 @@
+{
+  "metaTitle": "Yumurta Donasyonu | Ayda IVF",
+  "metaDescription": "Yumurta donasyonu hakkında detaylı bilgi edinin.",
+  "title": "Yumurta Donasyonu",
+  "whatIs": {
+    "title": "Yumurta Donasyonu Nedir?",
+    "paragraph1": "Bayanın kendi yumurtalarının yetersiz, kalitesi düşük veya hiç olmadığı durumlarda hamileliğin mümkün olamadığı için yumurta bağışçısından yumurta alınarak uygulanan yöntemdir.",
+    "paragraph2": "Ekibimiz tarafından bayanın kendi kan grubu ve tipik özelliklerine uygun bir yumurta bağışçısı seçilerek protokoller takibiyle bağışçının işlemi yapılır. Böylelikle embriyolar oluşturulur ve bayana transfer edilerek hamile olma şansı sağlanır."
+  },
+  "who": {
+    "title": "Yumurta Donasyonu Tedavisi Hangi Durumlardaki Bayanların Tercihidir?",
+    "items": [
+      "Menopoza giren bayanlar",
+      "Yaşı ilerleyip yumurta rezervi azalanlar",
+      "Embriyoları sağlıksız olanlar",
+      "Genetik bozukluk nedeniyle düşük kaliteli yumurtalar üretenler",
+      "Erken menopoz yaşayanlar (AMH düşük, FSH yüksek)",
+      "Kemoterapi görmüş veya yumurtalıkları alınmış bayanlar"
+    ]
+  },
+  "why": {
+    "title": "Neden Evlatlık Edinmeyip Yumurta Donasyonu Tedavisine Gidilmeli?",
+    "paragraph": "Hamilelik duygusunu tatmak, anne olmak isteyen her kadının hakkıdır. Bilim, yumurta donasyonu tedavisiyle bu duyguyu yaşama imkânı sunmaktadır."
+  }
+}

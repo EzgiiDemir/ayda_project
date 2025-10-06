@@ -1,0 +1,59 @@
+{
+  "hero": {
+    "imageUrl": "https://api.aydaivf.com/uploads/elitebig_7bc1166778.jpg",
+    "imageAlt": "Ovarian ve Endometrial PRP"
+  },
+  "title": "Ovarian ve Endometrial PRP",
+  "whatIs": {
+    "title": "PRP (Platelet Rich Plasma) nedir?",
+    "paragraphs": [
+      "Kişinin kendi kanından alınan örneğin laboratuvarda işlenerek trombositten zengin plazmanın ayrıştırılması ve tedavi edilmesi hedeflenen bölgeye enjekte edilmesi işlemidir.",
+      "PRP doğal ve görece yeni bir yaklaşımdır. Ortopedi, plastik cerrahi ve üreme tıbbı gibi alanlarda çeşitli endikasyonlarla kullanılmaktadır."
+    ]
+  },
+  "ivfUse": {
+    "title": "PRP tüp bebek tedavisinde nerelerde kullanılır?",
+    "paragraphs": [
+      "PRP, doku yenilenmesini desteklemek amacıyla farklı branşlarda kullanılmaktadır. Üremede ise son yıllarda kısırlık tedavilerinde, yumurtalık fonksiyonunu destekleme ve rahim içi zarı (endometrium) ile ilgili durumlarda yardımcı yöntem olarak uygulanmaktadır.",
+      "Uygulama alanları özetle: endometrium (rahim içi) ve ovaryum (yumurtalık). Yöntem bazı merkezlerde yeni kabul edildiği için yaklaşım farklılık gösterebilir."
+    ]
+  },
+  "endometrial": {
+    "title": "Endometrial PRP",
+    "benefitsTitle": "Endometrial PRP’nin potansiyel yararları",
+    "benefitsParagraphs": [
+      "Endometrium kalınlığının yetersiz olduğu olgularda kalınlaşmanın desteklenmesi amacıyla uygulanabilir.",
+      "Bazı kişilerde geçirilmiş işlemler (ör. küretaj) veya tıbbi durumlar sonrası rahim duvarı ince olabilir; embriyo transferi öncesi yeterli kalınlığa ulaşmak, tutunma şansını etkileyebildiğinden PRP destek tedavileri düşünülebilir."
+    ],
+    "moreTitle": "Uygulama ve notlar",
+    "moreParagraphs": [
+      "Embriyo transferinden önce, endometriumun hazırlık süreci ile eş zamanlı veya işlemden 1–2 ay önce planlanabilir.",
+      "Kişinin ihtiyacına göre kavite içine enjeksiyonla veya histeroskopik olarak uygulanabilir.",
+      "Uygunluk değerlendirmesi kişiye özel yapılmalı; işlemin yararı ve sınırlılıkları hekimle birlikte gözden geçirilmelidir."
+    ],
+    "timingTitle": "Zamanlama ve ücret",
+    "timingText": "Endometrium kalınlaştırma sürecinde veya transfer işleminden 1–2 ay önce yapılması sık tercih edilir.",
+    "priceLabel": "Tedavi ücreti:",
+    "price": "550 €'dan başlamaktadır."
+  },
+  "ovarian": {
+    "title": "Ovarian PRP (Yumurtalık PRP’si)",
+    "benefitsTitle": "Olası yararlar",
+    "benefitsParagraphs": [
+      "Tüp bebekte kaliteli embriyo için yumurta sayısı ve kalitesi kritik önemdedir. Yaş ilerledikçe yumurtalık rezervi ve kalite azalabilir.",
+      "Ovarian PRP; uyku halindeki foliküllerin aktivasyonuna ve/veya mevcut oosit kalitesinin desteklenmesine yardımcı olma amacıyla değerlendirilen deneysel bir yaklaşımdır.",
+      "İleri üreme yaşı, düşük AMH veya erken menopoz riski gibi durumlarda, klinik değerlendirme sonrası uygun görülürse düşünülebilir."
+    ],
+    "detailsTitle": "Uygulama ayrıntıları",
+    "detailsParagraphs": [
+      "İşlem kişinin kendi kanından elde edilen PRP’nin yumurtalıklara enjekte edilmesiyle yapılır.",
+      "Genel anestezi altında, genellikle 20 dakika civarında tamamlanır.",
+      "Bazı hastalarda hekim, işlem öncesi 1–2 ay büyüme hormonu gibi destek tedaviler planlayabilir."
+    ],
+    "pretxTitle": "Ön hazırlık ve ücret",
+    "pretxText": "Kişisel duruma göre işlem öncesi hazırlık protokolleri uygulanabilir. Nihai plan hasta ve hekim tarafından birlikte netleştirilir.",
+    "priceLabel": "Tedavi ücreti:",
+    "price": "1.500 €",
+    "afterText": "İşlemden 1–2 ay sonra uygun görülürse yumurta toplama tedavisine geçilebilir."
+  }
+}
