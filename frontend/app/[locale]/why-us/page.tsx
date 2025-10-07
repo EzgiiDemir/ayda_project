@@ -1,8 +1,9 @@
 // ==========================================
 // app/[locale]/why-us/page.tsx
 // ==========================================
+import type { Metadata } from 'next';
 import { Suspense } from 'react';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Image from 'next/image';
 import {
     WhyUsSection,
@@ -12,12 +13,11 @@ import {
 } from '@/components/sections/about/WhyUs';
 import { getWhyUsConfig } from '@/lib/api/whyUs';
 
-interface PageProps {
-    params: { locale: string };
-}
+type Params = { params: Promise<{ locale: string }> };
 
-export async function generateMetadata({ params: { locale } }: PageProps) {
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
     try {
+        const { locale } = await params;
         const t = await getTranslations({ locale, namespace: 'whyUs' });
         return {
             title: t('title', { default: 'Why Us' }),
@@ -35,7 +35,10 @@ export async function generateMetadata({ params: { locale } }: PageProps) {
     }
 }
 
-export default async function WhyUsPage({ params: { locale } }: PageProps) {
+export default async function WhyUsPage({ params }: Params) {
+    const { locale } = await params; // ✅ Next 15: await params
+    setRequestLocale(locale);
+
     const t = await getTranslations({ locale, namespace: 'whyUs' });
     const config = await getWhyUsConfig(locale);
 

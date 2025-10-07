@@ -1,0 +1,41 @@
+{
+
+    "meta": {
+      "title": "Başarı Oranlarımız - Ayda IVF",
+      "description": "Tüp bebek ve donasyon işlemlerimizin başarı oranları"
+    },
+    "hero": {
+      "title": "Başarı Oranlarımız"
+    },
+    "section1": {
+      "title": "Ayda IVF 2020 Ocak- Aralık ayı tüp bebek ve donasyon işlemleri ile elde edilen başarı oranları aşağıdaki listede verilmiştir",
+      "description": "Bilinmelidir ki başarı oranı <strong>bayanın yaşı, yumurta kalitesi, doğurganlığı</strong> ve <strong>erkekte bulunan sperm kalitesi</strong> ile yakından ilişkilidir."
+    },
+    "table": {
+      "ageRange": "Kadının Yaşı",
+      "ivf": "Tüp Bebek",
+      "spermDonation": "Sperm Donasyonu",
+      "eggDonation": "Yumurta Donasyonu",
+      "embryoDonation": "Embriyo Donasyonu"
+    },
+    "section2": {
+      "title": "Gel gelalim ki bayanın yumurtlamasının durması (menapoz) demek hamile kalamayacağı anlamına gelmez",
+      "p1": "Yaşın ilerlemesi ve menapoz size kendi yumurtalarınız ile hamile kalabilme ihtimalinizi nerede ise sıfırlar.",
+      "p2": "Ancak endometriumunuz yani <strong>'bebeğinizin vücudunuzda büyüyeceği alan olan rahim'</strong> halen işlevseldir.",
+      "p3": "Endometriumu işlevsel ve sağlığı yerinde olan her bir bayan 'yumurta donasyonu' yöntemi ile hamile kalabilmektedir. Bu yöntem ile tamamen size benzeyen ve kan grubunuza uygun olarak seçilen bağışçıdan yumurtalar toplanır. Toplanan yumurta hücreleri ile rahatlıkla hamile kalabilir ve sağlıklı bir şekilde bebeğinizi kucağınıza alabilmektesiniz.",
+      "p4": "Tüp bebek tedavisinin başarılı sonuçlanmasında bayanın yaş ve yumurta faktörünün etkili olduğu kadar; <strong>erkekte bulunan spermin kalitesinin de büyük önemi vardır.</strong> Sperm sayısının az olması tüp bebek ile çocuk sahibi olmayı ciddi derecede etkileyen bir faktör olmasa da kişinin sperminde bulunan <strong>yoğun morfolojik bozukluklar</strong> ve özellikle ameliyat yöntemleri ile testis kanallarından alınan hareketsiz, cansız ve ciddi morfolojik bozukluğa sahip olan spermler çocuk sahibi olmayı önemli derecede engellemektedir. Erkekteki morfolojiye bağlı sorunlar tedavi edilebilecek bir bozukluk ise muhakkak öncesinde bir <strong>ön tedaviden geçmesi</strong> gerekmektedir.",
+      "p5": "Bunun dışında vücudu hiçbir şekilde <strong>sperm üretmeyen</strong> veya <strong>spermi zayıf</strong> olan bireylerde; tamamen size benzeyen ve kan grubunuza uygun olarak seçilen 'sperm donasyonu' tedavisi ile hamile kalınabilmesi mümkündür. Sperm donasyonu tedavisinin başarı oranına ciddi bir etkisi vardır."
+    },
+    "section3": {
+      "title": "Tüm bunların yanında",
+      "description": "<strong>Embriyolarınıza genetik baktırtmak (PGD), Embriyoscope plus, Mikrochip</strong> vb kişinin tedavisi ile uyumlu teknikler <strong>başarı oranının arttırılmasında büyük etkisi olan yöntemlerdir.</strong> Sizde başarı şansınızı arttırabilmeniz için neler yaptırabileceğiniz hakkında koordinatörlerimize danışabilir ve her bir yöntem hakkında detaylı bilgi alabilirsiniz."
+    },
+    "section4": {
+      "title": "Peki bayanın yaşı neden bu kadar etkili",
+      "p1": "Bayanın yaşı arttıkça;<br><strong>kromozomal anomaliye sahip yumurta sayısı</strong> artar yani sağlıklı bebek oluşumuna gidebilecek embriyo sayısı azalır.",
+      "p2": "Bunun yanında yumurtaya enerjisini verip; yumurta hücresinin bölünüp çoğalmasını <strong>'bebek oluşturabilmesini'</strong> sağlayan mitokondri de yaşlanır.",
+      "p3": "Embriyo oluşumunda gerekli olan enerji zayıfladığı için embriyolar doğru bir hızda gelişip büyüyemezler. Böyle bir durumda birçok embriyo gelişimini tamamlayamadığından bebek oluşumuna gidemez.",
+      "p4": "Yaşın bir diğer etkiside; <strong>yumurta rezervlerinin</strong> yaş ilerledikçe <strong>azalmasıdır</strong>. Yani vücut her ay daha az yumurta üreterek menapoz dediğimiz <strong>(yumurtlamama)</strong> evresine geçer."
+    }
+
+}

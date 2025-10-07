@@ -1,0 +1,60 @@
+{
+
+    "pageTitle": "Tüp Bebek (IVF) - ICSI",
+    "section1": {
+      "title": "Tüp bebek tedavisi işlemi nedir? (IVF-ICSI)",
+      "p1": "Jinekoloji veya androloji doktorları tarafından kısırlık tanısı konulan çiftin doğal yollar veya kısırlık tedavisinde diğer üreme yöntemleri ile başarısız olduğunda kullanılan önemli bir tedavi yöntemidir.",
+      "p2": "Tüp bebek ya da bilimsel ismiyle in vitro fertilizasyon (IVF), bayanda bulunan her bir yumurtanın her bir sperm tarafından, vücut dışında suni olarak embriyoloji laboratuvarında döllenmesi ve geliştirilmesi ile gelişen embriyoların anne rahmine transfer edilmesi sürecidir."
+    },
+    "section2": {
+      "title": "Tüp bebek tedavisi kimlere uygulanır?",
+      "women": {
+        "title": "Bayanlarda;",
+        "item1": "Yumurta rezervi (AMH değeri) ve kalitesi düşük olan bayanlarda,",
+        "item2": "Yaşı ilerleyen bayanlarda,",
+        "item3": "PCO (Polikistik over sendromu) olup vücudu gereğinden fazla ve düşük kalitede yumurta üreten bayanlarda,",
+        "item4": "Tüpleri bağlı, tıkalı, olan veya enfeksiyon ya da dış gebelik gibi sebeplerle tüpleri alınmış olan bayanlarda,",
+        "item5": "Vaginismus olan bayanlarda,",
+        "item6": "Yumurtalık kisti veya kanserinden dolayı ameliyat geçirmiş bayanlarda,",
+        "item7": "Endometriosis'i olan bayanlarda,",
+        "item8": "Kadın üreme organlarında yapışıklığa bağlı tüpler ve yumurtalıklar arasındaki ilişkinin bozulduğu durumlarda."
+      },
+      "men": {
+        "title": "Erkeklerde;",
+        "item1": "Boşalma ile ilgili problem yaşayan beylerde,",
+        "item2": "Semen analizinde Dünya sağlık örgütünün (WHO) belirlemiş olduğu normozoospermi (normal sperm değerleri)'nin dışında kalan beylerde,",
+        "item3": "Semen analizinde hiç sperm bulunmayan veya çok az sayıda sperm bulunan erkeklerde,",
+        "item4": "Hareketli spermi bulunmayan erkeklerde,",
+        "item5": "Erkek üreme organlarında bulunan tümör sebebi ile kemoterapi ve radyoterapi almış olup ameliyat geçirmek zorunda kalan erkeklerde,",
+        "item6": "Küçükken geçirmiş olduğu kabakulak veya diğer virütik ateşli hastalıklara bağlı olarak sperm üretiminde bozukluk olan erkeklerde,",
+        "item7": "Sperm kanalları tıkalı veya doğuştan sperm kanalları gelişmemiş olan erkeklerde,",
+        "item8": "Testisleri bağlı olan veya testiste yanlış yapılan ameliyat sonrasında spermin ejekulata gelemediği durumlarda."
+      },
+      "general": {
+        "title": "Genel olarak;",
+        "item1": "Diğer tedavi yöntemleri ile gebelik elde edemeyen çiftlerde,",
+        "item2": "Açıklanamayan (genellikle psikolojik) kısırlık vakalarında,",
+        "item3": "Genetik problemi olan çiftlerde,",
+        "item4": "İmmunolojik (bağışıklık sistemi ile alakalı) problemleri olan çiftlerde."
+      }
+    },
+    "section3": {
+      "title": "Ne zaman tüp bebek tedavisine başvurmalıyım?",
+      "p1": "Çiftin 1 sene boyunca korunmasız olarak düzenli ilişkiye girmesinden hamilelik gözlenmemesi veya hamileliğin düşüklerle sonuçlanması kısırlık sebebi olabileceğinden 1 sene sonunda bayanın jinekoloji doktoruna erkeğin ise androloji doktoruna başvurarak muayene olması gerekmektedir.",
+      "p2": "Yapılan muayene ve diğer üreme yöntemleri başarısız olduğu durumlarda tüp bebek tedavisine baş vurulması gerekmektedir."
+    },
+    "section4": {
+      "title": "10 adımda tüp bebek süreci",
+      "step1": "Öncelikle tüp bebek tedavisini düşünen hastalarımızın bizimle iletişime geçerek eğer Kıbrıs'ta yaşıyorsalar randevu alarak ön görüşme yapmaları için kliniğimize gerekmektedir.",
+      "step2": "İkinci adım...",
+      "step3": "Üçüncü adım...",
+      "step4": "Dördüncü adım...",
+      "step5": "Beşinci adım...",
+      "step6": "Altıncı adım...",
+      "step7": "Yedinci adım...",
+      "step8": "Sekizinci adım...",
+      "step9": "Dokuzuncu adım...",
+      "step10": "Onuncu adım..."
+    }
+
+}

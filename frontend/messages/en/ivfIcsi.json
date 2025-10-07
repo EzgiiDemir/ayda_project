@@ -1,0 +1,60 @@
+{
+
+    "pageTitle": "In Vitro Fertilization (IVF) - ICSI",
+    "section1": {
+      "title": "What is the IVF treatment process? (IVF/ICSI)",
+      "p1": "It is an important treatment method used when a couple diagnosed with infertility by gynecology or andrology physicians fails to conceive through natural means or other assisted reproductive methods.",
+      "p2": "In vitro fertilization (IVF) is the process in which each egg is fertilized by sperm artificially in the embryology laboratory outside the body and developed into embryos, followed by transferring the resulting embryos into the mother’s uterus."
+    },
+    "section2": {
+      "title": "Who is IVF treatment for?",
+      "women": {
+        "title": "In women:",
+        "item1": "Women with low ovarian reserve (AMH level) and reduced egg quality,",
+        "item2": "Women of advanced reproductive age,",
+        "item3": "Women with PCOS (polycystic ovary syndrome) who produce an excessive number of eggs of lower quality,",
+        "item4": "Women whose tubes are tied or blocked, or whose tubes have been removed due to infection or ectopic pregnancy,",
+        "item5": "Women with vaginismus,",
+        "item6": "Women who have undergone surgery due to ovarian cysts or cancer,",
+        "item7": "Women with endometriosis,",
+        "item8": "Cases where adhesions in the female reproductive organs disrupt the relationship between the tubes and the ovaries."
+      },
+      "men": {
+        "title": "In men:",
+        "item1": "Men experiencing problems with ejaculation,",
+        "item2": "Men whose semen analysis falls outside the World Health Organization (WHO) reference ranges for normozoospermia (normal sperm parameters),",
+        "item3": "Men with no sperm or a very low sperm count in semen analysis,",
+        "item4": "Men with no motile sperm,",
+        "item5": "Men who, due to tumors of the male reproductive organs, have received chemotherapy and radiotherapy and needed surgery,",
+        "item6": "Men with impaired sperm production due to mumps in childhood or other viral febrile illnesses,",
+        "item7": "Men with blocked sperm ducts or congenital absence of the sperm ducts,",
+        "item8": "Men with a prior vasectomy or cases where, due to an incorrectly performed testicular surgery, sperm cannot reach the ejaculate."
+      },
+      "general": {
+        "title": "In general:",
+        "item1": "Couples who cannot achieve pregnancy with other treatment methods,",
+        "item2": "Cases of unexplained (often psychological) infertility,",
+        "item3": "Couples with genetic problems,",
+        "item4": "Couples with immunological (immune system–related) problems."
+      }
+    },
+    "section3": {
+      "title": "When should I consider IVF treatment?",
+      "p1": "If pregnancy is not observed after one year of regular unprotected intercourse, or if pregnancies end in miscarriage, infertility may be the reason. At the end of one year, the woman should be examined by a gynecologist and the man by an andrologist.",
+      "p2": "If the examinations and other reproductive methods are unsuccessful, IVF treatment should be considered."
+    },
+    "section4": {
+      "title": "IVF process in 10 steps",
+      "step1": "First, patients considering IVF should contact us; if they live in Cyprus, they should make an appointment and visit our clinic for an initial consultation.",
+      "step2": "Second step...",
+      "step3": "Third step...",
+      "step4": "Fourth step...",
+      "step5": "Fifth step...",
+      "step6": "Sixth step...",
+      "step7": "Seventh step...",
+      "step8": "Eighth step...",
+      "step9": "Ninth step...",
+      "step10": "Tenth step..."
+    }
+
+}

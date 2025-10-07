@@ -1,6 +1,6 @@
-
+import type { Metadata } from 'next';
 import { Suspense } from 'react';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Image from 'next/image';
 import { getTravelConfig } from '@/lib/api/travel';
 import {
@@ -10,11 +10,10 @@ import {
     TravelHighlight,
 } from '@/components/sections/travel/TravelSection';
 
-interface PageProps {
-    params: { locale: string };
-}
+type Params = { params: Promise<{ locale: string }> };
 
-export async function generateMetadata({ params: { locale } }: PageProps) {
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
+    const { locale } = await params;
     const t = await getTranslations({ locale, namespace: 'travel' });
     return {
         title: t('title'),
@@ -22,9 +21,14 @@ export async function generateMetadata({ params: { locale } }: PageProps) {
     };
 }
 
-export default async function TravelPage({ params: { locale } }: PageProps) {
+export default async function TravelPage({ params }: Params) {
+    const { locale } = await params;
+    setRequestLocale(locale);
+
     const t = await getTranslations({ locale, namespace: 'travel' });
     const config = await getTravelConfig(locale);
+
+    const heroImage = config.heroImage || '/images/placeholder-hero.jpg';
 
     return (
         <main className="flex-1 flex flex-col">

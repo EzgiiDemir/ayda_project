@@ -1,35 +1,28 @@
-// ==========================================
-// lib/api/team.ts
-// ==========================================
 import { cache } from 'react';
 import { TeamConfig, DEFAULT_TEAM_CONFIG } from '@/types/team';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:1337';
-const REVALIDATE_TIME = 3600;
 
 export const getTeamConfig = cache(async (locale: string): Promise<TeamConfig> => {
     try {
-        const response = await fetch(`${API_URL}/api/our-team-page?locale=${locale}&populate=deep`, {
-            next: { revalidate: REVALIDATE_TIME, tags: [`team-${locale}`] },
-            headers: { 'Content-Type': 'application/json' },
+        const res = await fetch(`${API_URL}/api/team?locale=${locale}&populate=deep`, {
+            next: { revalidate: 3600, tags: [`team-${locale}`] },
         });
 
-        if (!response.ok) {
-            console.error(`Team API error: ${response.status}`);
-            return DEFAULT_TEAM_CONFIG;
-        }
+        if (!res.ok) return DEFAULT_TEAM_CONFIG;
 
-        const data = await response.json();
-        const attributes = data.data?.attributes;
+        const data = await res.json();
+        const attr = data.data?.attributes;
 
         return {
-            heroImage: attributes?.heroImage?.data?.attributes?.url || DEFAULT_TEAM_CONFIG.heroImage,
-            heroPreTitle: attributes?.heroPreTitle || DEFAULT_TEAM_CONFIG.heroPreTitle,
-            heroTitle: attributes?.heroTitle || DEFAULT_TEAM_CONFIG.heroTitle,
-            members: attributes?.members || DEFAULT_TEAM_CONFIG.members,
+            heroImage: attr?.heroImage?.data?.attributes?.url || DEFAULT_TEAM_CONFIG.heroImage,
+            heroPreTitle: attr?.heroPreTitle || DEFAULT_TEAM_CONFIG.heroPreTitle,
+            members: (attr?.members || DEFAULT_TEAM_CONFIG.members)
+                .filter((m: any) => m.isActive !== false)
+                .sort((a: any, b: any) => a.order - b.order),
         };
     } catch (error) {
-        console.error('Team config fetch error:', error);
+        console.error('Team fetch error:', error);
         return DEFAULT_TEAM_CONFIG;
     }
 });

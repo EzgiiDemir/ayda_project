@@ -1,0 +1,31 @@
+{
+
+    "meta": {
+      "title": "Our Team - Ayda IVF",
+      "description": "Meet our expert team"
+    },
+    "hero": {
+      "title": "Our Team",
+      "preTitle": "Meet our team"
+    },
+    "members": {
+      "tanyel-felek": {
+        "nameTitle": "Ayda IVF Team Director & Embryology Lab Manager CLINICAL EMBRYOLOGIST TANYEL FELEK",
+        "paragraphs": {
+          "0": "Tanyel Felek was born in Cyprus in 1991. He completed his university education at Gazi University in Ankara and Johannes Gutenberg University in Germany.",
+          "1": "In May 2013, he started working as an Embryologist at the Embryology and Andrology Laboratory at Kinderwunsch Zentrum Wiesbaden, one of Germany's largest and most advanced IVF centers.",
+          "2": "While working in Germany, our embryologist applied for the Clinical Embryology Master's program. In 2016, he attended the Clinical Embryology Master's program at Karl Franzes University in Australia.",
+          "3": "While continuing to work in Germany, he received an offer from Dr. Münür Şago in North Cyprus to head the Embryology and Andrology laboratory. He returned to his country and joined the Ayda IVF team."
+        }
+      },
+      "munur-sago": {
+        "nameTitle": "Ayda IVF Team Gynecology Specialist Op. Dr. MÜNÜR ŞAGO",
+        "paragraphs": {
+          "0": "He was born in Limassol, Cyprus in 1970. After completing his primary, secondary and high school education in Cyprus, he was admitted to Cerrahpaşa Medical Faculty in 1988.",
+          "1": "After graduating in 1994, he completed his Obstetrics and Gynecology Specialization at Istanbul Şişli Etfal Hospital.",
+          "2": "He returned to the island in 2004 and quickly became one of the most preferred gynecologists among the people of Cyprus."
+        }
+      }
+    }
+
+}

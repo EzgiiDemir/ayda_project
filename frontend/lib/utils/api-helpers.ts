@@ -11,7 +11,7 @@ export function getStrapiMediaUrl(url: string | null | undefined): string {
     }
 
     // Relative URL - prepend API URL
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:1337';
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://api.aydaivf.com';
     return `${apiUrl}${url}`;
 }
 

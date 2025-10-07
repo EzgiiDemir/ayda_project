@@ -1,0 +1,41 @@
+{
+
+    "meta": {
+      "title": "Our Success Rates - Ayda IVF",
+      "description": "IVF treatment and donation procedure success rates"
+    },
+    "hero": {
+      "title": "Our Success Rates"
+    },
+    "section1": {
+      "title": "Success rates obtained from Ayda IVF January-December 2020 IVF and donation procedures are given in the list below",
+      "description": "It should be known that the success rate is closely related to <strong>the woman's age, egg quality, fertility</strong> and <strong>the sperm quality in men</strong>."
+    },
+    "table": {
+      "ageRange": "Woman's Age",
+      "ivf": "IVF",
+      "spermDonation": "Sperm Donation",
+      "eggDonation": "Egg Donation",
+      "embryoDonation": "Embryo Donation"
+    },
+    "section2": {
+      "title": "However, the cessation of ovulation (menopause) does not mean that pregnancy is impossible",
+      "p1": "Advancing age and menopause almost eliminate your chances of getting pregnant with your own eggs.",
+      "p2": "However, your endometrium, that is <strong>'the uterus, where your baby will grow in your body'</strong> is still functional.",
+      "p3": "Every woman with a functional and healthy endometrium can get pregnant with the 'egg donation' method. With this method, eggs are collected from a donor selected to completely match you and your blood group. You can easily get pregnant with the collected egg cells and hold your baby in your arms in a healthy way.",
+      "p4": "In the successful completion of IVF treatment, the woman's age and egg factor are effective, as well as; <strong>the quality of sperm in men is also of great importance.</strong> Although low sperm count is not a factor that seriously affects having a child with IVF, <strong>intense morphological disorders</strong> in the person's sperm and especially immobile, lifeless sperm with serious morphological disorders obtained from the testicular canals by surgical methods significantly prevent having a child. If morphological problems in men are a treatable disorder, they must definitely undergo <strong>pre-treatment</strong> beforehand.",
+      "p5": "Apart from this, in individuals whose body <strong>does not produce sperm</strong> at all or whose <strong>sperm is weak</strong>; it is possible to get pregnant with 'sperm donation' treatment selected to completely match you and your blood group. Sperm donation treatment has a serious effect on the success rate."
+    },
+    "section3": {
+      "title": "In addition to all these",
+      "description": "<strong>Genetic screening of your embryos (PGD), Embryoscope plus, Microchip</strong> etc. techniques compatible with the person's treatment <strong>are methods that have a great effect on increasing the success rate.</strong> You can consult with our coordinators about what you can do to increase your chances of success and get detailed information about each method."
+    },
+    "section4": {
+      "title": "Why is the woman's age so effective",
+      "p1": "As the woman's age increases;<br><strong>the number of eggs with chromosomal anomalies</strong> increases, that is, the number of embryos that can lead to healthy baby formation decreases.",
+      "p2": "In addition, the mitochondria that gives energy to the egg; enabling the egg cell to divide and multiply <strong>'to create a baby'</strong> also ages.",
+      "p3": "Since the energy required for embryo formation weakens, embryos cannot develop and grow at the right speed. In such a case, many embryos cannot complete their development and cannot lead to baby formation.",
+      "p4": "Another effect of age is; <strong>egg reserves</strong> <strong>decrease</strong> as age progresses. In other words, the body produces fewer eggs each month and enters the stage we call menopause <strong>(not ovulating)</strong>."
+    }
+
+}

@@ -1,25 +1,18 @@
-
-import { HeroConfig } from '@/types/hero.types';
+import type { HeroConfig } from '@/types/hero.types';
 
 export const DEFAULT_HERO_CONFIG: HeroConfig = {
-    slides: [
-        {
-            id: 'slide-1',
-            image: {
-                url: 'https://api.aydaivf.com/uploads/banner1_a97e8d6aa7.png',
-                alt: 'Ayda IVF Banner 1',
-            },
-            order: 1,
-            isActive: true,
-        },
-    ],
-    dotsPattern: '/images/dots.png',
+    slides: [],
+    rightText: '',
+    bottomText: '',
+    dotsPattern: true,
     autoPlay: true,
-    autoPlayInterval: 5000,
+    autoPlayInterval: 6000,
+    showControls: true,
     showIndicators: true,
-    meta: {
-        version: '1.0.0',
-    },
+    showCounter: false,
+    mobileHeight: 'calc(70dvh - 80px)',
+    desktopHeight: 'calc(100dvh - 80px)',
+    meta: {},
 };
 
 // API Configuration

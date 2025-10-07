@@ -1,4 +1,4 @@
-
+// types/hero.types.ts
 export interface HeroImage {
     url: string;
     alt?: string;
@@ -6,34 +6,51 @@ export interface HeroImage {
 
 export interface HeroSlide {
     id: string;
-    image: HeroImage;
     order: number;
     isActive?: boolean;
+
+    // içerikte kullandıkların
+    title?: string;             // alt fallback’inde kullanılıyor
+    description?: string;
+    image: HeroImage;
+    overlayOpacity?: number;    // slide seviyesinde override
+}
+
+export interface HeroMeta {
+    locale?: string;
+    [key: string]: unknown;
 }
 
 export interface HeroConfig {
     slides: HeroSlide[];
-    dotsPattern?: string;
+
+    // UI copy
+    rightText?: string;
+    bottomText?: string;
+
+    // görsel ayarlar
+    dotsPattern?: boolean;
+
+    // davranışlar
     autoPlay?: boolean;
-    autoPlayInterval: number;
+    autoPlayInterval?: number;
+    showControls?: boolean;
     showIndicators?: boolean;
-    meta?: {
-        version?: string;
-        lastUpdated?: string;
-    };
+    showCounter?: boolean;
+
+    // boyutlar
+    mobileHeight?: number | string;
+    desktopHeight?: number | string;
+
+    // ekstra meta
+    meta?: HeroMeta;
 }
 
-// API Response types
+/** API dönüş tipi (kullandığın şekle birebir) */
 export interface HeroApiResponse {
-    data: HeroConfig;
-    meta?: {
-        locale: string;
-        timestamp: string;
-    };
+    data: HeroConfig; // response.data.data şeklinde okuyorsun
 }
 
 export interface HeroError {
-    message: string;
-    code?: string;
-    details?: unknown;
+    message?: string;
 }

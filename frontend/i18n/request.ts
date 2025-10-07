@@ -21,6 +21,10 @@ export default getRequestConfig(async ({requestLocale}) => {
     const ovarianEndometrial = (await import(`@/messages/${locale}/ovarianEndometrial.json`).catch(() => ({ default: {} }))).default;
     const acupuncture = (await import(`@/messages/${locale}/acupuncture.json`).catch(() => ({ default: {} }))).default;
     const travel = (await import(`@/messages/${locale}/travel.json`).catch(() => ({ default: {} }))).default;
+    const team = (await import(`@/messages/${locale}/team.json`).catch(() => ({ default: {} }))).default;
+    const successRates = (await import(`@/messages/${locale}/successRates.json`).catch(() => ({ default: {} }))).default;
+    const ivfIcsi = (await import(`@/messages/${locale}/ivfIcsi.json`).catch(() => ({ default: {} }))).default;
+    const contactMap = (await import(`@/messages/${locale}/contactMap.json`).catch(() => ({ default: {} }))).default;
 
     return {
         locale,
@@ -38,7 +42,11 @@ export default getRequestConfig(async ({requestLocale}) => {
             eggFreezing,
             ovarianEndometrial,
             acupuncture,
-            travel
+            travel,
+            team,
+            successRates,
+            ivfIcsi,
+            contactMap
         }
     };
 });

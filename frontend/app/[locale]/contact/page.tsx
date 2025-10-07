@@ -1,14 +1,14 @@
+import type { Metadata } from 'next';
 import { Suspense } from 'react';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Image from 'next/image';
 import ContactForm from '@/components/sections/contact/ContactForm';
 import { getContactConfig } from '@/lib/api/contact';
 
-interface PageProps {
-    params: { locale: string };
-}
+type Params = { params: Promise<{ locale: string }> };
 
-export async function generateMetadata({ params: { locale } }: PageProps) {
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
+    const { locale } = await params;
     const t = await getTranslations({ locale, namespace: 'contact' });
     return {
         title: t('meta.title'),
@@ -16,9 +16,14 @@ export async function generateMetadata({ params: { locale } }: PageProps) {
     };
 }
 
-export default async function ContactPage({ params: { locale } }: PageProps) {
+export default async function ContactPage({ params }: Params) {
+    const { locale } = await params;
+    setRequestLocale(locale);
+
     const t = await getTranslations({ locale, namespace: 'contact' });
     const config = await getContactConfig(locale);
+
+    const heroImage = config.heroImage || '/images/placeholder-hero.jpg';
 
     return (
         <main className="flex-1 flex flex-col">

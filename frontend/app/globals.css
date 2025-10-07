@@ -4,9 +4,11 @@
 @layer base {
     :root {
         /* Primary Colors */
-        --color-primary-pink: oklch(71.8% 0.202 349.761);
-        --color-primary-blue: oklch(91.7% 0.08 205.041);
-        --color-primary-pink-light: oklch(82.3% 0.12 346.018);
+        --color-primary-pink: rgb(244 97 151);
+    ;
+        --color-primary-blue: rgb(152 224 242);
+        --color-primary-pink-light: rgb(240 143 178);
+    ;
 
         /* Neutral Colors */
         --color-black: oklch(0% 0 0);

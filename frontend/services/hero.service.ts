@@ -1,4 +1,3 @@
-// services/hero.service.ts
 
 import axios, { AxiosError } from 'axios';
 import { HeroConfig, HeroApiResponse, HeroError } from '@/types/hero.types';
@@ -85,42 +84,47 @@ class HeroService {
      * Validate and transform API config
      */
     private validateAndTransformConfig(config: Partial<HeroConfig>): HeroConfig {
-        // Filter and sort slides
-        const slides = (config.slides || DEFAULT_HERO_CONFIG.slides)
-            .filter(slide => slide.isActive !== false)
-            .sort((a, b) => (a.order || 0) - (b.order || 0))
-            .map(slide => ({
-                ...slide,
+        const slides = (config.slides ?? DEFAULT_HERO_CONFIG.slides)
+            .filter(s => s.isActive !== false)
+            .sort((a, b) => (a.order ?? 0) - (b.order ?? 0))
+            .map(s => ({
+                ...s,
                 image: {
-                    url: slide.image?.url || '',
-                    alt: slide.image?.alt || slide.title,
+                    url: s.image?.url ?? '',
+                    alt: s.image?.alt ?? s.title ?? '',
                 },
-                overlayOpacity: slide.overlayOpacity ?? 0.4,
+                overlayOpacity: s.overlayOpacity ?? 0.4,
             }));
 
-        // Ensure at least one slide exists
         if (slides.length === 0) {
             console.warn('[HeroService] No active slides found, using defaults');
             return DEFAULT_HERO_CONFIG;
         }
 
-        // Merge with default config
         const validatedConfig: HeroConfig = {
             slides,
-            rightText: config.rightText ?? DEFAULT_HERO_CONFIG.rightText,
-            bottomText: config.bottomText ?? DEFAULT_HERO_CONFIG.bottomText,
-            dotsPattern: config.dotsPattern ?? DEFAULT_HERO_CONFIG.dotsPattern,
-            autoPlay: config.autoPlay ?? DEFAULT_HERO_CONFIG.autoPlay,
+            rightText:      config.rightText      ?? DEFAULT_HERO_CONFIG.rightText,
+            bottomText:     config.bottomText     ?? DEFAULT_HERO_CONFIG.bottomText,
+            dotsPattern:    config.dotsPattern    ?? DEFAULT_HERO_CONFIG.dotsPattern,
+            autoPlay:       config.autoPlay       ?? DEFAULT_HERO_CONFIG.autoPlay,
             autoPlayInterval: config.autoPlayInterval ?? DEFAULT_HERO_CONFIG.autoPlayInterval,
-            showControls: config.showControls ?? DEFAULT_HERO_CONFIG.showControls,
+            showControls:   config.showControls   ?? DEFAULT_HERO_CONFIG.showControls,
             showIndicators: config.showIndicators ?? DEFAULT_HERO_CONFIG.showIndicators,
-            showCounter: config.showCounter ?? DEFAULT_HERO_CONFIG.showCounter,
-            mobileHeight: config.mobileHeight ?? DEFAULT_HERO_CONFIG.mobileHeight,
-            desktopHeight: config.desktopHeight ?? DEFAULT_HERO_CONFIG.desktopHeight,
-            meta: config.meta,
+            showCounter:    config.showCounter    ?? DEFAULT_HERO_CONFIG.showCounter,
+            mobileHeight:   config.mobileHeight   ?? DEFAULT_HERO_CONFIG.mobileHeight,
+            desktopHeight:  config.desktopHeight  ?? DEFAULT_HERO_CONFIG.desktopHeight,
+            meta:           config.meta,
         };
 
         return validatedConfig;
+    }
+
+    preloadImages(config: HeroConfig): void {
+        if (typeof window === 'undefined') return;
+        config.slides.forEach(slide => {
+            const img = new window.Image();
+            img.src = slide.image.url;
+        });
     }
 
     /**
@@ -195,13 +199,7 @@ class HeroService {
     /**
      * Preload slide images
      */
-    preloadImages(config: HeroConfig): void {
-        config.slides.forEach((slide) => {
-            const img = new window.Image();
-            img.src = slide.image.url;
-        });
-        console.log('[HeroService] Images preloaded');
-    }
+
 }
 
 // Export singleton instance

@@ -1,31 +1,61 @@
 {
 
+    "meta": {
+      "title": "Our Prices - Ayda IVF",
+      "description": "IVF treatment and other procedure prices"
+    },
     "hero": {
       "preTitle": "You can find our prices below",
       "title": "IVF and Treatment Prices"
     },
     "table": {
       "type": "Treatment Type",
-      "price": "Price",
-      "rows": [
-        { "type": "IVF / ICSI", "price": "3,500 Euro" },
-        { "type": "Sperm Donation", "price": "5,500 Euro" },
-        { "type": "Egg Donation", "price": "5,500 Euro" },
-        { "type": "Embryo Donation", "price": "6,500 Euro" },
-        { "type": "TESE", "price": "1,500 Euro" },
-        { "type": "MicroTESE", "price": "2,000 Euro" },
-        { "type": "Comprehensive Chromosome Screening (NGS)", "price": "3,500 Euro (First 5 embryos)" },
-        { "type": "Embryo Freezing", "price": "600 Euro (Per Year)" },
-        { "type": "Acupuncture", "price": "125 Euro (Per Session)" }
-      ]
+      "price": "Price"
+    },
+    "items": {
+      "ivf": {
+        "type": "IVF/ICSI",
+        "price": "3,500 Euro"
+      },
+      "sperm-donation": {
+        "type": "Sperm Donation",
+        "price": "5,500 Euro"
+      },
+      "egg-donation": {
+        "type": "Egg Donation",
+        "price": "5,500 Euro"
+      },
+      "embryo-donation": {
+        "type": "Embryo Donation",
+        "price": "6,500 Euro"
+      },
+      "tese": {
+        "type": "TESE",
+        "price": "1,500 Euro"
+      },
+      "micro-tese": {
+        "type": "Micro-TESE",
+        "price": "2,000 Euro"
+      },
+      "ngs": {
+        "type": "Comprehensive Chromosome Screening (NGS)",
+        "price": "3,500 Euro (First 5 embryos)"
+      },
+      "embryo-storage": {
+        "type": "Embryo Storage",
+        "price": "600 Euro (Annual)"
+      },
+      "acupuncture": {
+        "type": "Acupuncture",
+        "price": "125 Euro (Single session)"
+      }
     },
     "info": {
       "title": "Important Details You Should Know About Our Procedures",
-      "paragraphs": [
-        "Sperm used for sperm donation procedures are imported from the European Sperm Bank in Denmark, which has Europe’s largest sperm donor pool, and have been approved by the TRNC Ministry of Health.",
-        "Eggs used for egg donation are retrieved and monitored in our own clinic. Fresh eggs are fertilized with sperm on the same day to ensure the highest quality. Donors are selected according to the criteria of the TRNC Ministry of Health, blood group, and your personal preferences.",
-        "MESA, TESE, and MicroTESE procedures are performed by our experienced urologists. Before sperm retrieval surgery, our urology specialists must evaluate and guide you through the necessary preparation process."
-      ]
+      "paragraphs": {
+        "sperm": "Sperm used for sperm donation procedures are imported from the European Sperm Bank in Denmark, which has Europe's largest sperm donor pool, and have been approved by the TRNC Ministry of Health.",
+        "egg": "The eggs used for egg donor procedures are eggs that we collect ourselves with follicle tracking that we progress under our own supervision at our hospital; fresh eggs are given to the recipient (you) and fertilization with sperm takes place on the same day.",
+        "urology": "MESA, TESE, MICRO-TESE procedures are performed by our specialist Urology Doctors."
+      }
     }
-
 }
