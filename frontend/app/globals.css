@@ -13,7 +13,7 @@
         /* Neutral Colors */
         --color-black: oklch(0% 0 0);
         --color-white: oklch(100% 0 0);
-        --color-gray-light: oklch(95% 0 0);
+        --color-gray-light: rgb(229 231 235);
         --color-gray-medium: oklch(85% 0 0);
 
 
@@ -39,7 +39,9 @@
     .bg-primary-pink-light {
         background-color: var(--color-primary-pink-light);
     }
-
+    .bg-gray-light{
+        background-color: var(--color-gray-light);
+    }
     /* Text Colors */
     .text-primary-pink {
         color: var(--color-primary-pink);
