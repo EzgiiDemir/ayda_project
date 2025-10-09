@@ -8,10 +8,11 @@ use App\Models\PageContent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
-
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 class PageController extends Controller
 {
-    // Frontend API - Sayfa verilerini getir
+
     public function getBySlug(Request $request, string $slug)
     {
         $locale = $request->get('locale', 'tr');

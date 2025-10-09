@@ -4,6 +4,8 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\ComponentController;
 use App\Http\Controllers\Api\MediaController;
 use App\Http\Controllers\Api\PageController;
+use App\Http\Controllers\Api\PublicController;
+use App\Http\Controllers\Api\ConfigController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -11,26 +13,36 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 | API Routes
 |--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "api" middleware group. Make something great!
-|
 */
 
+// Sanctum auth route
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-// Public Routes (Frontend API)
-Route::prefix('public')->group(function () {
-    // Sayfa verilerini getir
-    Route::get('/pages/{slug}', [PageController::class, 'getBySlug']);
 
-    // Component verilerini getir (navbar, footer, vb.)
-    Route::get('/components/{name}', [ComponentController::class, 'getByName']);
+// ===================================
+// PUBLIC ROUTES (Frontend API)
+// ===================================
+Route::prefix('public')->group(function () {
+    // Pages
+    Route::get('/pages/{slug}', [PublicController::class, 'getPage']);
+    Route::get('/components/{name}', [PublicController::class, 'getComponent']);
+
+    // Site Configs (NEW)
+    Route::prefix('config')->group(function () {
+        Route::get('/hero', [ConfigController::class, 'getHero']);
+        Route::get('/welcome', [ConfigController::class, 'getWelcome']);
+        Route::get('/treatments', [ConfigController::class, 'getTreatments']);
+        Route::get('/navbar', [ConfigController::class, 'getNavbar']);
+        Route::get('/footer', [ConfigController::class, 'getFooter']);
+        Route::get('/contact', [ConfigController::class, 'getContact']);
+        Route::get('/faq', [ConfigController::class, 'getFaq']);
+    });
 });
 
-// Authentication Routes
+// ===================================
+// AUTHENTICATION ROUTES
+// ===================================
 Route::prefix('auth')->group(function () {
     Route::post('/register', [AuthController::class, 'register']);
     Route::post('/login', [AuthController::class, 'login']);
@@ -42,7 +54,9 @@ Route::prefix('auth')->group(function () {
     });
 });
 
-// Protected Admin Routes
+// ===================================
+// PROTECTED ADMIN ROUTES
+// ===================================
 Route::middleware('auth:api')->prefix('admin')->group(function () {
 
     // Pages Management
@@ -66,14 +80,19 @@ Route::middleware('auth:api')->prefix('admin')->group(function () {
     });
 
     // Components Management
+
     Route::prefix('components')->group(function () {
         Route::get('/', [ComponentController::class, 'index']);
+        Route::get('/{component}', [ComponentController::class, 'show']); // 🔥 Tekil component detay
         Route::post('/', [ComponentController::class, 'store']);
         Route::put('/{component}', [ComponentController::class, 'update']);
         Route::delete('/{component}', [ComponentController::class, 'destroy']);
 
         // Component Content
         Route::put('/{component}/content', [ComponentController::class, 'updateContent']);
+
+        // Component Actions
+        Route::post('/{component}/duplicate', [ComponentController::class, 'duplicate']); // 🔥 Duplicate endpoint
     });
 
     // Media Management
@@ -85,5 +104,17 @@ Route::middleware('auth:api')->prefix('admin')->group(function () {
         Route::put('/{media}', [MediaController::class, 'update']);
         Route::delete('/{media}', [MediaController::class, 'destroy']);
         Route::post('/delete-multiple', [MediaController::class, 'destroyMultiple']);
+    });
+
+    // Site Config Management (NEW)
+    Route::prefix('config')->group(function () {
+        Route::get('/all', [ConfigController::class, 'getAllConfigs']);
+        Route::put('/hero', [ConfigController::class, 'updateHero']);
+        Route::put('/welcome', [ConfigController::class, 'updateWelcome']);
+        Route::put('/treatments', [ConfigController::class, 'updateTreatments']);
+        Route::put('/navbar', [ConfigController::class, 'updateNavbar']);
+        Route::put('/footer', [ConfigController::class, 'updateFooter']);
+        Route::put('/contact', [ConfigController::class, 'updateContact']);
+        Route::put('/faq', [ConfigController::class, 'updateFaq']);
     });
 });

@@ -21,12 +21,14 @@ class Page extends Model
         'meta',
         'created_by',
         'updated_by',
+
     ];
 
     protected $casts = [
         'is_active' => 'boolean',
         'is_homepage' => 'boolean',
         'meta' => 'array',
+
     ];
 
     // İlişkiler
