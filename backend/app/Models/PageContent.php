@@ -14,6 +14,7 @@ class PageContent extends Model
         'locale',
         'title',
         'subtitle',
+        'hero_image',
         'description',
         'seo',
     ];

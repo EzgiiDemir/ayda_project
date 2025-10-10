@@ -1,54 +1,84 @@
+// lib/services/media.service.ts
 import apiClient from '@/lib/api-client';
 
 export interface Media {
     id: number;
     name: string;
-    file_name: string;
-    mime_type: string;
+    filename: string;
     path: string;
-    disk: string;
+    url: string;
+    mime_type: string;
     size: number;
     size_formatted: string;
-    url: string;
-    metadata?: {
-        width?: number;
-        height?: number;
-    };
-    collection?: string;
-    uploaded_by?: number;
+    type: 'image' | 'video' | 'document';
+    collection: string;
+    uploaded_by: number | null;
     created_at: string;
     updated_at: string;
 }
 
-export interface MediaPagination {
-    data: Media[];
+export interface PaginatedMediaResponse {
     current_page: number;
+    data: Media[];
+    first_page_url: string;
+    from: number;
     last_page: number;
+    last_page_url: string;
+    next_page_url: string | null;
+    path: string;
     per_page: number;
+    prev_page_url: string | null;
+    to: number;
     total: number;
 }
 
+export interface MediaFilters {
+    type?: 'image' | 'video' | 'document';
+    search?: string;
+    per_page?: number;
+    page?: number;
+}
+
 class MediaService {
-    async getAll(params?: {
-        collection?: string;
-        type?: 'image' | 'video' | 'document';
-        per_page?: number;
-        page?: number;
-    }): Promise<MediaPagination> {
-        const response = await apiClient.get<{ success: boolean; data: MediaPagination }>('/admin/media', { params });
-        return response.data.data;
+    async getAll(filters?: MediaFilters): Promise<PaginatedMediaResponse> {
+        try {
+            const response = await apiClient.get<PaginatedMediaResponse>('/admin/media', {
+                params: filters,
+            });
+
+            // Laravel paginate doğrudan response.data döner
+            return response.data;
+        } catch (error) {
+            console.error('Failed to fetch media:', error);
+            // Fallback: boş liste döndür
+            return {
+                current_page: 1,
+                data: [],
+                first_page_url: '',
+                from: 0,
+                last_page: 1,
+                last_page_url: '',
+                next_page_url: null,
+                path: '',
+                per_page: 24,
+                prev_page_url: null,
+                to: 0,
+                total: 0,
+            };
+        }
     }
 
     async getById(id: number): Promise<Media> {
-        const response = await apiClient.get<{ success: boolean; data: Media }>(`/admin/media/${id}`);
+        const response = await apiClient.get<{ success: boolean; data: Media }>(
+            `/admin/media/${id}`
+        );
         return response.data.data;
     }
 
-    async upload(file: File, collection?: string, name?: string): Promise<Media> {
+    async upload(file: File, collection: string = 'general'): Promise<Media> {
         const formData = new FormData();
         formData.append('file', file);
-        if (collection) formData.append('collection', collection);
-        if (name) formData.append('name', name);
+        formData.append('collection', collection);
 
         const response = await apiClient.post<{ success: boolean; data: Media }>(
             '/admin/media/upload',
@@ -62,12 +92,12 @@ class MediaService {
         return response.data.data;
     }
 
-    async uploadMultiple(files: File[], collection?: string): Promise<Media[]> {
+    async uploadMultiple(files: File[], collection: string = 'general'): Promise<Media[]> {
         const formData = new FormData();
         files.forEach((file) => {
             formData.append('files[]', file);
         });
-        if (collection) formData.append('collection', collection);
+        formData.append('collection', collection);
 
         const response = await apiClient.post<{ success: boolean; data: Media[] }>(
             '/admin/media/upload-multiple',
@@ -81,8 +111,11 @@ class MediaService {
         return response.data.data;
     }
 
-    async update(id: number, data: { name?: string; collection?: string }): Promise<Media> {
-        const response = await apiClient.put<{ success: boolean; data: Media }>(`/admin/media/${id}`, data);
+    async update(id: number, data: Partial<Media>): Promise<Media> {
+        const response = await apiClient.put<{ success: boolean; data: Media }>(
+            `/admin/media/${id}`,
+            data
+        );
         return response.data.data;
     }
 

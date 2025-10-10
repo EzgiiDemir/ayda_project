@@ -1,3 +1,4 @@
+// lib/services/component.service.ts
 import apiClient from '@/lib/api-client';
 
 export interface Component {
@@ -46,17 +47,34 @@ export interface UpdateComponentContentData {
 
 class ComponentService {
     async getAll(params?: { type?: string; locale?: string }): Promise<Component[]> {
-        const response = await apiClient.get<{ success: boolean; data: Component[] }>('/admin/components', { params });
+        const response = await apiClient.get<{ success: boolean; data: Component[] }>(
+            '/admin/components',
+            { params }
+        );
+        return response.data.data;
+    }
+
+    async getById(id: number, params?: { locale?: string }): Promise<Component> {
+        const response = await apiClient.get<{ success: boolean; data: Component }>(
+            `/admin/components/${id}`,
+            { params }
+        );
         return response.data.data;
     }
 
     async create(data: CreateComponentData): Promise<Component> {
-        const response = await apiClient.post<{ success: boolean; data: Component }>('/admin/components', data);
+        const response = await apiClient.post<{ success: boolean; data: Component }>(
+            '/admin/components',
+            data
+        );
         return response.data.data;
     }
 
     async update(id: number, data: UpdateComponentData): Promise<Component> {
-        const response = await apiClient.put<{ success: boolean; data: Component }>(`/admin/components/${id}`, data);
+        const response = await apiClient.put<{ success: boolean; data: Component }>(
+            `/admin/components/${id}`,
+            data
+        );
         return response.data.data;
     }
 
@@ -70,6 +88,13 @@ class ComponentService {
 
     async delete(id: number): Promise<void> {
         await apiClient.delete(`/admin/components/${id}`);
+    }
+
+    async duplicate(id: number): Promise<Component> {
+        const response = await apiClient.post<{ success: boolean; data: Component }>(
+            `/admin/components/${id}/duplicate`
+        );
+        return response.data.data;
     }
 
     // Public API - Frontend için

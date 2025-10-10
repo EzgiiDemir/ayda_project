@@ -11,7 +11,7 @@ class PublicController extends Controller
 {
     public function getPage(Request $request, string $slug)
     {
-        $locale = $request->get('locale', 'en');
+        $locale = $request->get('locale', 'tr');
 
         $page = Page::active()
             ->where('slug', $slug)
@@ -32,7 +32,7 @@ class PublicController extends Controller
             ], 404);
         }
 
-        $content = $page->content($locale);
+        $content = $page->contents->first();
 
         return response()->json([
             'success' => true,
@@ -42,7 +42,14 @@ class PublicController extends Controller
                     'slug' => $page->slug,
                     'template' => $page->template,
                 ],
-                'content' => $content,
+                'content' => [
+                    'id' => $content->id,
+                    'title' => $content->title,
+                    'subtitle' => $content->subtitle,
+                    'hero_image' => $content->hero_image, // ← BUNU EKLE
+                    'description' => $content->description,
+                    'seo' => $content->seo,
+                ],
                 'components' => $page->components->map(function ($component) {
                     $componentContent = $component->contents->first();
                     return [
@@ -56,7 +63,6 @@ class PublicController extends Controller
             ]
         ]);
     }
-
     public function getComponent(Request $request, string $name)
     {
         $locale = $request->get('locale', 'en');

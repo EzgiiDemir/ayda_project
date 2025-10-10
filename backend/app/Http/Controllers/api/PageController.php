@@ -254,11 +254,9 @@ class PageController extends Controller
             'locale' => 'required|string|size:2',
             'title' => 'required|string',
             'subtitle' => 'nullable|string',
+            'hero_image' => 'nullable|string',  // ← BUNU EKLE
             'description' => 'nullable|string',
             'seo' => 'nullable|array',
-            'seo.title' => 'nullable|string',
-            'seo.description' => 'nullable|string',
-            'seo.keywords' => 'nullable|array',
         ]);
 
         if ($validator->fails()) {
@@ -273,7 +271,7 @@ class PageController extends Controller
                 'page_id' => $page->id,
                 'locale' => $request->locale,
             ],
-            $request->only(['title', 'subtitle', 'description', 'seo'])
+            $request->only(['title', 'subtitle', 'hero_image', 'description', 'seo']) // ← hero_image ekle
         );
 
         return response()->json([
@@ -282,7 +280,6 @@ class PageController extends Controller
             'data' => $content
         ]);
     }
-
     // Admin API - Sayfaya component ekle
     public function attachComponent(Request $request, Page $page)
     {

@@ -13,23 +13,26 @@ export default function PagesListPage() {
     const [isLoading, setIsLoading] = useState(true);
     const [searchQuery, setSearchQuery] = useState('');
     const [statusFilter, setStatusFilter] = useState<'all' | 'active' | 'inactive'>('all');
+    const [currentLocale, setCurrentLocale] = useState<'tr' | 'en'>('tr');
 
     useEffect(() => {
         loadPages();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [currentLocale]); // currentLocale değişince yeniden yükle
 
     useEffect(() => {
         filterPages();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [pages, searchQuery, statusFilter]);
 
     const loadPages = async () => {
+        setIsLoading(true);
         try {
-            const data = await pageService.getAll({ locale: 'tr' });
+            // ✅ Locale parametresini gönder
+            const data = await pageService.getAll({ locale: currentLocale });
+            console.log('Loaded pages:', data); // Debug için
             setPages(data);
         } catch (error) {
             console.error('Failed to load pages:', error);
+            alert('Failed to load pages. Check console for details.');
         } finally {
             setIsLoading(false);
         }
@@ -49,7 +52,8 @@ export default function PagesListPage() {
         if (searchQuery) {
             const q = searchQuery.toLowerCase();
             filtered = filtered.filter((p) => {
-                const content = p.contents?.[0];
+                // ✅ contents array'den currentLocale'e göre filtrele
+                const content = p.contents?.find(c => c.locale === currentLocale);
                 return (
                     p.slug.toLowerCase().includes(q) ||
                     (content?.title?.toLowerCase?.().includes(q) ?? false)
@@ -76,9 +80,8 @@ export default function PagesListPage() {
         try {
             await pageService.delete(id);
             loadPages();
-        } catch (error: unknown) {
+        } catch (error: any) {
             console.error('Failed to delete page:', error);
-            // @ts-expect-error runtime-safe best effort
             const msg = error?.response?.data?.message || 'Failed to delete page';
             alert(msg);
         }
@@ -93,7 +96,7 @@ export default function PagesListPage() {
     }
 
     return (
-        <div className="space-y-6 container mx-auto">
+        <div className="space-y-6">
             {/* Header */}
             <div className="flex items-center justify-between">
                 <div>
@@ -109,6 +112,30 @@ export default function PagesListPage() {
                         <span>Create Page</span>
                     </Link>
                 )}
+            </div>
+
+            {/* Language Selector */}
+            <div className="flex gap-2">
+                <button
+                    onClick={() => setCurrentLocale('tr')}
+                    className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                        currentLocale === 'tr'
+                            ? 'bg-blue-600 text-white'
+                            : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    }`}
+                >
+                    🇹🇷 Turkish
+                </button>
+                <button
+                    onClick={() => setCurrentLocale('en')}
+                    className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                        currentLocale === 'en'
+                            ? 'bg-blue-600 text-white'
+                            : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    }`}
+                >
+                    🇬🇧 English
+                </button>
             </div>
 
             {/* Filters */}
@@ -169,12 +196,13 @@ export default function PagesListPage() {
                         {filteredPages.length === 0 ? (
                             <tr>
                                 <td colSpan={5} className="px-6 py-12 text-center text-gray-500">
-                                    No pages found
+                                    {pages.length === 0 ? 'No pages found in database' : 'No pages match your filters'}
                                 </td>
                             </tr>
                         ) : (
                             filteredPages.map((page) => {
-                                const content = page.contents?.[0];
+                                // ✅ currentLocale'e göre içeriği bul
+                                const content = page.contents?.find(c => c.locale === currentLocale);
                                 return (
                                     <tr key={page.id} className="hover:bg-gray-50">
                                         <td className="px-6 py-4">
@@ -192,21 +220,21 @@ export default function PagesListPage() {
                                         </td>
                                         <td className="px-6 py-4 text-sm text-gray-600">/{page.slug}</td>
                                         <td className="px-6 py-4">
-                        <span className="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-800 rounded">
-                          {page.template}
-                        </span>
+                                            <span className="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-800 rounded">
+                                                {page.template}
+                                            </span>
                                         </td>
                                         <td className="px-6 py-4">
                                             {page.is_active ? (
                                                 <span className="flex items-center gap-1 text-sm text-green-600">
-                            <Eye size={16} />
-                            Active
-                          </span>
+                                                    <Eye size={16} />
+                                                    Active
+                                                </span>
                                             ) : (
                                                 <span className="flex items-center gap-1 text-sm text-gray-400">
-                            <EyeOff size={16} />
-                            Inactive
-                          </span>
+                                                    <EyeOff size={16} />
+                                                    Inactive
+                                                </span>
                                             )}
                                         </td>
                                         <td className="px-6 py-4">

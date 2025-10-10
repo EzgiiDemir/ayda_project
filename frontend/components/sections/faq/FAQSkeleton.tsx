@@ -1,7 +1,6 @@
 export default function FAQSkeleton() {
     return (
-        <section className="w-full py-5 md:py-10">
-            {/* 👇 Ortalamak için container */}
+        <section className="w-full py-5 md:py-10 container mx-auto">
             <div className="container max-w-3xl mx-auto flex flex-col gap-4 animate-pulse">
                 {[1, 2, 3, 4, 5].map((i) => (
                     <div

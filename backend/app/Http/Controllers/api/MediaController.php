@@ -1,4 +1,5 @@
 <?php
+// app/Http/Controllers/Api/MediaController.php
 
 namespace App\Http\Controllers\Api;
 
@@ -6,104 +7,92 @@ use App\Http\Controllers\Controller;
 use App\Models\Media;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
 class MediaController extends Controller
 {
-    // Media listele
+    /**
+     * GET /api/admin/media
+     */
     public function index(Request $request)
     {
-        $collection = $request->get('collection');
-        $type = $request->get('type'); // image, video, document
-        $perPage = $request->get('per_page', 20);
+        $query = Media::query()->orderBy('created_at', 'desc');
 
-        $query = Media::with('uploader')
-            ->orderBy('created_at', 'desc');
-
-        if ($collection) {
-            $query->inCollection($collection);
+        // Type filter
+        if ($request->has('type') && $request->type !== 'all') {
+            $query->where('type', $request->type);
         }
 
-        if ($type === 'image') {
-            $query->images();
-        } elseif ($type === 'video') {
-            $query->videos();
-        } elseif ($type === 'document') {
-            $query->documents();
+        // Search
+        if ($request->has('search')) {
+            $query->where('name', 'like', '%' . $request->search . '%');
         }
 
+        // Pagination
+        $perPage = $request->get('per_page', 24);
         $media = $query->paginate($perPage);
 
-        return response()->json([
-            'success' => true,
-            'data' => $media
-        ]);
+        return response()->json($media);
     }
 
-    // Tekil media detayı
+    /**
+     * GET /api/admin/media/{id}
+     */
     public function show(Media $media)
     {
-        $media->load('uploader');
-
         return response()->json([
             'success' => true,
             'data' => $media
         ]);
     }
 
-    // Dosya yükle
+    /**
+     * POST /api/admin/media/upload
+     */
     public function upload(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'file' => 'required|file|max:10240', // Max 10MB
-            'collection' => 'nullable|string',
-            'name' => 'nullable|string',
+        $request->validate([
+            'file' => 'required|file|mimes:jpeg,png,jpg,gif,webp,mp4,webm,pdf|max:10240', // 10MB
         ]);
-
-        if ($validator->fails()) {
-            return response()->json([
-                'success' => false,
-                'errors' => $validator->errors()
-            ], 422);
-        }
 
         try {
             $file = $request->file('file');
-            $originalName = $file->getClientOriginalName();
-            $extension = $file->getClientOriginalExtension();
+
+            // Generate unique filename
+            $filename = time() . '_' . Str::random(10) . '.' . $file->getClientOriginalExtension();
+
+            // Store in public/uploads folder
+            $path = $file->storeAs('uploads', $filename, 'public');
+
+            // Get full URL
+            $url = Storage::url($path);
+            $fullUrl = url($url);
+
+            // Determine type
             $mimeType = $file->getMimeType();
-            $size = $file->getSize();
-
-            // Dosya adını oluştur (benzersiz)
-            $fileName = Str::slug(pathinfo($originalName, PATHINFO_FILENAME))
-                . '-' . time()
-                . '.' . $extension;
-
-            // Collection'a göre path belirle
-            $collection = $request->get('collection', 'general');
-            $path = $file->storeAs("media/{$collection}", $fileName, 'public');
-
-            // Metadata oluştur (görsel ise boyutları al)
-            $metadata = [];
             if (str_starts_with($mimeType, 'image/')) {
-                $imageSize = getimagesize($file->getRealPath());
-                $metadata = [
-                    'width' => $imageSize[0] ?? null,
-                    'height' => $imageSize[1] ?? null,
-                ];
+                $type = 'image';
+            } elseif (str_starts_with($mimeType, 'video/')) {
+                $type = 'video';
+            } else {
+                $type = 'document';
             }
 
-            // Veritabanına kaydet
+            // Format size
+            $size = $file->getSize();
+            $sizeFormatted = $this->formatBytes($size);
+
+            // Save to database
             $media = Media::create([
-                'name' => $request->get('name', pathinfo($originalName, PATHINFO_FILENAME)),
-                'file_name' => $fileName,
-                'mime_type' => $mimeType,
+                'name' => $file->getClientOriginalName(),
+                'filename' => $filename,
                 'path' => $path,
-                'disk' => 'public',
+                'url' => $fullUrl,
+                'mime_type' => $mimeType,
                 'size' => $size,
-                'metadata' => $metadata,
-                'collection' => $collection,
+                'size_formatted' => $sizeFormatted,
+                'type' => $type,
+                'collection' => $request->get('collection', 'general'),
                 'uploaded_by' => auth()->id(),
             ]);
 
@@ -111,7 +100,7 @@ class MediaController extends Controller
                 'success' => true,
                 'message' => 'File uploaded successfully',
                 'data' => $media
-            ], 201);
+            ]);
 
         } catch (\Exception $e) {
             return response()->json([
@@ -122,118 +111,79 @@ class MediaController extends Controller
         }
     }
 
-    // Çoklu dosya yükle
+    /**
+     * POST /api/admin/media/upload-multiple
+     */
     public function uploadMultiple(Request $request)
     {
-        $validator = Validator::make($request->all(), [
+        $request->validate([
             'files' => 'required|array',
-            'files.*' => 'file|max:10240',
-            'collection' => 'nullable|string',
+            'files.*' => 'file|mimes:jpeg,png,jpg,gif,webp,mp4,webm,pdf|max:10240',
         ]);
 
-        if ($validator->fails()) {
-            return response()->json([
-                'success' => false,
-                'errors' => $validator->errors()
-            ], 422);
-        }
+        try {
+            $uploadedFiles = [];
 
-        $uploadedMedia = [];
-        $errors = [];
-
-        foreach ($request->file('files') as $index => $file) {
-            try {
-                $originalName = $file->getClientOriginalName();
-                $extension = $file->getClientOriginalExtension();
+            foreach ($request->file('files') as $file) {
+                $filename = time() . '_' . Str::random(10) . '.' . $file->getClientOriginalExtension();
+                $path = $file->storeAs('uploads', $filename, 'public');
+                $url = Storage::url($path);
                 $mimeType = $file->getMimeType();
-                $size = $file->getSize();
 
-                $fileName = Str::slug(pathinfo($originalName, PATHINFO_FILENAME))
-                    . '-' . time() . '-' . $index
-                    . '.' . $extension;
-
-                $collection = $request->get('collection', 'general');
-                $path = $file->storeAs("media/{$collection}", $fileName, 'public');
-
-                $metadata = [];
                 if (str_starts_with($mimeType, 'image/')) {
-                    $imageSize = getimagesize($file->getRealPath());
-                    $metadata = [
-                        'width' => $imageSize[0] ?? null,
-                        'height' => $imageSize[1] ?? null,
-                    ];
+                    $type = 'image';
+                } elseif (str_starts_with($mimeType, 'video/')) {
+                    $type = 'video';
+                } else {
+                    $type = 'document';
                 }
 
+                $size = $file->getSize();
+                $sizeFormatted = $this->formatBytes($size);
+
                 $media = Media::create([
-                    'name' => pathinfo($originalName, PATHINFO_FILENAME),
-                    'file_name' => $fileName,
-                    'mime_type' => $mimeType,
+                    'name' => $file->getClientOriginalName(),
+                    'filename' => $filename,
                     'path' => $path,
-                    'disk' => 'public',
+                    'url' => url($url),
+                    'mime_type' => $mimeType,
                     'size' => $size,
-                    'metadata' => $metadata,
-                    'collection' => $collection,
+                    'size_formatted' => $sizeFormatted,
+                    'type' => $type,
+                    'collection' => $request->get('collection', 'general'),
                     'uploaded_by' => auth()->id(),
                 ]);
 
-                $uploadedMedia[] = $media;
-
-            } catch (\Exception $e) {
-                $errors[] = [
-                    'file' => $originalName ?? "file_{$index}",
-                    'error' => $e->getMessage()
-                ];
+                $uploadedFiles[] = $media;
             }
-        }
 
-        return response()->json([
-            'success' => count($errors) === 0,
-            'message' => count($uploadedMedia) . ' files uploaded successfully',
-            'data' => $uploadedMedia,
-            'errors' => $errors
-        ], count($errors) > 0 ? 207 : 201); // 207 Multi-Status
-    }
+            return response()->json([
+                'success' => true,
+                'message' => 'Files uploaded successfully',
+                'data' => $uploadedFiles
+            ]);
 
-    // Media güncelle (sadece metadata)
-    public function update(Request $request, Media $media)
-    {
-        $validator = Validator::make($request->all(), [
-            'name' => 'sometimes|string',
-            'collection' => 'sometimes|string',
-        ]);
-
-        if ($validator->fails()) {
+        } catch (\Exception $e) {
             return response()->json([
                 'success' => false,
-                'errors' => $validator->errors()
-            ], 422);
+                'message' => 'Failed to upload files',
+                'error' => $e->getMessage()
+            ], 500);
         }
-
-        $media->update($request->only(['name', 'collection']));
-
-        return response()->json([
-            'success' => true,
-            'message' => 'Media updated successfully',
-            'data' => $media->fresh()
-        ]);
     }
 
-    // Media sil
+    /**
+     * DELETE /api/admin/media/{id}
+     */
     public function destroy(Media $media)
     {
-        // Sadece adminler veya yükleyen kişi silebilir
-        if (!auth()->user()->isAdmin() && $media->uploaded_by !== auth()->id()) {
-            return response()->json([
-                'success' => false,
-                'message' => 'You do not have permission to delete this file'
-            ], 403);
-        }
-
         try {
-            // Dosyayı fiziksel olarak sil
-            Storage::disk($media->disk)->delete($media->path);
+            // Delete file from storage
+            if (Storage::disk('public')->exists($media->path)) {
+                Storage::disk('public')->delete($media->path);
+            }
 
-            // Veritabanından sil
+            // Delete from database
             $media->delete();
 
             return response()->json([
@@ -250,52 +200,50 @@ class MediaController extends Controller
         }
     }
 
-    // Çoklu media sil
+    /**
+     * POST /api/admin/media/delete-multiple
+     */
     public function destroyMultiple(Request $request)
     {
-        $validator = Validator::make($request->all(), [
+        $request->validate([
             'ids' => 'required|array',
-            'ids.*' => 'exists:media,id',
+            'ids.*' => 'integer|exists:media,id',
         ]);
 
-        if ($validator->fails()) {
+        try {
+            $media = Media::whereIn('id', $request->ids)->get();
+
+            foreach ($media as $item) {
+                if (Storage::disk('public')->exists($item->path)) {
+                    Storage::disk('public')->delete($item->path);
+                }
+                $item->delete();
+            }
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Media files deleted successfully'
+            ]);
+
+        } catch (\Exception $e) {
             return response()->json([
                 'success' => false,
-                'errors' => $validator->errors()
-            ], 422);
+                'message' => 'Failed to delete files',
+                'error' => $e->getMessage()
+            ], 500);
         }
+    }
 
-        $deleted = 0;
-        $errors = [];
-
-        foreach ($request->ids as $id) {
-            try {
-                $media = Media::find($id);
-
-                if (!auth()->user()->isAdmin() && $media->uploaded_by !== auth()->id()) {
-                    $errors[] = [
-                        'id' => $id,
-                        'error' => 'Permission denied'
-                    ];
-                    continue;
-                }
-
-                Storage::disk($media->disk)->delete($media->path);
-                $media->delete();
-                $deleted++;
-
-            } catch (\Exception $e) {
-                $errors[] = [
-                    'id' => $id,
-                    'error' => $e->getMessage()
-                ];
-            }
-        }
-
-        return response()->json([
-            'success' => count($errors) === 0,
-            'message' => "{$deleted} files deleted successfully",
-            'errors' => $errors
-        ]);
+    /**
+     * Format bytes to human readable
+     */
+    private function formatBytes($bytes, $precision = 2)
+    {
+        $units = ['B', 'KB', 'MB', 'GB', 'TB'];
+        $bytes = max($bytes, 0);
+        $pow = floor(($bytes ? log($bytes) : 0) / log(1024));
+        $pow = min($pow, count($units) - 1);
+        $bytes /= (1 << (10 * $pow));
+        return round($bytes, $precision) . ' ' . $units[$pow];
     }
 }

@@ -16,8 +16,8 @@ export default async function FAQPage({ params: { locale } }: { params: { locale
             )}
 
             {/* 👇 container içinde TEK bir merkezleyici kutu */}
-            <div className="py-5 md:py-10">
-                <div className=" mx-auto w-full">
+            <div className="py-5 md:py-10 container mx-auto">
+                <div className="container mx-auto max-w-7xl ">
                     <Suspense fallback={<FAQSkeleton />}>
                         <FAQAccordion locale={locale} />
                     </Suspense>

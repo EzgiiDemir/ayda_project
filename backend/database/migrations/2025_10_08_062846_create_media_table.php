@@ -11,18 +11,18 @@ return new class extends Migration
         Schema::create('media', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('file_name');
-            $table->string('mime_type');
+            $table->string('filename');
             $table->string('path');
-            $table->string('disk')->default('public');
-            $table->unsignedBigInteger('size');
-            $table->json('metadata')->nullable();
-            $table->string('collection')->nullable();
-            $table->foreignId('uploaded_by')->nullable()->constrained('users');
+            $table->string('url');
+            $table->string('mime_type');
+            $table->bigInteger('size');
+            $table->string('size_formatted');
+            $table->string('type');
+            $table->string('collection')->default('general');
+            $table->unsignedBigInteger('uploaded_by')->nullable();
             $table->timestamps();
-            $table->softDeletes();
 
-            $table->index(['collection', 'mime_type']);
+            $table->foreign('uploaded_by')->references('id')->on('users')->onDelete('set null');
         });
     }
 

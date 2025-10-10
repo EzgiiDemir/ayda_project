@@ -16,7 +16,7 @@ import {
     ChevronDown,
 } from 'lucide-react';
 
-export default function AdminLayout({ children }: { children: React.ReactNode }) {
+export default function ComponentsLayout({ children }: { children: React.ReactNode }) {
     const router = useRouter();
     const pathname = usePathname();
     const { user, isAuthenticated, isLoading, checkAuth, logout } = useAuthStore();
@@ -114,7 +114,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                             {sidebarOpen && (
                                 <div className="flex-1 min-w-0">
                                     <p className="text-sm font-medium truncate">{user?.name}</p>
-                                    {/*<p className="text-xs text-gray-400 capitalize">{user?.role.replace('_', ' ')}</p>*/}
+                                    <p className="text-xs text-gray-400 capitalize">{user?.role.replace('_', ' ')}</p>
                                 </div>
                             )}
                         </div>

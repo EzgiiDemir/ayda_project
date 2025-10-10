@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
 
     private function createUsers()
     {
-        User::create([
+        User::updateOrCreate([
             'name' => 'Super Admin',
             'email' => 'admin@aydaivf.com',
             'password' => Hash::make('password123'),
@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
             'is_active' => true,
         ]);
 
-        User::create([
+        User::updateOrCreate([
             'name' => 'Admin User',
             'email' => 'editor@aydaivf.com',
             'password' => Hash::make('password123'),
@@ -35,7 +35,7 @@ class DatabaseSeeder extends Seeder
             'is_active' => true,
         ]);
 
-        User::create([
+        User::updateOrCreate([
             'name' => 'Content Editor',
             'email' => 'content@aydaivf.com',
             'password' => Hash::make('password123'),

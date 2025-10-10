@@ -27,7 +27,7 @@ export default function FAQItem({ faqId, question, answer }: FAQItemProps) {
     }, [isOpen]);
 
     return (
-        <div className="w-full border p-4 md:p-6 rounded-md border-primary-blue transition-all duration-300">
+        <div className="w-full border p-4 md:p-6 rounded-md border-primary-blue transition-all duration-300 container mx-auto">
             <button
                 className="flex items-center justify-between gap-3 cursor-pointer w-full text-left"
                 onClick={() => setIsOpen(!isOpen)}

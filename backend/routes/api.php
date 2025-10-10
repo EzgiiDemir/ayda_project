@@ -118,3 +118,10 @@ Route::middleware('auth:api')->prefix('admin')->group(function () {
         Route::put('/faq', [ConfigController::class, 'updateFaq']);
     });
 });
+Route::middleware('auth:api')->prefix('admin')->group(function () {
+    Route::prefix('media')->group(function () {
+        Route::post('/upload', [MediaController::class, 'upload']);
+        Route::post('/upload-multiple', [MediaController::class, 'uploadMultiple']);
+        Route::delete('/delete', [MediaController::class, 'delete']);
+    });
+});

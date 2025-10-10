@@ -281,7 +281,6 @@ class ConfigController extends Controller
         ]);
     }
 
-    // PUT /api/admin/config/footer
     public function updateFooter(Request $request)
     {
         $validator = Validator::make($request->all(), [

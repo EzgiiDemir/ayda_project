@@ -27,23 +27,26 @@ export default function MediaLibraryPage() {
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
 
+// app/admin/media/page.tsx
     const loadMedia = useCallback(async () => {
         setIsLoading(true);
         try {
-            const data = await mediaService.getAll({
+            const response = await mediaService.getAll({
                 type: typeFilter === 'all' ? undefined : typeFilter,
                 per_page: 24,
                 page: currentPage,
             });
-            setMedia(data.data);
-            setTotalPages(data.last_page);
+
+            setMedia(response.data || []);
+            setTotalPages(response.last_page || 1);
         } catch (error) {
             console.error('Failed to load media:', error);
+            setMedia([]);
+            setTotalPages(1);
         } finally {
             setIsLoading(false);
         }
     }, [currentPage, typeFilter]);
-
     useEffect(() => {
         loadMedia();
     }, [loadMedia]);

@@ -9,16 +9,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            // Mevcut tabloya eklemeler
             if (!Schema::hasColumn('users', 'role')) {
-                $table->enum('role', ['super_admin', 'admin', 'editor'])->default('editor')->after('password');
+                $table->enum('role', ['super_admin', 'admin', 'editor'])
+                    ->default('editor')
+                    ->after('password');
             }
+
             if (!Schema::hasColumn('users', 'is_active')) {
                 $table->boolean('is_active')->default(true)->after('role');
             }
-            if (!Schema::hasColumn('users', 'avatar')) {
-                $table->string('avatar')->nullable()->after('is_active');
-            }
+
             if (!Schema::hasColumn('users', 'deleted_at')) {
                 $table->softDeletes()->after('updated_at');
             }
@@ -49,7 +49,15 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn(['role', 'is_active', 'avatar', 'deleted_at']);
+            if (Schema::hasColumn('users', 'role')) {
+                $table->dropColumn('role');
+            }
+            if (Schema::hasColumn('users', 'is_active')) {
+                $table->dropColumn('is_active');
+            }
+            if (Schema::hasColumn('users', 'deleted_at')) {
+                $table->dropColumn('deleted_at');
+            }
         });
 
         Schema::dropIfExists('password_reset_tokens');

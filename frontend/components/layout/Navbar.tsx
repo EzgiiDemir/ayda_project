@@ -144,16 +144,16 @@ export default function Navbar() {
                     </Link>
 
                     {/* Desktop Menu */}
-                    <div className="hidden md:flex items-center gap-6">
-                        <ul className="flex items-center gap-6 text-black capitalize">
+                    <div className="hidden md:flex items-center gap-6 ">
+                        <ul className="flex items-center gap-6 text-black capitalize ">
                             {/* About Dropdown */}
                             <li
-                                className="relative"
+                                className="relative "
                                 onMouseEnter={() => setAboutOpen(true)}
                                 onMouseLeave={() => setAboutOpen(false)}
                             >
                                 <button
-                                    className="flex items-center gap-1 hover-primary-pink transition-colors duration-300"
+                                    className="flex items-center gap-1 hover-primary-pink transition-colors duration-300 "
                                     aria-expanded={aboutOpen}
                                     aria-haspopup="true"
                                 >
@@ -165,7 +165,7 @@ export default function Navbar() {
                                     />
                                 </button>
                                 <ul
-                                    className={`absolute top-full left-0 bg-white shadow-lg flex flex-col min-w-[220px] transition-all duration-300 rounded-b-md overflow-hidden ${
+                                    className={`absolute top-full left-0 bg-gray-light shadow-lg flex flex-col min-w-[220px] transition-all duration-300 rounded-b-md overflow-hidden ${
                                         aboutOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
                                     }`}
                                     role="menu"
@@ -203,7 +203,7 @@ export default function Navbar() {
                                     />
                                 </button>
                                 <ul
-                                    className={`absolute top-full left-0 bg-white shadow-lg flex flex-col min-w-[220px] transition-all duration-300 rounded-b-md overflow-hidden ${
+                                    className={`absolute top-full left-0 bg-gray-light shadow-lg flex flex-col min-w-[220px] transition-all duration-300 rounded-b-md overflow-hidden ${
                                         treatmentsOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
                                     }`}
                                     role="menu"
@@ -262,7 +262,7 @@ export default function Navbar() {
 
                 {/* Mobile Menu */}
                 <div
-                    className={`md:hidden fixed top-20 left-0 w-full h-[calc(100vh-5rem)] bg-white shadow-lg overflow-y-auto transition-transform duration-300 z-40 ${
+                    className={`md:hidden fixed top-20 left-0 w-full h-[calc(100vh-5rem)] bg-gray-light shadow-lg overflow-y-auto transition-transform duration-300 z-40 ${
                         mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
                     }`}
                     role="dialog"

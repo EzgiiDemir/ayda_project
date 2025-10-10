@@ -3,25 +3,20 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
     public function up(): void
     {
-        // Önce çok uzun verileri kısalt
-        DB::statement("UPDATE page_contents SET description = LEFT(description, 65000) WHERE LENGTH(description) > 65000");
-
-        // Sonra kolonu değiştir
         Schema::table('page_contents', function (Blueprint $table) {
-            $table->longText('description')->nullable()->change();
+            $table->string('hero_image')->nullable()->after('subtitle');
         });
     }
 
     public function down(): void
     {
         Schema::table('page_contents', function (Blueprint $table) {
-            $table->longText('description', 191)->nullable()->change();
+            $table->dropColumn('hero_image');
         });
     }
 };
