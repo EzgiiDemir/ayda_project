@@ -1,6 +1,6 @@
 import { cache } from 'react';
 import { fetchWithRetry, getStrapiMediaUrl } from '@/lib/utils/api-helpers';
-import type { FooterConfig, FooterApiResponse } from '@/types/footer';
+import {FooterConfig, FooterApiResponse, DEFAULT_FOOTER_CONFIG} from '@/types/footer';
 
 type NextFetchOptions = RequestInit & {
     next?: {
